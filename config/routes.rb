@@ -1,4 +1,7 @@
 AscDavv::Application.routes.draw do
+  resources :refresher_courses
+
+
   resources :shortterm_courses
   match '/index', :to => redirect('/public/index.html')
   # The priority is based upon order of creation:

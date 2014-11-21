@@ -11,7 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141121175811) do
+ActiveRecord::Schema.define(:version => 20141121200318) do
+
+  create_table "refresher_courses", :force => true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.string   "religion"
+    t.string   "category"
+    t.string   "marital_status"
+    t.string   "email"
+    t.string   "stream"
+    t.string   "college"
+    t.string   "university"
+    t.string   "city"
+    t.string   "district"
+    t.string   "state"
+    t.string   "position"
+    t.string   "payscale"
+    t.string   "course"
+    t.string   "pin"
+    t.string   "landline"
+    t.string   "mobile"
+    t.string   "university_pin"
+    t.date     "dob"
+    t.date     "date_of_joining"
+    t.date     "pref_date1"
+    t.date     "pref_date2"
+    t.text     "res_address"
+    t.boolean  "phd"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "shortterm_courses", :force => true do |t|
     t.string   "name"

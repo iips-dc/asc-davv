@@ -1,20 +1,20 @@
 <!--@Author: Dhaval
 Dated:20/11/2014
 -->
-<%= form_for(@shortterm_course) do |f| %>
-  <% if @shortterm_course.errors.any? %>
+<%= form_for(@refresher_course) do |f| %>
+  <% if @refresher_course.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@shortterm_course.errors.count, "error") %> prohibited this shortterm_course from being saved:</h2>
+      <h2><%= pluralize(@refresher_course.errors.count, "error") %> prohibited this refresher_course from being saved:</h2>
 
       <ul>
-      <% @shortterm_course.errors.full_messages.each do |msg| %>
+      <% @refresher_course.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field form-group">
+<div class="field form-group">
     <%= f.label :Name %><br />
     <%= f.text_field :name, :placeholder => "Enter Name" %>
   </div>
@@ -117,5 +117,4 @@ Dated:20/11/2014
   <div class="actions">
     <%= f.submit "Submit", :class => "btn btn-primary"%>
   </div>
-
 <% end %>
