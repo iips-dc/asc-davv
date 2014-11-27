@@ -1,9 +1,7 @@
 <!--@Author: Dhaval
 Dated:20/11/2014
 -->
-<div class="panel-body">
-  <div class="col-md-4">
-    <%= form_for(@shortterm_course, :html => { :class => 'form-horizontal'}) do |f| %>
+<%= form_for(@shortterm_course, :html => { :class => 'form-horizontal'}) do |f| %>
       <% if @shortterm_course.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@shortterm_course.errors.count, "error") %> prohibited this shortterm_course from being saved:</h2>
@@ -16,110 +14,135 @@ Dated:20/11/2014
         </div>
       <% end %>
 
-      <div class="form-group">
-        <%= f.label :Name %><br />
-        <%= f.text_field :name, :placeholder => "Enter Name", :class => 'form-control' %>
+      <div class="panel-heading">
+        <h3> Personal Details </h3>
+    </div>  
+    <div class="panel-body">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :Name %><br />
+          <%= f.text_field :name, :placeholder => "Enter Name", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Gender %><br />
+          <%= f.text_field :gender, :placeholder => "Enter Gender", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Dob %><br />
+          <%= f.date_select :dob, :placeholder => "Enter Date Of Birth", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Religion %><br />
+          <%= f.text_field :religion, :placeholder => "Enter Religion", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Category %><br />
+          <%= f.text_field :category, :placeholder => "Enter Category", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Marital_status %><br />
+          <%= f.text_field :marital_status, :placeholder => "Enter Marital Status", :class => 'form-control'%>
+        </div>
+      </div>  
+    </div>
+    <div class="panel-heading">
+        <h3> University Details </h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :Stream %><br />
+          <%= f.text_field :stream, :placeholder => "Enter Stream", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Course %><br />
+          <%= f.text_field :course, :placeholder => "Enter Course", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Position %><br />
+          <%= f.text_field :position, :placeholder => "Enter Position", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Payscale %><br />
+          <%= f.text_field :payscale, :placeholder => "Enter Payscale", :class => 'form-control' %>
+        </div> 
+        <div class="form-group">
+          <%= f.label :Date_Of_Joining %><br />
+          <%= f.date_select :date_of_joining, :class => 'form-control' %>
+        </div>
+        <div class="form-group form-inline">
+          <%= f.label :phd %><br />
+          <%= f.check_box :phd, :class => 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.label :College %><br />
+          <%= f.text_field :college, :placeholder => "Enter College/UTD", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :University %><br />
+          <%= f.text_field :university, :placeholder => "Enter University", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :City %><br />
+          <%= f.text_field :city, :placeholder => "Enter City", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :District %><br />
+          <%= f.text_field :district, :placeholder => "Enter District", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :State %><br />
+          <%= f.text_field :state, :placeholder => "Enter State", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :University_pin %><br />
+          <%= f.text_field :university_pin, :placeholder => "Enter Pin", :class => 'form-control' %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :Gender %><br />
-        <%= f.text_field :gender, :placeholder => "Enter Gender", :class => 'form-control' %>
+    </div>
+    <div class="panel-heading">
+        <h3> Dates Preferred </h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-4">    
+        <div class="form-group">
+          <%= f.label :pref_date1 %><br />
+          <%= f.date_select :pref_date1, :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :pref_date2 %><br />
+          <%= f.date_select :pref_date2, :class => 'form-control' %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :Religion %><br />
-        <%= f.text_field :religion, :placeholder => "Enter Religion", :class => 'form-control' %>
+    </div>  
+    <div class="panel-heading">
+        <h3> Contact Details </h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :Email %><br />
+          <%= f.text_field :email, :placeholder => "Enter E-mail", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Landline %><br />
+          <%= f.text_field :landline, :placeholder => "Enter Landline Number", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Mobile %><br />
+          <%= f.text_field :mobile, :placeholder => "Enter Mobile Number", :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :residential_Address %><br />
+          <%= f.text_area :res_address, :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Pin %><br />
+          <%= f.text_field :pin, :placeholder => "Enter pin", :class => 'form-control' %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :Category %><br />
-        <%= f.text_field :category, :placeholder => "Enter Category", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Marital_status %><br />
-        <%= f.text_field :marital_status, :placeholder => "Enter Marital Status", :class => 'form-control'%>
-      </div>
-      <div class="form-group">
-        <%= f.label :Email %><br />
-        <%= f.text_field :email, :placeholder => "Enter E-mail", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Stream %><br />
-        <%= f.text_field :stream, :placeholder => "Enter Stream", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :College %><br />
-        <%= f.text_field :college, :placeholder => "Enter College/UTD", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :University %><br />
-        <%= f.text_field :university, :placeholder => "Enter University", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :City %><br />
-        <%= f.text_field :city, :placeholder => "Enter City", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :District %><br />
-        <%= f.text_field :district, :placeholder => "Enter District", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :State %><br />
-        <%= f.text_field :state, :placeholder => "Enter State", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Position %><br />
-        <%= f.text_field :position, :placeholder => "Enter Position", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Payscale %><br />
-        <%= f.text_field :payscale, :placeholder => "Enter Payscale", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Course %><br />
-        <%= f.text_field :course, :placeholder => "Enter Course", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Pin %><br />
-        <%= f.text_field :pin, :placeholder => "Enter pin", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Landline %><br />
-        <%= f.text_field :landline, :placeholder => "Enter Landline Number", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Mobile %><br />
-        <%= f.text_field :mobile, :placeholder => "Enter Mobile Number", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :University_pin %><br />
-        <%= f.text_field :university_pin, :placeholder => "Enter Pin", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Dob %><br />
-        <%= f.date_select :dob, :placeholder => "Enter Date Of Birth", :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :Date_Of_Joining %><br />
-        <%= f.date_select :date_of_joining, :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :pref_date1 %><br />
-        <%= f.date_select :pref_date1, :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :pref_date2 %><br />
-        <%= f.date_select :pref_date2, :class => 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :residential_Address %><br />
-        <%= f.text_area :res_address, :class => 'form-control' %>
-      </div>
-      <div class="form-group form-inline">
-        <%= f.label :phd %><br />
-        <%= f.check_box :phd, :class => 'form-control'%>
-      </div>
+    </div>    
       <div class="actions">
         <%= f.submit "Submit", :class => "btn btn-primary"%>
       </div>
-
-    <% end %>
-  </div>
-</div>    
+<% end %> 
