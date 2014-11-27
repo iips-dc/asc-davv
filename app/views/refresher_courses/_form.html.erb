@@ -13,37 +13,46 @@ Dated:20/11/2014
           </ul>
         </div>
     <% end %>
-    <div class="panel-heading">
-        <h3> Personal Details </h3>
-    </div>  
-    <div class="panel-body">
-      <div class="col-md-4">
-        <div class="form-group">
-          <%= f.label :Name %><br />
-          <%= f.text_field :name, :placeholder => "Enter Name", :class => 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :Gender %><br />
-          <%= f.text_field :gender, :placeholder => "Enter Gender", :class => 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :Dob %><br />
-          <%= f.date_select :dob, :placeholder => "Enter Date Of Birth", :class => 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :Religion %><br />
-          <%= f.text_field :religion, :placeholder => "Enter Religion", :class => 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :Category %><br />
-          <%= f.text_field :category, :placeholder => "Enter Category", :class => 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :Marital_status %><br />
-          <%= f.text_field :marital_status, :placeholder => "Enter Marital Status", :class => 'form-control'%>
-        </div>
-      </div>  
-    </div>
+
+    <div class="panel panel-primary"><div class="panel-heading">
+            <h4> Personal Details </h4>
+        </div>  
+        <div class="panel-body">
+          <div class="col-md-12 ">
+            <div class="form-group">
+              <%= f.label :Name, :class => "col-sm-2 label-control" %>
+              <div class="col-sm-10">
+              <%= f.text_field :name, :placeholder => "Enter Name", :class => 'form-control col-sm-10 input-sm' %>
+              </div>
+            </div>
+            <div class="form-group">
+    <div class="col-sm-2 label-control">          <%= f.label :Gender %><br />
+              </div>           
+    <div class="col-sm-8">   <%= f.radio_button :gender, 'male' %>        <%= label :Gender, 'Male' %>
+                      <%= f.radio_button :gender, 'female' %>
+                      <%= label :Gender, 'Female' %>
+                      <%= f.radio_button :gender, 'other' %>
+                      <%= label :Gender, 'Other' %>
+            </div>        </div>
+            <div class="form-group">
+              <%= f.label :Dob %><br />
+              <%= f.date_select :dob, :placeholder => "Enter Date Of Birth", :class => 'form-control' %>
+            </div>
+            
+            <div class="form-group">
+              <%= f.label :Religion %><br />
+              <%= f.text_field :religion, :placeholder => "Enter Religion", :class => 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :Category %><br />
+              <%= f.text_field :category, :placeholder => "Enter Category", :class => 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :Marital_status %><br />
+              <%= f.text_field :marital_status, :placeholder => "Enter Marital Status", :class => 'form-control'%>
+            </div>
+          </div>  
+        </div></div>
     <div class="panel-heading">
         <h3> University Details </h3>
     </div>
@@ -58,7 +67,7 @@ Dated:20/11/2014
           <%= f.text_field :course, :placeholder => "Enter Course", :class => 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :Position %><br />
+          <%= f.label :Position %>
           <%= f.text_field :position, :placeholder => "Enter Position", :class => 'form-control' %>
         </div>
         <div class="form-group">
@@ -70,8 +79,11 @@ Dated:20/11/2014
           <%= f.date_select :date_of_joining, :class => 'form-control' %>
         </div>
         <div class="form-group form-inline">
-          <%= f.label :phd %><br />
-          <%= f.check_box :phd, :class => 'form-control'%>
+          <%= f.label :phd ,"Are you a phd holder?" %><br />
+          <%= f.radio_button :phd, 'yes' %> 
+          <%= label :phd, 'Yes' %>
+          <%= f.radio_button :phd, 'no' %>
+          <%= label :phd, 'No' %>
         </div>
         <div class="form-group">
           <%= f.label :College %><br />
