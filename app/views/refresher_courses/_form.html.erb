@@ -14,7 +14,18 @@ Dated:20/11/2014
         </div>
     <% end %>
 
-    <div class="panel panel-primary" style="margin-top:10px">
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul id="tabs" class="nav nav-pills custom" role="tablist">
+    <li role="presentation" class="active"><a href="#detail1"  aria-controls="detail1" role="tab" data-toggle="tab">Personal Details</a></li>
+    <li role="presentation"><a href="#detail2" aria-controls="detail2" role="tab" data-toggle="tab">University Details</a></li>
+    <li role="presentation"><a href="#detail3" aria-controls="detail3" role="tab" data-toggle="tab">Preferred Dates</a></li>
+    <li role="presentation"><a href="#detail4" aria-controls="detail4" role="tab" data-toggle="tab">Contact Details</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">  
+    <div role="tabpanel" class="panel panel-primary tab-pane active" style="margin-top:10px" id="detail1">
         <div class="panel-heading input-lg">
             <h4> Personal Details </h4>
         </div>  
@@ -55,8 +66,8 @@ Dated:20/11/2014
                 <%= f.label :Dob %>
               </div>
               <div class="col-sm-10">
-                <%= f.date_select :dob, :placeholder => "Enter Date Of Birth", :class => 'form-control' %>
-                <p class="help-block"> Select Your Date Of Birth </p>
+                <%= f.text_field :dob, :placeholder => "Select Your Date Of Birth", :class => 'datepicker' %>
+                <i class="fa fa-calendar"></i>
               </div>
             </div>
             <!-- Date Of Birth -->
@@ -66,7 +77,7 @@ Dated:20/11/2014
                 <%= f.label :Religion %>
               </div>
               <div class="col-sm-10">
-                <%= f.select :religion, options_for_select([ "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]) %>
+                <%= f.select :religion, options_for_select([ "Select", "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]) %>
                 <p class="help-block"> Select Your Religion </p>
               </div>
             </div>
@@ -77,7 +88,7 @@ Dated:20/11/2014
                 <%= f.label :Category %>
               </div>
               <div class="col-sm-10">
-                <%= select_tag :category, options_for_select([ "General", "OBC", "SC", "ST" ]) %>
+                <%= select_tag :category, options_for_select([ "Select", "General", "OBC", "SC", "ST" ]) %>
               </div>
               <span class="col-sm-offset-2 col-sm-10">        
               <p class="help-block"> Select Your Category </p>
@@ -98,16 +109,21 @@ Dated:20/11/2014
                 <%= label :Marital_status, 'Divorced' %>
                 <%= f.radio_button :marital_status, 'widow' %>
                 <%= label :Marital_status, 'Widow' %>
-                <p class="help-block"> Select Your Marital Status </p>
               </div>   
             </div>
             <!-- Marital Status Field -->
         </div>
         <!-- Panel-body -->
+   
+        <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+          <span class="btn btn-success" id="toggle1">Previous</span>
+          <span class="btn btn-success" id="toggle2">Next</span>
+        </div>
+        <!-- Prev-Next Button -->
     </div>
     <!-- Panel -->
-      
-    <div class="panel panel-primary" style="margin-top:10px">
+        
+    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail2">
         <div class="panel-heading input-lg">
             <h4> University Details </h4>
         </div>
@@ -149,7 +165,7 @@ Dated:20/11/2014
                 <%= f.label :Payscale %>
               </div>
               <div class="col-sm-10">
-                <%= select_tag :payscale, options_for_select([ "Under 10000", "10000-20000", "20000-30000", "30000-50000", "50000-80000", "80000-100000", "100000 and above" ]) %>
+                <%= select_tag :payscale, options_for_select([ "Select", "Under 10000", "10000-20000", "20000-30000", "30000-50000", "50000-80000", "80000-100000", "100000 and above" ]) %>
                 <p class="help-block"> Select Your Payscale </p>
               </div>
             </div>
@@ -159,8 +175,8 @@ Dated:20/11/2014
               <div class="col-sm-2 label-control"><%= f.label :Date_Of_Joining %>
               </div>
               <div class="col-sm-10">
-                <%= f.date_select :date_of_joining, :class => 'form-control' %>
-                <p class="help-block"> Select Your Date Of Joining </p>
+                <%= f.text_field :date_of_joining, :placeholder => "Select Your Date Of Joining", :class => 'datepicker' %>
+                <i class="fa fa-calendar"></i>
               </div>  
             </div>
             <!-- Date Of Joining Field -->
@@ -224,7 +240,7 @@ Dated:20/11/2014
                 <%= f.label :State %>
               </div>
               <div class="col-sm-10">
-                <%= select_tag :state, options_for_select(["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]) %>
+                <%= select_tag :state, options_for_select([ "Select", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]) %>
                 <p class="help-block"> Select State </p>
               </div>
             </div>
@@ -241,10 +257,17 @@ Dated:20/11/2014
             <!-- University Pin Field -->
         </div>
         <!-- Panel-body -->
+        
+        <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+          <span class="btn btn-success" id="toggle3">Previous</span>
+          <span class="btn btn-success" id="toggle4">Next</span>
+        </div>
+        <!-- Prev-Next Button -->
+
     </div>
     <!-- Panel -->
       
-    <div class="panel panel-primary" style="margin-top:10px">
+    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail3">
           <div class="panel-heading input-lg">
               <h4> Preferred Dates </h4>
           </div>
@@ -256,8 +279,8 @@ Dated:20/11/2014
                   <%= f.label :pref_date1 %>
                 </div>
                 <div class="col-sm-10">
-                  <%= f.date_select :pref_date1, :class => 'form-control' %>
-                  <p class="help-block"> Select Your First Date Preference of Attending course </p>
+                  <%= f.text_field :pref_date1, :placeholder => "Select Your First Date Preference", :id => 'datepicker' %>
+                  <i class="fa fa-calendar"></i>
                 </div>
               </div>
               <!-- Preferred Date1 Field -->
@@ -267,17 +290,24 @@ Dated:20/11/2014
                   <%= f.label :pref_date2 %>
                 </div>
                 <div class="col-sm-10">
-                  <%= f.date_select :pref_date2, :class => 'form-control' %>
-                  <p class="help-block"> Select Your Second Date Preference of Attending course </p>
+                  <%= f.text_field :pref_date2, :placeholder => "Select Your Second Date Preference ", :id => 'datepicker' %>
+                  <i class="fa fa-calendar"></i>
                 </div> 
               </div>
               <!-- Preferred Date2 Field -->
           </div>
           <!-- Panel-body -->
+
+          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+            <span class="btn btn-success" id="toggle5">Previous</span>
+            <span class="btn btn-success" id="toggle6">Next</span>
+          </div>
+          <!-- Prev-Next Button -->
+
       </div>    
       <!-- Panel -->
-      
-      <div class="panel panel-primary" style="margin-top:10px">
+
+      <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail4">
             <div class="panel-heading input-lg">
                 <h4> Contact Details </h4>
             </div>
@@ -289,7 +319,17 @@ Dated:20/11/2014
                     <%= f.label :Email %>
                   </div>
                   <div class="col-sm-10">
-                    <%= f.text_field :email, :placeholder => "Enter E-mail", :class => 'form-control' %>
+                    <%= f.text_field :email, :placeholder => "Enter E-mail Address", :class => 'form-control' %>
+                  </div>
+                </div>
+                <!-- Email Field -->
+
+                <div class="form-group">
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :Alternate_Email %>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.text_field :email, :placeholder => "Enter Alternate E-mail Address", :class => 'form-control' %><!-- Alternate E-mail field not added in table -->
                   </div>
                 </div>
                 <!-- Email Field -->
@@ -299,7 +339,7 @@ Dated:20/11/2014
                     <%= f.label :Landline %>
                   </div>
                   <div class="col-sm-3">
-                    <%= f.text_field :landline, :placeholder => "STD Code", :class => 'form-control' %> <!-- Field not added in table -->
+                    <%= f.text_field :landline, :placeholder => "STD Code", :class => 'form-control' %> <!-- STD Code Field not added in table -->
                   </div>
                   <div class="col-sm-7">
                     <%= f.text_field :landline, :placeholder => "Enter Landline Number", :class => 'form-control' %>
@@ -341,13 +381,75 @@ Dated:20/11/2014
                 <!-- Pin Field -->
             </div>
             <!-- Panel-body -->
+
+            <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+              <span class="btn btn-success" id="toggle7">Previous</span>
+              <span class="btn btn-success" id="toggle8">Next</span>
+            </div>
+            <!-- Prev-Next Button -->
+
+            <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+              <%= link_to 'Back', refresher_courses_path, :class => "btn btn-default" %>
+              <%= f.submit "Submit", :class => "btn btn-primary"%>        
+            </div>
+            <!-- Submit Button-->  
     </div>    
     <!-- Panel -->
+      
+  </div>
+  <!-- Tab Content-->
 
-      <div class="actions">
-        <%= f.submit "Submit", :class => "btn btn-primary"%>
-      </div>
+</div>
+<!-- Tab Panel -->      
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    /* bootstrap date picker */
+    $('.datepicker').datepicker({
+      startDate: '01/01/1940',
+      endDate: '0d'
+    });
+    $('#datepicker').datepicker({
+      startDate: '0d'
+    });
+
+    /* Toggle Buttons For navigating between tabs */
+    
+    /*Personal Details Tab*/
+    $('#toggle1').attr('disabled', true);
+    
+    $('#toggle2').click(function(){
+      $('#tabs a[href="#detail2"]').tab('show');
+    });
+
+    /*University Details Tab*/
+    $('#toggle3').click(function(){
+      $('#tabs a[href="#detail1"]').tab('show');
+    });
+
+    $('#toggle4').click(function(){
+      $('#tabs a[href="#detail3"]').tab('show');
+    });
+
+    /*Preferred date Tab*/
+    $('#toggle5').click(function(){
+      $('#tabs a[href="#detail2"]').tab('show');
+    });
+
+    $('#toggle6').click(function(){
+      $('#tabs a[href="#detail4"]').tab('show');
+    });    
+       
+    /*Contact Details Tab*/
+    $('#toggle7').click(function(){
+      $('#tabs a[href="#detail3"]').tab('show');
+    });
+
+    $('#toggle8').attr('disabled', true);    
+
+  });
+</script>
 
 <!-- Issue to be solved:
  1) Pin number should have validation of maximum length of 8 and only allow numeric.

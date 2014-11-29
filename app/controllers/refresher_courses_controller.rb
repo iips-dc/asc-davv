@@ -1,6 +1,7 @@
 class RefresherCoursesController < ApplicationController
   # GET /refresher_courses
   # GET /refresher_courses.json
+  
   def index
     @refresher_courses = RefresherCourse.all
 
