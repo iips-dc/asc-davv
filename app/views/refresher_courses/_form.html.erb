@@ -403,56 +403,6 @@ Dated:20/11/2014
 <!-- Tab Panel -->      
 <% end %>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    /* bootstrap date picker */
-    $('.datepicker').datepicker({
-      startDate: '01/01/1940',
-      endDate: '0d'
-    });
-    
-    /* Preferred Dates date picker */ 
-    $('.prefdatepicker').datepicker({
-      startDate: '0d'
-    });
-    
-    /* Toggle Buttons For navigating between tabs */
-    
-    /*Personal Details Tab*/
-    $('#toggle1').attr('disabled', true);
-    
-    $('#toggle2').click(function(){
-      $('#tabs a[href="#detail2"]').tab('show');
-    });
-
-    /*University Details Tab*/
-    $('#toggle3').click(function(){
-      $('#tabs a[href="#detail1"]').tab('show');
-    });
-
-    $('#toggle4').click(function(){
-      $('#tabs a[href="#detail3"]').tab('show');
-    });
-
-    /*Preferred date Tab*/
-    $('#toggle5').click(function(){
-      $('#tabs a[href="#detail2"]').tab('show');
-    });
-
-    $('#toggle6').click(function(){
-      $('#tabs a[href="#detail4"]').tab('show');
-    });    
-       
-    /*Contact Details Tab*/
-    $('#toggle7').click(function(){
-      $('#tabs a[href="#detail3"]').tab('show');
-    });
-
-    $('#toggle8').attr('disabled', true);    
-
-  });
-</script>
-
 <!-- Issue to be solved:
  1) Pin number should have validation of maximum length of 8 and only allow numeric.
  2) All date columns are taking values from 2009 onwards. The dob and doj should allow values from 1940 till 2099.
