@@ -1,4 +1,7 @@
 AscDavv::Application.routes.draw do
+  resources :interaction_programs
+
+
   resources :courses
 
 

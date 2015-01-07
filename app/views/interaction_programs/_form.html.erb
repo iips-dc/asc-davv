@@ -1,0 +1,93 @@
+<%= form_for(@interaction_program) do |f| %>
+  <% if @interaction_program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interaction_program.errors.count, "error") %> prohibited this interaction_program from being saved:</h2>
+
+      <ul>
+      <% @interaction_program.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :religion %><br />
+    <%= f.text_field :religion %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :marital_status %><br />
+    <%= f.text_field :marital_status %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :stream %><br />
+    <%= f.text_field :stream %>
+  </div>
+  <div class="field">
+    <%= f.label :college %><br />
+    <%= f.text_field :college %>
+  </div>
+  <div class="field">
+    <%= f.label :university %><br />
+    <%= f.text_field :university %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :district %><br />
+    <%= f.text_field :district %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :landline %><br />
+    <%= f.text_field :landline %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :university_pin %><br />
+    <%= f.text_field :university_pin %>
+  </div>
+  <div class="field">
+    <%= f.label :res_address %><br />
+    <%= f.text_area :res_address %>
+  </div>
+  <div class="field">
+    <%= f.label :pin %><br />
+    <%= f.text_field :pin %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_joining_phd %><br />
+    <%= f.date_select :date_of_joining_phd %>
+  </div>
+  <div class="field">
+    <%= f.label :research_experience %><br />
+    <%= f.number_field :research_experience %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

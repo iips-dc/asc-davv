@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  gender: MyString
+  religion: MyString
+  category: MyString
+  marital_status: MyString
+  email: MyString
+  stream: MyString
+  college: MyString
+  university: MyString
+  city: MyString
+  district: MyString
+  state: MyString
+  landline: MyString
+  mobile: MyString
+  university_pin: MyString
+  res_address: MyText
+  pin: MyString
+  date_of_joining_phd: 2015-01-07
+  research_experience: 1
+
+two:
+  name: MyString
+  gender: MyString
+  religion: MyString
+  category: MyString
+  marital_status: MyString
+  email: MyString
+  stream: MyString
+  college: MyString
+  university: MyString
+  city: MyString
+  district: MyString
+  state: MyString
+  landline: MyString
+  mobile: MyString
+  university_pin: MyString
+  res_address: MyText
+  pin: MyString
+  date_of_joining_phd: 2015-01-07
+  research_experience: 1
