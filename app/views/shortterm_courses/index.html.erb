@@ -21,14 +21,14 @@ Dated:20/11/2014
 
     <h3>Select a Course</h3>
 
-
     <select autofocus required>
-    <% @shortterm_courses.each do |shortterm_course| %>
+    <% @courses.each do |course| %>
       
-        <option><%= shortterm_course.name %></option>
+        <option><%= course.name %></option>
         
     <% end %>
-    </select>
+    </select>   
+    
     <br />
     <br />
 

@@ -3,7 +3,7 @@ class RefresherCoursesController < ApplicationController
   # GET /refresher_courses.json
   
   def index
-    @refresher_courses = RefresherCourse.all
+    @courses = Course.all
 
     respond_to do |format|
       format.html # index.html.erb

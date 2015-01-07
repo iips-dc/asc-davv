@@ -22,12 +22,11 @@ Dated:20/11/2014
 
     <h3>Select a Course</h3>
 
-
     <select autofocus required>
-    <% @refresher_courses.each do |refresher_course| %>
-      
-        <option><%= refresher_course.name %></option>
-        
+    <% @courses.each do |course| %>
+        <% if course.type == 'Refresher Course' %>
+            <option><%= course.name %></option>
+        <% end %>
     <% end %>
     </select>
     <br />

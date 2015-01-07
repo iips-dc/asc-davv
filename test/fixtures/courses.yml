@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  course_name: MyString
+  type: 
+  description: MyText
+  start_date: 2015-01-06
+  end_date: 2015-01-06
+
+two:
+  course_name: MyString
+  type: 
+  description: MyText
+  start_date: 2015-01-06
+  end_date: 2015-01-06
