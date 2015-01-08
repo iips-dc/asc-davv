@@ -1,3 +1,10 @@
+<!--@Author: Aditi
+Dated:08/1/2015
+-->
+
+
+
+
 <%= form_for(@interaction_program) do |f| %>
   <% if @interaction_program.errors.any? %>
     <div id="error_explanation">
@@ -11,83 +18,326 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul id="tabs" class="nav nav-pills custom" role="tablist">
+    <li role="presentation" class="active"><a href="#detail1"  aria-controls="detail1" role="tab" data-toggle="tab">Personal Details</a></li>
+    <li role="presentation"><a href="#detail2" aria-controls="detail2" role="tab" data-toggle="tab">University Details</a></li>
+    
+    <li role="presentation"><a href="#detail4" aria-controls="detail4" role="tab" data-toggle="tab">Contact Details</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">  
+    <div role="tabpanel" class="panel panel-primary tab-pane active" style="margin-top:10px" id="detail1">
+        <div class="panel-heading input-lg">
+            <h4> Personal Details </h4>
+        </div>  
+        <!-- Panel-head -->
+        
+        <div class="panel-body">
+
+            <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :Name %>
+                </div>
+                <div class="col-sm-10">
+                  <%= f.text_field :name, :placeholder => "Enter Full Name", :class => 'form-control' %>
+                </div>
+            </div>
+            <!--Name field-->
+  
+
+            <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control">          
+                <%= f.label :Gender %>
+              </div>           
+              <div class="col-sm-10">   
+                <%= f.radio_button :gender, 'male' %>        
+                <%= label :Gender, 'Male' %>
+                <%= f.radio_button :gender, 'female' %>
+                <%= label :Gender, 'Female' %>
+                <%= f.radio_button :gender, 'other' %>
+                <%= label :Gender, 'Other' %>
+                <p class="help-block"> Select Your Gender </p>
+              </div>
+              <span class="col-sm-offset-2 col-sm-10">        
+              
+              </span>
+            </div>
+            <!--Gender field-->
+  
+
+            <div class="form-group">
+              <div class="col-sm-2 label-control">
+                <%= f.label :Religion %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.select :religion, options_for_select([ "Select", "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]) %>
+                <p class="help-block"> Select Your Religion </p>
+              </div>
+            </div>
+            <!-- Religion Field -->
+  
+
+            <div class="form-group">
+              <div class="col-sm-2 label-control">
+                <%= f.label :Category %>
+              </div>
+              <div class="col-sm-10">
+                <%= select_tag :category, options_for_select([ "Select", "General", "OBC", "SC", "ST" ]) %>
+              </div>
+              <span class="col-sm-offset-2 col-sm-10">        
+              <p class="help-block"> Select Your Category </p>
+              </span>
+            </div>
+            <!-- Category Field -->
+
+            
+            <div class="form-group">
+              <div class="col-sm-2 label-control">
+                <%= f.label :Marital_status %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.radio_button :marital_status, 'married' %>        
+                <%= label :Marital_status, 'Married' %>
+                <%= f.radio_button :marital_status, 'unmarried' %>
+                <%= label :Marital_status, 'Unmarried' %>
+                <%= f.radio_button :marital_status, 'divorced' %>
+                <%= label :Marital_status, 'Divorced' %>
+                <%= f.radio_button :marital_status, 'widow' %>
+                <%= label :Marital_status, 'Widow' %>
+              </div>   
+            </div>
+            <!-- Marital Status Field -->
+
+                </div>
+        <!-- Panel-body -->
+   
+        <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+          <span class="btn btn-success" id="toggle1">Previous</span>
+          <span class="btn btn-success" id="toggle2">Next</span>
+        </div>
+        <!-- Prev-Next Button -->
+    </div>
+    <!-- Panel -->
+
+
+    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail2">
+        <div class="panel-heading input-lg">
+            <h4> University Details </h4>
+        </div>
+        <!-- Panel-head -->
+        
+        <div class="panel-body">
+            <div class="form-group">
+              <div class="col-sm-2 label-control">
+                <%= f.label :Stream %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :stream, :placeholder => "Enter Stream", :class => 'form-control' %>
+              </div>
+            </div>
+            <!-- Stream Field -->
+
+            
+            <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control"><%= f.label :Date_Of_Joining_phd %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :date_of_joining_phd, :placeholder => "Select Your Date Of Joining", :class => 'datepicker' %>
+                <i class="fa fa-calendar"></i>
+              </div>  
+            </div>
+            <!-- Date Of Joining Field -->
+
+
+            
+            <div class="form-group"><br/><br/><br/>
+              <div class="col-sm-2 label-control"><%= f.label :research_experience %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :research_experience, :placeholder => "Enter Research Experience", :class => 'form-control' %>
+              </div>
+            </div>
+            <!--Research experience field-->
+
+             
+
+             <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control">
+                <%= f.label :College %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :college, :placeholder => "Enter College/UTD", :class => 'form-control' %>
+              </div>
+            </div>
+            <!-- College Field -->
+
+            <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control">
+                <%= f.label :University %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :university, :placeholder => "Enter University", :class => 'form-control' %>
+              </div>
+            </div>
+            <!-- University Field -->
+
+
+
+            <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control">
+                <%= f.label :City %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :city, :placeholder => "Enter City", :class => 'form-control' %>
+              </div>
+            </div>
+            <!-- City Field -->
+
+            <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control">
+                <%= f.label :District %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :district, :placeholder => "Enter District", :class => 'form-control' %>
+              </div>
+            </div>
+            <!-- District Field -->
+
+            <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control">
+                <%= f.label :State %>
+              </div>
+              <div class="col-sm-10">
+                <%= select_tag :state, options_for_select([ "Select", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]) %>
+                <p class="help-block"> Select State </p>
+              </div>
+            </div>
+            <!-- State Field -->
+
+
+            <div class="form-group"><br/><br/>
+              <div class="col-sm-2 label-control">
+                <%= f.label :University_pin %>
+              </div>
+              <div class="col-sm-10">
+                <%= f.text_field :university_pin, :placeholder => "Enter Pin", :class => 'form-control' %>
+              </div>
+            </div>
+            <!-- University Pin Field -->
+        </div>
+        <!-- Panel-body -->
+        
+        <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+          <span class="btn btn-success" id="toggle3">Previous</span>
+          <span class="btn btn-success" id="toggle6">Next</span>
+        </div>
+        <!-- Prev-Next Button -->
+
+    </div>
+    <!-- Panel -->
+  
+
+  <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail4">
+            <div class="panel-heading input-lg">
+                <h4> Contact Details </h4>
+            </div>
+            <!-- Panel head -->
+
+            <div class="panel-body">
+                <div class="form-group"><br/><br/>
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :Email %>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.text_field :email, :placeholder => "Enter E-mail Address", :class => 'form-control' %>
+                  </div>
+                </div>
+                <!-- Email Field -->
+
+  
+
+            <div class="form-group"><br/><br/>
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :Landline %>
+                  </div>
+                  <div class="col-sm-3">
+                    <%= f.text_field :landline, :placeholder => "STD Code", :class => 'form-control' %> <!-- STD Code Field not added in table -->
+                  </div>
+                  <div class="col-sm-7">
+                    <%= f.text_field :landline, :placeholder => "Enter Landline Number", :class => 'form-control' %>
+                  </div>
+                </div>
+                <!-- Landline Field -->
+
+                <div class="form-group"><br/><br/>
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :Mobile %>
+                  </div>
+                  <div class="col-sm-2 label-control">
+                    <%= text_field_tag(:mobile, "+91", :class => 'form-control', :disabled => true) %> 
+                  </div>
+                  <div class="col-sm-8">
+                    <%= f.text_field :mobile, :placeholder => "Enter Mobile Number", :class => 'form-control' %>
+                  </div>
+                </div>
+                <!-- Mobile Field -->
+
+
+                <div class="form-group"><br/><br/>
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :residential_Address %>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.text_area :res_address, :class => 'form-control', :placeholder => "Enter Full Residential Address", :style => "height:100px" %><br/>
+                  </div>
+                </div>
+                <!-- Residential Address Field -->
+
+                
+
+                <div class="form-group"><br/><br/>
+                  <div class="col-sm-2 label-control">
+
+                    <%= f.label :Pin %>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.text_field :pin, :placeholder => "Enter pin", :class => 'form-control' %>
+                  </div>
+                </div>
+                <!-- Pin Field -->
+
+                </div>
+            <!-- Panel-body -->
+
+            <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+              <span class="btn btn-success" id="toggle5">Previous</span>
+              <span class="btn btn-success" id="toggle8">Next</span>
+            </div>
+            <!-- Prev-Next Button -->
+
+            <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+              <%= link_to 'Back', refresher_courses_path, :class => "btn btn-default" %>
+              <%= f.submit "Submit", :class => "btn btn-primary"%>        
+            </div>
+            <!-- Submit Button-->  
+    </div>    
+    <!-- Panel -->
+      
   </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :religion %><br />
-    <%= f.text_field :religion %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :marital_status %><br />
-    <%= f.text_field :marital_status %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :stream %><br />
-    <%= f.text_field :stream %>
-  </div>
-  <div class="field">
-    <%= f.label :college %><br />
-    <%= f.text_field :college %>
-  </div>
-  <div class="field">
-    <%= f.label :university %><br />
-    <%= f.text_field :university %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :district %><br />
-    <%= f.text_field :district %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :landline %><br />
-    <%= f.text_field :landline %>
-  </div>
-  <div class="field">
-    <%= f.label :mobile %><br />
-    <%= f.text_field :mobile %>
-  </div>
-  <div class="field">
-    <%= f.label :university_pin %><br />
-    <%= f.text_field :university_pin %>
-  </div>
-  <div class="field">
-    <%= f.label :res_address %><br />
-    <%= f.text_area :res_address %>
-  </div>
-  <div class="field">
-    <%= f.label :pin %><br />
-    <%= f.text_field :pin %>
-  </div>
-  <div class="field">
-    <%= f.label :date_of_joining_phd %><br />
-    <%= f.date_select :date_of_joining_phd %>
-  </div>
-  <div class="field">
-    <%= f.label :research_experience %><br />
-    <%= f.number_field :research_experience %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <!-- Tab Content-->
+
+</div>
+<!-- Tab Panel -->      
 <% end %>
+  
+  
+  
+ 
+  
+  
+ 
+  
+  
