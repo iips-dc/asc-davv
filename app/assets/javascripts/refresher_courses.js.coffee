@@ -49,3 +49,5 @@ $(document).ready ->
 
   $("#toggle8").attr "disabled", true
   return
+
+  
