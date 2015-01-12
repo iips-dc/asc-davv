@@ -2,9 +2,6 @@
 Dated:08/1/2015
 -->
 
-
-
-
 <%= form_for(@interaction_program) do |f| %>
   <% if @interaction_program.errors.any? %>
     <div id="error_explanation">
@@ -111,7 +108,7 @@ Dated:08/1/2015
             </div>
             <!-- Marital Status Field -->
 
-                </div>
+        </div>
         <!-- Panel-body -->
    
         <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
@@ -147,6 +144,7 @@ Dated:08/1/2015
               <div class="col-sm-10">
                 <%= f.text_field :date_of_joining_phd, :placeholder => "Select Your Date Of Joining", :class => 'datepicker' %>
                 <i class="fa fa-calendar"></i>
+                <p class="help-block"> Date Format: MM/DD/YYYY </p>
               </div>  
             </div>
             <!-- Date Of Joining Field -->

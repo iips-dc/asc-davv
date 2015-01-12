@@ -4,12 +4,12 @@ one:
   course_name: MyString
   type: 
   description: MyText
-  start_date: 2015-01-06
-  end_date: 2015-01-06
+  start_date: 2015-01-12
+  end_date: 2015-01-12
 
 two:
   course_name: MyString
   type: 
   description: MyText
-  start_date: 2015-01-06
-  end_date: 2015-01-06
+  start_date: 2015-01-12
+  end_date: 2015-01-12
