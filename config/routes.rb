@@ -1,4 +1,6 @@
 AscDavv::Application.routes.draw do
+  devise_for :admins
+
   resources :courses
 
   resources :refresher_courses
