@@ -1,5 +1,7 @@
 AscDavv::Application.routes.draw do
-  devise_for :admins
+  devise_for :admins, :controllers => { :registrations => 'registration' }
+
+  resources :admin
 
   resources :courses
 
