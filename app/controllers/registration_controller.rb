@@ -1,4 +1,4 @@
-class RegistrationController < Devise::RegistrationsController
+class RegistrationController < Devise::RegistrationsController	
 
 	def new
 		@admin = Admin.new
@@ -14,7 +14,7 @@ class RegistrationController < Devise::RegistrationsController
 		@admin.valid?
 		if @admin.errors.blank?
 			@admin.save
-			redirect_to admin_index_path
+			redirect_to welcome_path
 		else
 			render :action => "new"
 		end		

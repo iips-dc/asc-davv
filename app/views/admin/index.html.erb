@@ -1,12 +1,6 @@
 <% if admin_signed_in? %>
 
-<h3>you have succesfully signed in</h3>
+<h3>you have succesfully signed in <%= @user.username %></h3>
 <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %>
-
-<% else %>
-
-<h1> welcom to rails community</h1>
-<%= link_to "Sign In", new_admin_session_path, :method => :get %>
-<%= link_to "Sign up", new_admin_registration_path, :method => :get %>
 
 <% end %>

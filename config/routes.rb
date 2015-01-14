@@ -1,7 +1,12 @@
 AscDavv::Application.routes.draw do
-  devise_for :admins, :controllers => { :registrations => 'registration' }
-
-  resources :admin
+  devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]
+  as :admin do
+    get 'signin' => 'devise/sessions#new', :as => :new_admin_session
+    post 'signin' => 'devise/sessions#create', :as => :admin_session
+    delete 'signout' => 'devise/sessions#destroy', :as => :destroy_admin_session
+    get 'signup' => 'registration#new', :as => :new_admin_registration
+    get 'admin/edit' => 'devise/registrations#edit', :as => :edit_admin_registration
+  end
 
   resources :courses
 
@@ -22,4 +27,8 @@ AscDavv::Application.routes.draw do
   match '/faq' => 'static_pages#faq'
 
   match '/program' => 'static_pages#programs'
+
+  match '/welcome' => 'static_pages#welcome'
+
+  match '/admin' => 'admin#index'
 end
