@@ -19,4 +19,8 @@ class RegistrationController < Devise::RegistrationsController
 			render :action => "new"
 		end		
 	end	
+
+	def edit
+		render layout: "adminDashboard"
+	end	
 end

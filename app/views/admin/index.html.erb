@@ -1,6 +1,7 @@
-<% if admin_signed_in? %>
-
-<h3>you have succesfully signed in <%= @user.username %></h3>
-<%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %>
-
-<% end %>
+<!-- row -->
+<div class="row">
+	<% if admin_signed_in? %>
+		<h1>Welcome Aboard, <small>folks</small></h3>
+		<hr>
+	<% end %>
+</div>

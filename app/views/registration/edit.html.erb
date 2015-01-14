@@ -1,0 +1,44 @@
+<!-- row -->
+<div class="row">
+  <div class="col-md-5">
+      <h2>Update Account Details</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :role => 'form' }) do |f| %>
+        <%= devise_error_messages! %>
+        <fieldset>
+          <div class="form-group">
+            <%= f.label :email, :class => 'label-control' %><br />
+            <%= f.email_field :email, :class => 'form-control', autofocus: true %>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :password, :class => 'label-control' %> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.password_field :password, :placeholder => "New Password", :class => 'form-control', autocomplete: "off" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, :class => 'label-control' %><br />
+            <%= f.password_field :password_confirmation, :placeholder => "Re-enter New Password", :class => 'form-control', autocomplete: "off" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :current_password, :class => 'label-control' %> 
+            <%= f.password_field :current_password, :placeholder => "Current Password", :class => 'form-control', autocomplete: "off" %><i>(we need your current password to confirm your changes)</i><br />
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Update", :class =>"btn btn-md btn-success" %>
+          </div>
+      <% end %>
+      <hr>
+      <h3>Cancel my account</h3>
+
+      <p class="text-muted">Unhappy? Delete your account <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class =>"btn btn-md btn-danger" %></p>
+
+      <%= link_to "Back", :back, :class =>"btn btn-md btn-default" %>
+    </div>  
+</div>
