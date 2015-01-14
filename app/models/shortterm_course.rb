@@ -36,3 +36,8 @@ class ShorttermCourse < ActiveRecord::Base
   
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
 end
+
+ShorttermCourse.create(name: "John Doe").valid? # => true
+ShorttermCourse.create(name: nil).valid? # => false
+
+
