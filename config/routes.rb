@@ -1,4 +1,5 @@
 AscDavv::Application.routes.draw do
+  
   devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]
   as :admin do
     get 'signin' => 'devise/sessions#new', :as => :new_admin_session
@@ -13,6 +14,8 @@ AscDavv::Application.routes.draw do
   resources :refresher_courses
 
   resources :shortterm_courses
+
+  resources :orientation_courses
 
   resources :interaction_programs
   

@@ -1,0 +1,2 @@
+module OrientationCoursesHelper
+end
