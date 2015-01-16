@@ -1,4 +1,6 @@
 class InteractionProgramsController < ApplicationController
+  layout "adminDashboard", :only => :record
+
   # GET /interaction_programs
   # GET /interaction_programs.json
   def index
@@ -20,6 +22,16 @@ class InteractionProgramsController < ApplicationController
       format.json { render json: @interaction_program }
     end
   end
+
+  def record
+    @interaction_programs = InteractionProgram.all
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: @interaction_programs }
+    end
+  end
+
 
   # GET /interaction_programs/new
   # GET /interaction_programs/new.json

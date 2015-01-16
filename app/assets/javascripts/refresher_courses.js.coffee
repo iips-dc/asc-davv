@@ -6,13 +6,15 @@ $(document).ready ->
   
   # bootstrap date picker 
   $(".datepicker").datepicker
-    startDate: "01/01/1940"
+    format: "yyyy/mm/dd"
+    startDate: "1940/01/01"
     endDate: "0d"
-
   
   # Preferred Dates date picker 
-  $(".prefdatepicker").datepicker startDate: "0d"
-  
+  $(".prefdatepicker").datepicker 
+    format: "yyyy/mm/dd"
+    startDate: "0d"
+
   # Toggle Buttons For navigating between tabs 
   
   #Personal Details Tab

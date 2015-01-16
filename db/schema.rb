@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150115024017) do
+ActiveRecord::Schema.define(:version => 20150116094525) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -61,9 +61,10 @@ ActiveRecord::Schema.define(:version => 20150115024017) do
     t.text     "res_address"
     t.string   "pin"
     t.date     "date_of_joining_phd"
-    t.integer  "research_experience"
+    t.string   "research_experience"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "std_code"
   end
 
   create_table "orientation_courses", :force => true do |t|
@@ -85,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20150115024017) do
     t.string   "pin"
     t.string   "landline"
     t.string   "mobile"
-    t.string   "university_pi"
+    t.string   "university_pin"
     t.date     "dob"
     t.date     "date_of_joining"
     t.date     "pref_date1"
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20150115024017) do
     t.boolean  "phd"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "std_code"
   end
 
   create_table "refresher_courses", :force => true do |t|
@@ -124,6 +126,7 @@ ActiveRecord::Schema.define(:version => 20150115024017) do
     t.boolean  "phd"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "std_code"
   end
 
   create_table "shortterm_courses", :force => true do |t|
@@ -154,6 +157,7 @@ ActiveRecord::Schema.define(:version => 20150115024017) do
     t.boolean  "phd"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "std_code"
   end
 
   create_table "shortterm_forms", :force => true do |t|

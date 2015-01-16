@@ -13,11 +13,21 @@ AscDavv::Application.routes.draw do
 
   resources :refresher_courses
 
+  match 'refresher_record' => 'refresher_courses#record'
+
   resources :shortterm_courses
 
+  match '/shortterm_record' => 'shortterm_courses#record'
+
+  match '/registered' => 'shortterm_courses#registered'
+  
   resources :orientation_courses
 
+  match '/orientation_record' => 'orientation_courses#record'
+
   resources :interaction_programs
+
+  match '/interaction_record' => 'interaction_programs#record'
   
   root to: 'static_pages#index'
 

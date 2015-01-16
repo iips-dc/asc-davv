@@ -1,7 +1,8 @@
 class RefresherCoursesController < ApplicationController
+  layout "adminDashboard", :only => :record
+
   # GET /refresher_courses
   # GET /refresher_courses.json
-  
   def index
     @courses = Course.all
 
@@ -19,6 +20,15 @@ class RefresherCoursesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @refresher_course }
+    end
+  end
+
+  def record
+    @refresher_courses = RefresherCourse.all
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: @refresher_courses }
     end
   end
 
@@ -45,7 +55,7 @@ class RefresherCoursesController < ApplicationController
 
     respond_to do |format|
       if @refresher_course.save
-        format.html { redirect_to @refresher_course, notice: 'Refresher course was successfully created.' }
+        format.html { redirect_to registered_path }
         format.json { render json: @refresher_course, status: :created, location: @refresher_course }
       else
         format.html { render action: "new" }

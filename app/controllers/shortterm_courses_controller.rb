@@ -1,4 +1,6 @@
 class ShorttermCoursesController < ApplicationController
+  layout "adminDashboard", :only => :record
+
   # GET /shortterm_courses
   # GET /shortterm_courses.json
   def index
@@ -18,6 +20,14 @@ class ShorttermCoursesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @shortterm_course }
+    end
+  end
+
+  def record
+    @shortterm_courses = ShorttermCourse.all
+    respond_to do |format|
+      format.html 
+      format.json { render json: @shortterm_courses }
     end
   end
 
@@ -44,7 +54,7 @@ class ShorttermCoursesController < ApplicationController
 
     respond_to do |format|
       if @shortterm_course.save
-        format.html { redirect_to @shortterm_course, notice: 'Shortterm course was successfully created.' }
+        format.html { redirect_to registered_path }
         format.json { render json: @shortterm_course, status: :created, location: @shortterm_course }
       else
         format.html { render action: "new" }

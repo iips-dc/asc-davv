@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/bcardarella/client_side_validations.git
+  revision: 56bdafa7502e3aba899a9ce56784392e3d8b0566
+  branch: 3-2-stable
+  specs:
+    client_side_validations (3.2.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -126,6 +133,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
+  client_side_validations!
   coffee-rails (~> 3.2.1)
   devise
   font-awesome-rails
