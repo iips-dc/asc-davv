@@ -74,10 +74,16 @@ Dated:11/01/2014
                             <a class="active" href="admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements</a>
+                            <a href="#"><i class="fa fa-calendar fa-fw"></i> Courses<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <%= link_to "Courses", courses_path %> 
+                                </li>
+                                <li>
+                                    <%= link_to "New Course", new_course_path %>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Application Forms<span class="fa arrow"></span></a>
@@ -97,36 +103,6 @@ Dated:11/01/2014
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>    
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -136,6 +112,12 @@ Dated:11/01/2014
 
         <div id="page-wrapper">
             <%= yield %>    
+                <!-- Devise error message -->
+                <%- flash.each do |name, msg| -%>
+                  <div class="alert alert-info col-md-3" role="alert">
+                    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+                  </div>
+                <%- end -%>
         </div>
         <!-- /#page-wrapper -->
 

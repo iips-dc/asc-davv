@@ -11,9 +11,11 @@ AscDavv::Application.routes.draw do
 
   resources :courses
 
+  match '/courses_success' => 'courses#success'
+
   resources :refresher_courses
 
-  match 'refresher_record' => 'refresher_courses#record'
+  match '/refresher_record' => 'refresher_courses#record'
 
   resources :shortterm_courses
 

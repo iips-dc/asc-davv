@@ -24,8 +24,8 @@ Dated:14/01/2015
 
     <select autofocus required>
         <% @courses.each do |course| %>
-            <% if course.type == 'Orientation Course' %>
-                <option><%= course.name %></option>
+            <% if course.course_type == 'orientation course' %>
+                <option><%= course.course_name %></option>
             <% end %>
         <% end %>
     </select>

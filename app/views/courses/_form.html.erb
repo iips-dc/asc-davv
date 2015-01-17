@@ -1,37 +1,40 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<%= form_for(@course, :html => { :class => 'form-horizontal'}, :validate => true) do |f| %>
+      <% if @course.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @course.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :course_name %><br />
-    <%= f.text_field :course_name %>
+<fieldset>
+  <div class="form-group">
+    <%= f.label :course_name, :class => 'label-control' %><br />
+    <%= f.text_field :course_name, :placeholder => 'Enter Course Name', :class => 'form-control', autofocus: true %>
   </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
+  <div class="form-group">
+    <%= f.label :course_type, :class => 'label-control' %><br />
+    <%= f.text_field :course_type, :placeholder => 'Enter Course Type', :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :description, :class => 'label-control' %><br />
+    <%= f.text_area :description, :placeholder => 'Enter Course Description', :class => 'form-control', :style => "height:100px" %>
   </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
+  <div class="form-group">
+      <%= f.label :start_date, :class => 'label-control' %><br />
+      <%= f.text_field :start_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
+      <i class="fa fa-calendar"></i>
   </div>
-  <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
+  <div class="form-group">
+      <%= f.label :end_date, :class => 'label-control' %><br />
+      <%= f.text_field :end_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
+      <i class="fa fa-calendar"></i>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
   </div>
+</fieldset>  
 <% end %>

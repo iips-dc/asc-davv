@@ -21,9 +21,9 @@
 
     <select autofocus required>
     <% @courses.each do |course| %>
-      
-        <option><%= course.name %></option>
-        
+      <% if course.course_type == 'interaction program' %>
+                <option><%= course.course_name %></option>
+      <% end %>
     <% end %>
     </select>   
     <!--Course Combo box -->

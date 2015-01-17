@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_filter :authenticate_admin!
+  layout "adminDashboard"
   # GET /courses
   # GET /courses.json
   def index
@@ -44,7 +46,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to courses_success_path }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }

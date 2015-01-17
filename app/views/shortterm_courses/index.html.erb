@@ -23,9 +23,9 @@ Dated:20/11/2014
 
     <select autofocus required>
     <% @courses.each do |course| %>
-      
-        <option><%= course.name %></option>
-        
+      <% if course.course_type == 'shortterm course' %>
+                <option><%= course.course_name %></option>
+     <% end %>
     <% end %>
     </select>   
     

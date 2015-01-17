@@ -1,4 +1,5 @@
 class ShorttermCoursesController < ApplicationController
+  before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => :record
 
   # GET /shortterm_courses

@@ -9,7 +9,7 @@ class  InteractionProgram < ActiveRecord::Base
   :pin,:university_pin,:date_of_joining_phd, :res_address, :email, presence: true
 end
 
-#field must contain alphabets
+#field must contain alphabets and space
 class InteractionProgram < ActiveRecord::Base
   validates :name, :city, :college, :district, :stream, :university, format: { with: /\A[a-zA-Z\s]+\z/,
     message: "only alphabets and spaces are allowed" }

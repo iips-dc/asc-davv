@@ -25,7 +25,7 @@ gem 'devise'
 
 gem 'jquery-rails'
 
-#Client side validation
+#Form-validation 
 gem 'client_side_validations', :github => 'bcardarella/client_side_validations', :branch => '3-2-stable'
 
 # To Use Bootstrap Datepicker

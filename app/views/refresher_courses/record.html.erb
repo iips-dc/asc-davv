@@ -36,18 +36,16 @@
                             <th>Payscale</th>
                             <th>Course</th>
                             <th>Pin</th>
+                            <th>Std Code</th>
                             <th>Landline</th>
                             <th>Mobile</th>
-                            <th>University pi</th>
+                            <th>University pin</th>
                             <th>Dob</th>
                             <th>Date of joining</th>
                             <th>Pref date1</th>
                             <th>Pref date2</th>
                             <th>Res address</th>
                             <th>Phd</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
                           </tr>
                       </thead>    
                         <% @refresher_courses.each do |refresher_course| %>
@@ -69,6 +67,7 @@
                                 <td><%= refresher_course.payscale %></td>
                                 <td><%= refresher_course.course %></td>
                                 <td><%= refresher_course.pin %></td>
+                                <td><%= refresher_course.std_code %></td>
                                 <td><%= refresher_course.landline %></td>
                                 <td><%= refresher_course.mobile %></td>
                                 <td><%= refresher_course.university_pin %></td>
@@ -83,8 +82,12 @@
                         <% end %>
                     </table>
                 </div>
-                <!-- /.table-responsive -->       
-                    <%= link_to 'Show', refresher_course %>
-                    <%= link_to 'Edit', edit_refresher_course_path(refresher_course) %>
-                    <%= link_to 'Destroy', refresher_course, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+                <!-- /.table-responsive -->      
+              </div>
+              <!-- /.panel-body -->
+            </div>
+            <!-- /. panel -->    
+        </div>
+        <!-- /.col-lg-12 -->    
+</div>
+<!-- /. row -->    
