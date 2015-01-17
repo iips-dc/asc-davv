@@ -1,130 +1,84 @@
-<p id="notice"><%= notice %></p>
+<!-- row -->            
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Individual Record</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+    <p id="notice"><%= notice %></p>
+</div>
+<!-- /.row -->
+<!-- row -->
+<div class="row">
+    <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                        <thead>          
+                            <tr>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Religion</th>
+                                <th>Category</th>
+                                <th>Marital status</th>
+                                <th>Email</th>
+                                <th>Stream</th>
+                                <th>College</th>
+                                <th>University</th>
+                                <th>City</th>
+                                <th>District</th>
+                                <th>State</th>
+                                <th>Position</th>
+                                <th>Payscale</th>
+                                <th>Course</th>
+                                <th>Pin</th>
+                                <th>Std Code</th>
+                                <th>Landline</th>
+                                <th>Mobile</th>
+                                <th>University pin</th>
+                                <th>Dob</th>
+                                <th>Date of joining</th>
+                                <th>Preferred date1</th>
+                                <th>Preferred date2</th>
+                                <th>Residential address</th>
+                                <th>Phd</th>
+                                
+                            </tr>
+                        </thead>             
+                        <tbody>
+                            <tr>
+                            <td><%= @shortterm_course.name %></td>
+                            <td><%= @shortterm_course.gender %></td>
+                            <td><%= @shortterm_course.religion %></td>
+                            <td><%= @shortterm_course.category %></td>
+                            <td><%= @shortterm_course.marital_status %></td>
+                            <td><%= @shortterm_course.email %></td>
+                            <td><%= @shortterm_course.stream %></td>
+                            <td><%= @shortterm_course.college %></td>
+                            <td><%= @shortterm_course.university %></td>
+                            <td><%= @shortterm_course.city %></td>
+                            <td><%= @shortterm_course.district %></td>
+                            <td><%= @shortterm_course.state %></td>
+                            <td><%= @shortterm_course.position %></td>
+                            <td><%= @shortterm_course.payscale %></td>
+                            <td><%= @shortterm_course.course %></td>
+                            <td><%= @shortterm_course.pin %></td>
+                            <td><%= @shortterm_course.std_code %></td>
+                            <td><%= @shortterm_course.landline %></td>
+                            <td><%= @shortterm_course.mobile %></td>
+                            <td><%= @shortterm_course.university_pin %></td>
+                            <td><%= @shortterm_course.dob %></td>
+                            <td><%= @shortterm_course.date_of_joining %></td>
+                            <td><%= @shortterm_course.pref_date1 %></td>
+                            <td><%= @shortterm_course.pref_date2 %></td>
+                            <td><%= @shortterm_course.res_address %></td>
+                            <td><%= @shortterm_course.phd %></td>
+                        </tbody>    
+                      </table>
+                </div>
+                <!-- /.table-responsive -->    
+        </div>
+        <!-- /.col-lg-12 -->    
+        <%= link_to 'Edit', edit_shortterm_course_path(@shortterm_course), :class => 'btn btn-default' %> 
+        <%= link_to 'Back', shortterm_record_path, :class => 'btn btn-default' %>
+</div>
+<!-- /. row -->
 
-<p>
-  <b>Name:</b>
-  <%= @shortterm_course.name %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%= @shortterm_course.gender %>
-</p>
-
-<p>
-  <b>Religion:</b>
-  <%= @shortterm_course.religion %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @shortterm_course.category %>
-</p>
-
-<p>
-  <b>Marital status:</b>
-  <%= @shortterm_course.marital_status %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @shortterm_course.email %>
-</p>
-
-<p>
-  <b>Stream:</b>
-  <%= @shortterm_course.stream %>
-</p>
-
-<p>
-  <b>College:</b>
-  <%= @shortterm_course.college %>
-</p>
-
-<p>
-  <b>University:</b>
-  <%= @shortterm_course.university %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @shortterm_course.city %>
-</p>
-
-<p>
-  <b>District:</b>
-  <%= @shortterm_course.district %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @shortterm_course.state %>
-</p>
-
-<p>
-  <b>Position:</b>
-  <%= @shortterm_course.position %>
-</p>
-
-<p>
-  <b>Payscale:</b>
-  <%= @shortterm_course.payscale %>
-</p>
-
-<p>
-  <b>Course:</b>
-  <%= @shortterm_course.course %>
-</p>
-
-<p>
-  <b>Pin:</b>
-  <%= @shortterm_course.pin %>
-</p>
-
-<p>
-  <b>Landline:</b>
-  <%= @shortterm_course.landline %>
-</p>
-
-<p>
-  <b>Mobile:</b>
-  <%= @shortterm_course.mobile %>
-</p>
-
-<p>
-  <b>University pin:</b>
-  <%= @shortterm_course.university_pin %>
-</p>
-
-<p>
-  <b>Dob:</b>
-  <%= @shortterm_course.dob %>
-</p>
-
-<p>
-  <b>Date of joining:</b>
-  <%= @shortterm_course.date_of_joining %>
-</p>
-
-<p>
-  <b>Pref date1:</b>
-  <%= @shortterm_course.pref_date1 %>
-</p>
-
-<p>
-  <b>Pref date2:</b>
-  <%= @shortterm_course.pref_date2 %>
-</p>
-
-<p>
-  <b>Res address:</b>
-  <%= @shortterm_course.res_address %>
-</p>
-
-<p>
-  <b>Phd:</b>
-  <%= @shortterm_course.phd %>
-</p>
-
-
-<%= link_to 'Edit', edit_shortterm_course_path(@shortterm_course) %> |
-<%= link_to 'Back', shortterm_courses_path %>

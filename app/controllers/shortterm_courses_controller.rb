@@ -1,6 +1,6 @@
 class ShorttermCoursesController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
-  layout "adminDashboard", :only => :record
+  layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
   # GET /shortterm_courses
   # GET /shortterm_courses.json
@@ -87,7 +87,7 @@ class ShorttermCoursesController < ApplicationController
     @shortterm_course.destroy
 
     respond_to do |format|
-      format.html { redirect_to shortterm_courses_url }
+      format.html { redirect_to shortterm_record_path}
       format.json { head :no_content }
     end
   end
