@@ -23,6 +23,7 @@ Dated:14/01/2015
     <h3>Select a Course</h3>
 
     <select autofocus required>
+        <option selected disabled value="">Select a course</option>
         <% @courses.each do |course| %>
             <% if course.course_type == 'orientation course' %>
                 <option><%= course.course_name %></option>

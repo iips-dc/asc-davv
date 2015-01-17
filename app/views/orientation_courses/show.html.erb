@@ -1,130 +1,82 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @orientation_course.name %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%= @orientation_course.gender %>
-</p>
-
-<p>
-  <b>Religion:</b>
-  <%= @orientation_course.religion %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @orientation_course.category %>
-</p>
-
-<p>
-  <b>Marital status:</b>
-  <%= @orientation_course.marital_status %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @orientation_course.email %>
-</p>
-
-<p>
-  <b>Stream:</b>
-  <%= @orientation_course.stream %>
-</p>
-
-<p>
-  <b>College:</b>
-  <%= @orientation_course.college %>
-</p>
-
-<p>
-  <b>University:</b>
-  <%= @orientation_course.university %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @orientation_course.city %>
-</p>
-
-<p>
-  <b>District:</b>
-  <%= @orientation_course.district %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @orientation_course.state %>
-</p>
-
-<p>
-  <b>Position:</b>
-  <%= @orientation_course.position %>
-</p>
-
-<p>
-  <b>Payscale:</b>
-  <%= @orientation_course.payscale %>
-</p>
-
-<p>
-  <b>Course:</b>
-  <%= @orientation_course.course %>
-</p>
-
-<p>
-  <b>Pin:</b>
-  <%= @orientation_course.pin %>
-</p>
-
-<p>
-  <b>Landline:</b>
-  <%= @orientation_course.landline %>
-</p>
-
-<p>
-  <b>Mobile:</b>
-  <%= @orientation_course.mobile %>
-</p>
-
-<p>
-  <b>University pi:</b>
-  <%= @orientation_course.university_pi %>
-</p>
-
-<p>
-  <b>Dob:</b>
-  <%= @orientation_course.dob %>
-</p>
-
-<p>
-  <b>Date of joining:</b>
-  <%= @orientation_course.date_of_joining %>
-</p>
-
-<p>
-  <b>Pref date1:</b>
-  <%= @orientation_course.pref_date1 %>
-</p>
-
-<p>
-  <b>Pref date2:</b>
-  <%= @orientation_course.pref_date2 %>
-</p>
-
-<p>
-  <b>Res address:</b>
-  <%= @orientation_course.res_address %>
-</p>
-
-<p>
-  <b>Phd:</b>
-  <%= @orientation_course.phd %>
-</p>
-
-
-<%= link_to 'Edit', edit_orientation_course_path(@orientation_course) %> |
-<%= link_to 'Back', orientation_courses_path %>
+<!-- row -->            
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Individual Record</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+    <p id="notice"><%= notice %></p>
+</div>
+<!-- /.row -->
+<!-- row -->
+<div class="row">
+    <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                        <thead>          
+                            <tr>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Religion</th>
+                                <th>Category</th>
+                                <th>Marital status</th>
+                                <th>Email</th>
+                                <th>Stream</th>
+                                <th>College</th>
+                                <th>University</th>
+                                <th>City</th>
+                                <th>District</th>
+                                <th>State</th>
+                                <th>Position</th>
+                                <th>Payscale</th>
+                                <th>Course</th>
+                                <th>Pin</th>
+                                <th>Std Code</th>
+                                <th>Landline</th>
+                                <th>Mobile</th>
+                                <th>University pin</th>
+                                <th>Dob</th>
+                                <th>Date of joining</th>
+                                <th>Preferred date1</th>
+                                <th>Preferred date2</th>
+                                <th>Residential address</th>
+                                <th>Phd</th>
+                            </tr>
+                        </thead>             
+                        <tbody>
+                          <tr>
+                            <td><%= @orientation_course.name %></td>
+                            <td><%= @orientation_course.gender %></td>
+                            <td><%= @orientation_course.religion %></td>
+                            <td><%= @orientation_course.category %></td>
+                            <td><%= @orientation_course.marital_status %></td>
+                            <td><%= @orientation_course.email %></td>
+                            <td><%= @orientation_course.stream %></td>
+                            <td><%= @orientation_course.college %></td>
+                            <td><%= @orientation_course.university %></td>
+                            <td><%= @orientation_course.city %></td>
+                            <td><%= @orientation_course.district %></td>
+                            <td><%= @orientation_course.state %></td>
+                            <td><%= @orientation_course.position %></td>
+                            <td><%= @orientation_course.payscale %></td>
+                            <td><%= @orientation_course.course %></td>
+                            <td><%= @orientation_course.pin %></td>
+                            <td><%= @orientation_course.std_code %></td>
+                            <td><%= @orientation_course.landline %></td>
+                            <td><%= @orientation_course.mobile %></td>
+                            <td><%= @orientation_course.university_pin %></td>
+                            <td><%= @orientation_course.dob %></td>
+                            <td><%= @orientation_course.date_of_joining %></td>
+                            <td><%= @orientation_course.pref_date1 %></td>
+                            <td><%= @orientation_course.pref_date2 %></td>
+                            <td><%= @orientation_course.res_address %></td>
+                            <td><%= @orientation_course.phd %></td>
+                        </tbody>    
+                      </table>
+                </div>
+                <!-- /.table-responsive -->    
+        </div>
+        <!-- /.col-lg-12 -->
+        <%= link_to 'Edit', edit_orientation_course_path(@orientation_course), :class => 'btn btn-default' %> 
+        <%= link_to 'Back', orientation_record_path, :class => 'btn btn-default' %>
+</div>
+<!-- /. row -->

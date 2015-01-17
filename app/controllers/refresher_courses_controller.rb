@@ -1,6 +1,6 @@
 class RefresherCoursesController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
-  layout "adminDashboard", :only => :record
+  layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
   # GET /refresher_courses
   # GET /refresher_courses.json
@@ -88,7 +88,7 @@ class RefresherCoursesController < ApplicationController
     @refresher_course.destroy
 
     respond_to do |format|
-      format.html { redirect_to refresher_courses_url }
+      format.html { redirect_to refresher_record_path }
       format.json { head :no_content }
     end
   end

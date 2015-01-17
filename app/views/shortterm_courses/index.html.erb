@@ -22,16 +22,15 @@ Dated:20/11/2014
     <h3>Select a Course</h3>
 
     <select autofocus required>
-    <% @courses.each do |course| %>
-      <% if course.course_type == 'shortterm course' %>
+        <option selected disabled value="">Select a course</option>
+        <% @courses.each do |course| %>
+            <% if course.course_type == 'shortterm course' %>
                 <option><%= course.course_name %></option>
-     <% end %>
-    <% end %>
+            <% end %>
+        <% end %>
     </select>   
-    
     <br />
-    <br />
-
-    <%= link_to 'Register Here', new_shortterm_course_path, class:"btn btn-primary", :style => "color:white" %>
+    <br />  
+        <%= link_to 'Register Here', new_shortterm_course_path, class:"btn btn-primary", :style => "color:white" %>
     <hr>
 

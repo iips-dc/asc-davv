@@ -1,6 +1,11 @@
-<h1>Editing orientation_course</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @orientation_course %> |
-<%= link_to 'Back', orientation_courses_path %>
+<!-- row -->
+<div class="row">
+  <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+	<h1>Edit Record</h1>
+		<%= render 'form' %>
+		<%= link_to 'Show', @orientation_course, :class => "btn btn-default" %> 
+		<%= link_to 'Back', orientation_record_path, :class => "btn btn-default" %>
+	</div>  
+  <!-- /.col-md-5 -->
+</div>
+<!-- /.row -->		

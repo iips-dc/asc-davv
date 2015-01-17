@@ -1,6 +1,6 @@
 class InteractionProgramsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
-  layout "adminDashboard", :only => :record
+  layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
   # GET /interaction_programs
   # GET /interaction_programs.json
@@ -89,7 +89,7 @@ class InteractionProgramsController < ApplicationController
     @interaction_program.destroy
 
     respond_to do |format|
-      format.html { redirect_to interaction_programs_url }
+      format.html { redirect_to interaction_record_path }
       format.json { head :no_content }
     end
   end
