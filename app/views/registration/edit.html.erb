@@ -3,7 +3,7 @@
   <div class="col-md-5">
       <h2>Update Account Details</h2>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :role => 'form'}) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :role => 'form'}, :validate => true) do |f| %>
         <%= devise_error_messages! %>
         <fieldset>
           <div class="form-group">

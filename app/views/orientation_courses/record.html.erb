@@ -6,7 +6,7 @@
 </div>
 <!-- /.row -->
 
-<!-- row -->
+
 <!-- row -->
 <div class="row">
     <div class="col-lg-12">
@@ -20,6 +20,7 @@
                                 <th>Category</th>
                                 <th>Marital status</th>
                                 <th>Email</th>
+                                <th>Alternate Email</th>
                                 <th>Stream</th>
                                 <th>College</th>
                                 <th>University</th>
@@ -35,7 +36,7 @@
                                 <th>Mobile</th>
                                 <th>University pin</th>
                                 <th>Dob</th>
-                                <th>Date of joining</th>
+                                <th>Joining Date</th>
                                 <th>Preferred date1</th>
                                 <th>Preferred date2</th>
                                 <th>Residential address</th>
@@ -45,7 +46,6 @@
                                 <th>Action</th>
                             </tr>
                         </thead>    
-                        <tbody>
                         <% @orientation_courses.each do |orientation_course| %>
                           <tbody>
                               <tr>
@@ -55,6 +55,7 @@
                                 <td><%= orientation_course.category %></td>
                                 <td><%= orientation_course.marital_status %></td>
                                 <td><%= orientation_course.email %></td>
+                                <td><%= orientation_course.alternate_email %></td>
                                 <td><%= orientation_course.stream %></td>
                                 <td><%= orientation_course.college %></td>
                                 <td><%= orientation_course.university %></td>

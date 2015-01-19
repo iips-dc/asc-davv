@@ -75,7 +75,7 @@ Dated:20/11/2014
                 <%= f.label :Religion %>
               </div>
               <div class="col-sm-10">
-                <%= f.select :religion, options_for_select([ "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]) %>
+                <%= f.select :religion, options_for_select([['Select a Religion',''], "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]) %>
                 <p class="help-block"> Select Your Religion </p>
               </div>
             </div>
@@ -86,7 +86,7 @@ Dated:20/11/2014
                 <%= f.label :Category %>
               </div>
               <div class="col-sm-10">
-                <%= f.select(:category,[['General', 'general'], ['OBC', 'obc'], ['SC', 'sc'], ['ST', 'st'] ]) %>
+                <%= f.select(:category,[['Select a Category',''], ['General', 'general'], ['OBC', 'obc'], ['SC', 'sc'], ['ST', 'st'] ]) %>
               </div>
               <span class="col-sm-offset-2 col-sm-10">        
               <p class="help-block"> Select Your Category </p>
@@ -133,7 +133,7 @@ Dated:20/11/2014
                 <%= f.label :Stream %>
               </div>
               <div class="col-sm-10">
-                <%= f.text_field :stream, :placeholder => "Enter Stream", :class => 'form-control', :validate => true %>
+                <%= f.text_field :stream, :placeholder => "Enter Stream", :class => 'form-control' %>
               </div>
             </div>
             <!-- Stream Field -->
@@ -163,7 +163,7 @@ Dated:20/11/2014
                 <%= f.label :Payscale %>
               </div>
               <div class="col-sm-10">
-                <%= f.select :payscale, options_for_select([ "Under 10000", "10000-20000", "20000-30000", "30000-50000", "50000-80000", "80000-100000", "100000 and above" ]) %>
+                <%= f.select :payscale, options_for_select([['Select your payscale',''], "Under 10000", "10000-20000", "20000-30000", "30000-50000", "50000-80000", "80000-100000", "100000 and above" ]) %>
                 <p class="help-block"> Select Your Payscale </p>
               </div>
             </div>
@@ -239,7 +239,7 @@ Dated:20/11/2014
                 <%= f.label :State %>
               </div>
               <div class="col-sm-10">
-                <%= f.select :state, options_for_select([ "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]) %>
+                <%= f.select :state, options_for_select([['Select a state',''], "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]) %>
                 <p class="help-block"> Select State </p>
               </div>
             </div>
@@ -265,6 +265,7 @@ Dated:20/11/2014
 
     </div>
     <!-- Panel -->
+  
       
     <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail3">
           <div class="panel-heading input-lg">
@@ -330,17 +331,17 @@ Dated:20/11/2014
                     <%= f.label :Alternate_Email %>
                   </div>
                   <div class="col-sm-10">
-                    <%= f.text_field :email, :placeholder => "Enter Alternate E-mail Address", :class => 'form-control' %><!-- Alternate E-mail field not added in table -->
+                    <%= f.text_field :alternate_email, :placeholder => "Enter Alternate E-mail Address", :class => 'form-control' %>
                   </div>
                 </div>
-                <!-- Email Field -->
+                <!-- Alternate Email Field -->
 
                 <div class="form-group">
                   <div class="col-sm-2 label-control">
                     <%= f.label :Landline %>
                   </div>
                   <div class="col-sm-3">
-                    <%= f.text_field :std_code, :placeholder => "STD Code", :class => 'form-control' %> <!-- STD Code Field not added in table -->
+                    <%= f.text_field :std_code, :placeholder => "STD Code", :class => 'form-control' %>
                   </div>
                   <div class="col-sm-7">
                     <%= f.text_field :landline, :placeholder => "Enter Landline Number", :class => 'form-control' %>
@@ -390,7 +391,7 @@ Dated:20/11/2014
             <!-- Prev-Next Button -->
 
             <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
-              <%= link_to 'Back', shortterm_courses_path, :class => "btn btn-default" %>
+              <%= link_to 'Back', refresher_courses_path, :class => "btn btn-default" %>
               <%= f.submit "Submit", :class => "btn btn-primary"%>        
             </div>
             <!-- Submit Button-->  

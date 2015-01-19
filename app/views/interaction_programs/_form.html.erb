@@ -70,7 +70,7 @@ Dated:08/1/2015
                 <%= f.label :Religion %>
               </div>
               <div class="col-sm-10">
-                <%= f.select :religion, options_for_select([ "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]) %>
+                <%= f.select :religion, options_for_select([['Select a Religion',''], "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]) %>
                 <p class="help-block"> Select Your Religion </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ Dated:08/1/2015
                 <%= f.label :Category %>
               </div>
               <div class="col-sm-10">
-                <%= f.select :category, options_for_select([ "General", "OBC", "SC", "ST" ]) %>
+                <%= f.select :category, options_for_select([['Select a Category',''],"General", "OBC", "SC", "ST" ]) %>
               </div>
               <span class="col-sm-offset-2 col-sm-10">        
               <p class="help-block"> Select Your Category </p>
@@ -210,7 +210,7 @@ Dated:08/1/2015
                 <%= f.label :State %>
               </div>
               <div class="col-sm-10">
-                <%= f.select :state, options_for_select([ "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]) %>
+                <%= f.select :state, options_for_select([['Select a State',''],"Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]) %>
                 <p class="help-block"> Select State </p>
               </div>
             </div>
@@ -246,7 +246,7 @@ Dated:08/1/2015
             <!-- Panel head -->
 
             <div class="panel-body">
-                <div class="form-group"><br/><br/>
+                <div class="form-group">
                   <div class="col-sm-2 label-control">
                     <%= f.label :Email %>
                   </div>
@@ -256,8 +256,8 @@ Dated:08/1/2015
                 </div>
                 <!-- Email Field -->
 
-  
-
+                
+                
             <div class="form-group"><br/><br/>
                   <div class="col-sm-2 label-control">
                     <%= f.label :Landline %>
