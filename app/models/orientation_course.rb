@@ -1,17 +1,18 @@
 class OrientationCourse < ActiveRecord::Base
-  attr_accessible :category, :city, :college, :course, :date_of_joining, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :payscale, :phd, :pin, :position, :pref_date1, :pref_date2, :religion, :res_address, :state, :stream, :university, :university_pin, :std_code, :alternate_email
+  belongs_to :course
+  attr_accessible :category, :city, :college, :program_course, :date_of_joining, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :payscale, :phd, :pin, :position, :pref_date1, :pref_date2, :religion, :res_address, :state, :stream, :university, :university_pin, :std_code, :alternate_email
 end
 
 #field not remain blank
 class  OrientationCourse < ActiveRecord::Base
   validates :name, :gender, :dob, :religion,:category, :marital_status,:stream,
   :college,:university,:city,:district,:state,
-  :position,:payscale,:course,:pin,:university_pin,:date_of_joining,:pref_date1,:pref_date2,:res_address, :email, presence: true
+  :position,:payscale,:program_course,:pin,:university_pin,:date_of_joining,:pref_date1,:pref_date2,:res_address, :email, presence: true
 end
 
 #field must contain alphabets
 class OrientationCourse < ActiveRecord::Base
-  validates :name, :city, :college, :district, :stream, :university, :course, format: { with: /\A[a-zA-Z\s]+\z/,
+  validates :name, :city, :college, :district, :stream, :university, :program_course, format: { with: /\A[a-zA-Z\s]+\z/,
     message: "only alphabets and spaces are allowed" }
 end
 

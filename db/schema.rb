@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150119074552) do
+ActiveRecord::Schema.define(:version => 20150121162413) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -65,7 +65,10 @@ ActiveRecord::Schema.define(:version => 20150119074552) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "std_code"
+    t.integer  "course_id"
   end
+
+  add_index "interaction_programs", ["course_id"], :name => "index_interaction_programs_on_course_id"
 
   create_table "orientation_courses", :force => true do |t|
     t.string   "name"
@@ -82,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20150119074552) do
     t.string   "state"
     t.string   "position"
     t.string   "payscale"
-    t.string   "course"
+    t.string   "program_course"
     t.string   "pin"
     t.string   "landline"
     t.string   "mobile"
@@ -97,7 +100,10 @@ ActiveRecord::Schema.define(:version => 20150119074552) do
     t.datetime "updated_at",      :null => false
     t.string   "std_code"
     t.string   "alternate_email"
+    t.integer  "course_id"
   end
+
+  add_index "orientation_courses", ["course_id"], :name => "index_orientation_courses_on_course_id"
 
   create_table "refresher_courses", :force => true do |t|
     t.string   "name"
@@ -114,7 +120,7 @@ ActiveRecord::Schema.define(:version => 20150119074552) do
     t.string   "state"
     t.string   "position"
     t.string   "payscale"
-    t.string   "course"
+    t.string   "program_course"
     t.string   "pin"
     t.string   "landline"
     t.string   "mobile"
@@ -129,7 +135,10 @@ ActiveRecord::Schema.define(:version => 20150119074552) do
     t.datetime "updated_at",      :null => false
     t.string   "std_code"
     t.string   "alternate_email"
+    t.integer  "course_id"
   end
+
+  add_index "refresher_courses", ["course_id"], :name => "index_refresher_courses_on_course_id"
 
   create_table "shortterm_courses", :force => true do |t|
     t.string   "name"
@@ -161,6 +170,9 @@ ActiveRecord::Schema.define(:version => 20150119074552) do
     t.datetime "updated_at",      :null => false
     t.string   "std_code"
     t.string   "alternate_email"
+    t.integer  "course_id"
   end
+
+  add_index "shortterm_courses", ["course_id"], :name => "index_shortterm_courses_on_course_id"
 
 end

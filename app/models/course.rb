@@ -1,4 +1,8 @@
 class Course < ActiveRecord::Base
+  has_many :shortterm_courses
+  has_many :refresher_courses
+  has_many :orientation_courses
+  has_many :interaction_programs
   attr_accessible :course_name, :description, :end_date, :start_date, :course_type
 end
 

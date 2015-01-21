@@ -6,20 +6,11 @@ class ShorttermCoursesController < ApplicationController
   # GET /shortterm_courses.json
   def index
     @courses = Course.all
-    
-    if @courses == ''
-      errors.add(@course,"You must select a course")
-    else
-      respond_to do |format|
+    respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @courses }
       end
     end  
-  end
-
-  def course_select
-    
-      
   end
 
   # GET /shortterm_courses/1
