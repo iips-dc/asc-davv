@@ -58,7 +58,7 @@
                             <td><%= @shortterm_course.state %></td>
                             <td><%= @shortterm_course.position %></td>
                             <td><%= @shortterm_course.payscale %></td>
-                            <td><%= @shortterm_course.course %></td>
+                            <td><%= @shortterm_course.program_course %></td>
                             <td><%= @shortterm_course.pin %></td>
                             <td><%= @shortterm_course.std_code %></td>
                             <td><%= @shortterm_course.landline %></td>
@@ -74,10 +74,12 @@
                       </table>
                 </div>
                 <!-- /.table-responsive -->    
+            <%= link_to 'Edit', edit_shortterm_course_path(@shortterm_course), :class => 'btn btn-default' %>
+            <%= link_to 'Destroy', shortterm_course_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } %> 
+            <%= link_to 'Back', shortterm_record_path, :class => 'btn btn-default' %>
         </div>
         <!-- /.col-lg-12 -->    
-        <%= link_to 'Edit', edit_shortterm_course_path(@shortterm_course), :class => 'btn btn-default' %> 
-        <%= link_to 'Back', shortterm_record_path, :class => 'btn btn-default' %>
+        
 </div>
 <!-- /. row -->
 

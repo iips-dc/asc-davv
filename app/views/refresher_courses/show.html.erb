@@ -76,10 +76,11 @@
                       </table>
                 </div>
                 <!-- /.table-responsive -->    
-        </div>
-        <!-- /.col-lg-12 -->    
         <%= link_to 'Edit', edit_refresher_course_path(@refresher_course), :class => 'btn btn-default' %> 
+        <%= link_to 'Destroy', refresher_course_path, :class => 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
         <%= link_to 'Back', refresher_record_path, :class => 'btn btn-default' %>
+        </div>
+        <!-- /.col-lg-12 -->            
 </div>
 <!-- /. row -->
 

@@ -13,55 +13,29 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>          
                           <tr>
-                            <th>Name</th>
-                            <th>Gender</th>
-                            <th>Religion</th>
-                            <th>Category</th>
-                            <th>Marital status</th>
-                            <th>Email</th>
-                            <th>Stream</th>
-                            <th>College</th>
-                            <th>University</th>
-                            <th>City</th>
-                            <th>District</th>
-                            <th>State</th>
-                            <th>Landline</th>
-                            <th>Mobile</th>
-                            <th>University pin</th>
-                            <th>Residential address</th>
-                            <th>Pin</th>
-                            <th>Phd Date Joining</th>
-                            <th>Research experience</th>
-                            <th>Action</th>
-                            <th>Action</th>
-                            <th>Action</th>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>University</th>
+                                <th>Research Experience</th>
+                                <th>Landline</th>
+                                <th>Mobile</th>
+                                <th>Residential address</th>
+                                <th>City</th>
+                            </tr>
                           </tr>
                       </thead>    
                         <% @interaction_programs.each do |interaction_program| %>
                           <tbody>
                               <tr>
                                 <td><%= interaction_program.name %></td>
-                                <td><%= interaction_program.gender %></td>
-                                <td><%= interaction_program.religion %></td>
-                                <td><%= interaction_program.category %></td>
-                                <td><%= interaction_program.marital_status %></td>
                                 <td><%= interaction_program.email %></td>
-                                <td><%= interaction_program.stream %></td>
-                                <td><%= interaction_program.college %></td>
                                 <td><%= interaction_program.university %></td>
-                                <td><%= interaction_program.city %></td>
-                                <td><%= interaction_program.district %></td>
-                                <td><%= interaction_program.state %></td>
+                                <td><%= interaction_program.research_experience %></td>
                                 <td><%= interaction_program.landline %></td>
                                 <td><%= interaction_program.mobile %></td>
-                                <td><%= interaction_program.university_pin %></td>
                                 <td><%= interaction_program.res_address %></td>
-                                <td><%= interaction_program.pin %></td>
-                                <td><%= interaction_program.date_of_joining_phd %></td>
-                                <td><%= interaction_program.research_experience %></td>
-                                <td><%= link_to 'Show', interaction_program %></td>
-                                <td><%= link_to 'Edit', edit_interaction_program_path(interaction_program) %></td>
-                                <td><%= link_to 'Destroy', interaction_program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                <td><%= interaction_program.city %></td>
                               </tr>
                           </tbody>      
                         <% end %>

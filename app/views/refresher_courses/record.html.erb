@@ -15,70 +15,26 @@
                         <thead>          
                             <tr>
                                 <th>Name</th>
-                                <th>Gender</th>
-                                <th>Religion</th>
-                                <th>Category</th>
-                                <th>Marital status</th>
                                 <th>Email</th>
-                                <th>Alternate Email</th>
-                                <th>Stream</th>
-                                <th>College</th>
                                 <th>University</th>
-                                <th>City</th>
-                                <th>District</th>
-                                <th>State</th>
-                                <th>Position</th>
-                                <th>Payscale</th>
-                                <th>Course</th>
-                                <th>Pin</th>
-                                <th>Std Code</th>
+                                <th>Date of birth</th>
                                 <th>Landline</th>
                                 <th>Mobile</th>
-                                <th>University pin</th>
-                                <th>Dob</th>
-                                <th>Joining Date</th>
-                                <th>Preferred date1</th>
-                                <th>Preferred date2</th>
                                 <th>Residential address</th>
-                                <th>Phd</th>
-                                <th>Action</th>
-                                <th>Action</th>
-                                <th>Action</th>
+                                <th>City</th>
                             </tr>
                         </thead>    
                         <% @refresher_courses.each do |refresher_course| %>
                           <tbody>
                               <tr>
-                                <td><%= refresher_course.name %></td>
-                                <td><%= refresher_course.gender %></td>
-                                <td><%= refresher_course.religion %></td>
-                                <td><%= refresher_course.category %></td>
-                                <td><%= refresher_course.marital_status %></td>
+                                <td><%= link_to refresher_course.name, refresher_course %></td>
                                 <td><%= refresher_course.email %></td>
-                                <td><%= refresher_course.alternate_email %></td>
-                                <td><%= refresher_course.stream %></td>
-                                <td><%= refresher_course.college %></td>
                                 <td><%= refresher_course.university %></td>
-                                <td><%= refresher_course.city %></td>
-                                <td><%= refresher_course.district %></td>
-                                <td><%= refresher_course.state %></td>
-                                <td><%= refresher_course.position %></td>
-                                <td><%= refresher_course.payscale %></td>
-                                <td><%= refresher_course.course %></td>
-                                <td><%= refresher_course.pin %></td>
-                                <td><%= refresher_course.std_code %></td>
-                                <td><%= refresher_course.landline %></td>
-                                <td><%= refresher_course.mobile %></td>
-                                <td><%= refresher_course.university_pin %></td>
                                 <td><%= refresher_course.dob %></td>
-                                <td><%= refresher_course.date_of_joining %></td>
-                                <td><%= refresher_course.pref_date1 %></td>
-                                <td><%= refresher_course.pref_date2 %></td>
+                                <td><%= refresher_course.mobile %></td>
+                                <td><%= refresher_course.landline %></td>
                                 <td><%= refresher_course.res_address %></td>
-                                <td><%= refresher_course.phd %></td>
-                                <td><%= link_to 'Show', refresher_course %></td>
-                                <td><%= link_to 'Edit', edit_refresher_course_path(refresher_course) %></td>
-                                <td><%= link_to 'Destroy', refresher_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                <td><%= refresher_course.city %></td>
                               </tr>
                           </tbody>    
                         <% end %>

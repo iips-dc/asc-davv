@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150118183632) do
+ActiveRecord::Schema.define(:version => 20150119074552) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -146,7 +146,7 @@ ActiveRecord::Schema.define(:version => 20150118183632) do
     t.string   "state"
     t.string   "position"
     t.string   "payscale"
-    t.string   "course"
+    t.string   "program_course"
     t.string   "pin"
     t.string   "landline"
     t.string   "mobile"

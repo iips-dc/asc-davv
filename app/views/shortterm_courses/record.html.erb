@@ -15,71 +15,27 @@
                         <thead>          
                             <tr>
                                 <th>Name</th>
-                                <th>Gender</th>
-                                <th>Religion</th>
-                                <th>Category</th>
-                                <th>Marital status</th>
                                 <th>Email</th>
-                                <th>Alternate Email</th>
-                                <th>Stream</th>
-                                <th>College</th>
                                 <th>University</th>
-                                <th>City</th>
-                                <th>District</th>
-                                <th>State</th>
-                                <th>Position</th>
-                                <th>Payscale</th>
-                                <th>Course</th>
-                                <th>Pin</th>
-                                <th>Std Code</th>
+                                <th>Date of birth</th>
                                 <th>Landline</th>
                                 <th>Mobile</th>
-                                <th>University pin</th>
-                                <th>Dob</th>
-                                <th>Joining Date</th>
-                                <th>Preferred date1</th>
-                                <th>Preferred date2</th>
                                 <th>Residential address</th>
-                                <th>Phd</th>
-                                <th>Action</th>
-                                <th>Action</th>
-                                <th>Action</th>
+                                <th>City</th>
                             </tr>
                         </thead>    
 
                     <% @shortterm_courses.each do |shortterm_course| %>
                         <tbody>
                             <tr>
-                            <td><%= shortterm_course.name %></td>
-                            <td><%= shortterm_course.gender %></td>
-                            <td><%= shortterm_course.religion %></td>
-                            <td><%= shortterm_course.category %></td>
-                            <td><%= shortterm_course.marital_status %></td>
-                            <td><%= shortterm_course.email %></td>
-                            <td><%= shortterm_course.alternate_email %></td>
-                            <td><%= shortterm_course.stream %></td>
-                            <td><%= shortterm_course.college %></td>
-                            <td><%= shortterm_course.university %></td>
-                            <td><%= shortterm_course.city %></td>
-                            <td><%= shortterm_course.district %></td>
-                            <td><%= shortterm_course.state %></td>
-                            <td><%= shortterm_course.position %></td>
-                            <td><%= shortterm_course.payscale %></td>
-                            <td><%= shortterm_course.course %></td>
-                            <td><%= shortterm_course.pin %></td>
-                            <td><%= shortterm_course.std_code %></td>
-                            <td><%= shortterm_course.landline %></td>
-                            <td><%= shortterm_course.mobile %></td>
-                            <td><%= shortterm_course.university_pin %></td>
-                            <td><%= shortterm_course.dob %></td>
-                            <td><%= shortterm_course.date_of_joining %></td>
-                            <td><%= shortterm_course.pref_date1 %></td>
-                            <td><%= shortterm_course.pref_date2 %></td>
-                            <td><%= shortterm_course.res_address %></td>
-                            <td><%= shortterm_course.phd %></td>
-                            <td><%= link_to 'Show', shortterm_course %></td>
-                            <td><%= link_to 'Edit', edit_shortterm_course_path(shortterm_course) %></td>
-                            <td><%= link_to 'Destroy', shortterm_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                <td><%= link_to shortterm_course.name, shortterm_course %></td>
+                                <td><%= shortterm_course.email %></td>
+                                <td><%= shortterm_course.university %></td>
+                                <td><%= shortterm_course.dob %></td>
+                                <td><%= shortterm_course.mobile %></td>
+                                <td><%= shortterm_course.landline %></td>
+                                <td><%= shortterm_course.res_address %></td>
+                                <td><%= shortterm_course.city %></td>
                           </tr>
                         </tbody>  
                     <% end %>

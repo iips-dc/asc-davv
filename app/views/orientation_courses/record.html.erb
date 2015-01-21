@@ -15,77 +15,33 @@
                         <thead>          
                             <tr>
                                 <th>Name</th>
-                                <th>Gender</th>
-                                <th>Religion</th>
-                                <th>Category</th>
-                                <th>Marital status</th>
                                 <th>Email</th>
-                                <th>Alternate Email</th>
-                                <th>Stream</th>
-                                <th>College</th>
                                 <th>University</th>
-                                <th>City</th>
-                                <th>District</th>
-                                <th>State</th>
-                                <th>Position</th>
-                                <th>Payscale</th>
-                                <th>Course</th>
-                                <th>Pin</th>
-                                <th>Std Code</th>
+                                <th>Date of birth</th>
                                 <th>Landline</th>
                                 <th>Mobile</th>
-                                <th>University pin</th>
-                                <th>Dob</th>
-                                <th>Joining Date</th>
-                                <th>Preferred date1</th>
-                                <th>Preferred date2</th>
                                 <th>Residential address</th>
-                                <th>Phd</th>
-                                <th>Action</th>
-                                <th>Action</th>
-                                <th>Action</th>
+                                <th>City</th>
                             </tr>
                         </thead>    
                         <% @orientation_courses.each do |orientation_course| %>
                           <tbody>
                               <tr>
-                                <td><%= orientation_course.name %></td>
-                                <td><%= orientation_course.gender %></td>
-                                <td><%= orientation_course.religion %></td>
-                                <td><%= orientation_course.category %></td>
-                                <td><%= orientation_course.marital_status %></td>
+                                <td><%= link_to orientation_course.name, orientation_course %></td>
                                 <td><%= orientation_course.email %></td>
-                                <td><%= orientation_course.alternate_email %></td>
-                                <td><%= orientation_course.stream %></td>
-                                <td><%= orientation_course.college %></td>
                                 <td><%= orientation_course.university %></td>
-                                <td><%= orientation_course.city %></td>
-                                <td><%= orientation_course.district %></td>
-                                <td><%= orientation_course.state %></td>
-                                <td><%= orientation_course.position %></td>
-                                <td><%= orientation_course.payscale %></td>
-                                <td><%= orientation_course.course %></td>
-                                <td><%= orientation_course.pin %></td>
-                                <td><%= orientation_course.std_code %></td>
-                                <td><%= orientation_course.landline %></td>
-                                <td><%= orientation_course.mobile %></td>
-                                <td><%= orientation_course.university_pin %></td>
                                 <td><%= orientation_course.dob %></td>
-                                <td><%= orientation_course.date_of_joining %></td>
-                                <td><%= orientation_course.pref_date1 %></td>
-                                <td><%= orientation_course.pref_date2 %></td>
+                                <td><%= orientation_course.mobile %></td>
+                                <td><%= orientation_course.landline %></td>
                                 <td><%= orientation_course.res_address %></td>
-                                <td><%= orientation_course.phd %></td>
-                                <td><%= link_to 'Show', orientation_course %></td>
-                                <td><%= link_to 'Edit', edit_orientation_course_path(orientation_course) %></td>
-                                <td><%= link_to 'Destroy', orientation_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                <td><%= orientation_course.city %></td>    
                               </tr>
                           </tbody>    
                         <% end %>
                     </table>
                 </div>
                 <!-- /.table-responsive -->    
-        </div>
-        <!-- /.col-lg-12 -->    
+    </div>
+    <!-- /.col-lg-12 -->    
 </div>
 <!-- /. row -->
