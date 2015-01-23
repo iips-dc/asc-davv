@@ -9,8 +9,7 @@ class ShorttermCoursesController < ApplicationController
     respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @courses }
-      end
-    end  
+    end 
   end
 
   # GET /shortterm_courses/1
