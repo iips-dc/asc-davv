@@ -22,7 +22,7 @@ Dated:20/11/2014
     <h3>Select a Course</h3>
         <% @courses.each do |course| %>
             <% if course.course_type == 'shortterm course' %>
-                <%= collection_select(:shortterm_course, :course_id, Course.find(:all), :id, :course_name, {:prompt => true}, {:required => true, :autofocus => true}) %>
+                <%= collection_select(:shortterm_course, :course_id, Course.find(:all), :id, :course_name, {:prompt => "Select a Course"}, {:required => true, :autofocus => true}) %>
             <% end %>
         <% end %>
     <br />
