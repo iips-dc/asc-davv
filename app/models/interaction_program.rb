@@ -12,7 +12,7 @@ end
 
 #field must contain alphabets and space
 class InteractionProgram < ActiveRecord::Base
-  validates :name, :city, :college, :district, :stream, :university, format: { with: /\A[a-zA-Z\s]+\z/,
+  validates :name, :city, :college, :district, :stream, :university, format: { with: /\A[a-zA-Z\s.,]+\z/,
     message: "only alphabets and spaces are allowed" }
 end
 

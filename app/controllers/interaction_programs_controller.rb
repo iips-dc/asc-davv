@@ -57,7 +57,7 @@ class InteractionProgramsController < ApplicationController
 
     respond_to do |format|
       if @interaction_program.save
-        format.html { redirect_to @interaction_program, notice: 'Interaction program was successfully created.' }
+        format.html { redirect_to registered_path }
         format.json { render json: @interaction_program, status: :created, location: @interaction_program }
       else
         format.html { render action: "new" }

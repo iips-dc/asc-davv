@@ -28,7 +28,7 @@
                         <% @interaction_programs.each do |interaction_program| %>
                           <tbody>
                               <tr>
-                                <td><%= interaction_program.name %></td>
+                                <td><%= link_to interaction_program.name, interaction_program %></td>
                                 <td><%= interaction_program.email %></td>
                                 <td><%= interaction_program.university %></td>
                                 <td><%= interaction_program.research_experience %></td>
