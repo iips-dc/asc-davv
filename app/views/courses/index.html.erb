@@ -10,6 +10,7 @@
 <!-- row -->
 <div class="row">
     <div class="col-lg-12">
+        <%= paginate @courses %>
         <div class="panel panel-default">
             <div class="panel-heading">
               <b>List Of Courses</b>
@@ -25,22 +26,16 @@
                             <th>Description</th>
                             <th>Start date</th>
                             <th>End date</th>
-                            <th>Action</th>
-                            <th>Action</th>
-                            <th>Action</th>
                           </tr>
                       </thead>    
                       <tbody>
                         <% @courses.each do |course| %>
                           <tr>
-                            <td><%= course.course_name %></td>
+                            <td><%= link_to course.course_name, course %></td>
                             <td><%= course.course_type %></td>
                             <td><%= course.description %></td>
                             <td><%= course.start_date %></td>
                             <td><%= course.end_date %></td>
-                            <td><%= link_to 'Show', course %></td>
-                            <td><%= link_to 'Edit', edit_course_path(course) %></td>
-                            <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                           </tr>
                         <% end %>
                       </tbody>  

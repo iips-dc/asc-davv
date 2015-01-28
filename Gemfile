@@ -20,13 +20,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-#For Authentication
+# For Authentication
 gem 'devise'
 
 gem 'jquery-rails'
 
-#Form-validation 
+# Form-validation 
 gem 'client_side_validations', :github => 'bcardarella/client_side_validations', :branch => '3-2-stable'
+
+# To Use Pagination for table
+gem 'kaminari'
 
 # To Use Bootstrap Datepicker
 gem 'bootstrap-datepicker-rails'

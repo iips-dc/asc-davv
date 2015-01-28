@@ -44,7 +44,7 @@
                             </tr>
                         </thead>             
                         <tbody>
-                          <tr>
+                          <tr class="info">
                             <td><%= @orientation_course.name %></td>
                             <td><%= @orientation_course.gender %></td>
                             <td><%= @orientation_course.religion %></td>
@@ -72,12 +72,13 @@
                             <td><%= @orientation_course.pref_date2 %></td>
                             <td><%= @orientation_course.res_address %></td>
                             <td><%= @orientation_course.phd %></td>
+                          </tr>  
                         </tbody>    
                       </table>
                 </div>
                 <!-- /.table-responsive -->
             <%= link_to 'Edit', edit_orientation_course_path(@orientation_course), :class => 'btn btn-default' %> 
-            <%= link_to 'Destroy', orientation_course_path, :class => 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Delete', orientation_course_path, :class => 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
             <%= link_to 'Back', orientation_record_path, :class => 'btn btn-default' %>        
         </div>
         <!-- /.col-lg-12 -->

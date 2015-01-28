@@ -25,7 +25,7 @@ class ShorttermCoursesController < ApplicationController
 
   #List of record
   def record
-    @shortterm_courses = ShorttermCourse.all
+    @shortterm_courses = Kaminari.paginate_array(ShorttermCourse.all).page(params[:page]).per(4)
     respond_to do |format|
       format.html 
       format.json { render json: @shortterm_courses }

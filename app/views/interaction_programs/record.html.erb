@@ -14,11 +14,11 @@
                         <thead>          
                           <tr>
                             <tr>
+                                <th>ID</td>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>University</th>
                                 <th>Research Experience</th>
-                                <th>Landline</th>
                                 <th>Mobile</th>
                                 <th>Residential address</th>
                                 <th>City</th>
@@ -28,17 +28,18 @@
                         <% @interaction_programs.each do |interaction_program| %>
                           <tbody>
                               <tr>
-                                <td><%= link_to interaction_program.name, interaction_program %></td>
+                                <td><%= link_to interaction_program.id, interaction_program %></td>
+                                <td><%= interaction_program.name %></td>
                                 <td><%= interaction_program.email %></td>
                                 <td><%= interaction_program.university %></td>
                                 <td><%= interaction_program.research_experience %></td>
-                                <td><%= interaction_program.landline %></td>
                                 <td><%= interaction_program.mobile %></td>
                                 <td><%= interaction_program.res_address %></td>
                                 <td><%= interaction_program.city %></td>
                               </tr>
                           </tbody>      
                         <% end %>
+                        <%= paginate @interaction_programs %>    
                     </table>
                 </div>
                 <!-- /.table-responsive -->    

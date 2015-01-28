@@ -25,7 +25,7 @@ class RefresherCoursesController < ApplicationController
   end
 
   def record
-    @refresher_courses = RefresherCourse.all
+    @refresher_courses = Kaminari.paginate_array(RefresherCourse.all).page(params[:page]).per(4)
 
     respond_to do |format|
       format.html 

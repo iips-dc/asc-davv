@@ -15,7 +15,7 @@ class OrientationCoursesController < ApplicationController
   end
 
   def record
-    @orientation_courses = OrientationCourse.all
+    @orientation_courses = Kaminari.paginate_array(OrientationCourse.all).page(params[:page]).per(4)
     respond_with(@orientation_courses)
   end
 
