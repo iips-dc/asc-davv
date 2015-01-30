@@ -11,18 +11,32 @@
 <div class="row">
     <div class="col-lg-12">
           <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover">
-                        <thead>          
+            <table class="table table-striped table-hover">        
                             <tr>
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th>Gender</th>
                                 <th>Religion</th>
                                 <th>Category</th>
                                 <th>Marital status</th>
                                 <th>Email</th>
-                                <th>Alternate Email</th>
                                 <th>Stream</th>
                                 <th>College</th>
+                            </tr>       
+                            <tr class="success">
+                                <td><%= @refresher_course.id %></td>
+                                <td><%= @refresher_course.name %></td>
+                                <td><%= @refresher_course.gender %></td>
+                                <td><%= @refresher_course.religion %></td>
+                                <td><%= @refresher_course.category %></td>
+                                <td><%= @refresher_course.marital_status %></td>
+                                <td><%= @refresher_course.email %></td>
+                                <td><%= @refresher_course.stream %></td>
+                                <td><%= @refresher_course.college %></td>
+                            </tr>    
+                      </table>   
+                      <table class="table table-striped table-hover">          
+                            <tr>    
                                 <th>University</th>
                                 <th>City</th>
                                 <th>District</th>
@@ -30,30 +44,10 @@
                                 <th>Position</th>
                                 <th>Payscale</th>
                                 <th>Course</th>
-                                <th>Pin</th>
                                 <th>Std Code</th>
                                 <th>Landline</th>
-                                <th>Mobile</th>
-                                <th>University pin</th>
-                                <th>Dob</th>
-                                <th>Date of joining</th>
-                                <th>Preferred date1</th>
-                                <th>Preferred date2</th>
-                                <th>Residential address</th>
-                                <th>Phd</th>
                             </tr>
-                        </thead>             
-                        <tbody>
-                            <tr class="info">
-                                <td><%= @refresher_course.name %></td>
-                                <td><%= @refresher_course.gender %></td>
-                                <td><%= @refresher_course.religion %></td>
-                                <td><%= @refresher_course.category %></td>
-                                <td><%= @refresher_course.marital_status %></td>
-                                <td><%= @refresher_course.email %></td>
-                                <td><%= @refresher_course.alternate_email %></td>
-                                <td><%= @refresher_course.stream %></td>
-                                <td><%= @refresher_course.college %></td>
+                            <tr class="success">
                                 <td><%= @refresher_course.university %></td>
                                 <td><%= @refresher_course.city %></td>
                                 <td><%= @refresher_course.district %></td>
@@ -61,9 +55,23 @@
                                 <td><%= @refresher_course.position %></td>
                                 <td><%= @refresher_course.payscale %></td>
                                 <td><%= @refresher_course.program_course %></td>
-                                <td><%= @refresher_course.pin %></td>
                                 <td><%= @refresher_course.std_code %></td>
                                 <td><%= @refresher_course.landline %></td>
+                            </tr>
+                      </table>                
+                      <table class="table table-striped table-hover">          
+                            <tr>    
+                                <th>Mobile</th>
+                                <th>University pin</th>
+                                <th>Dob</th>
+                                <th>Date of joining</th>
+                                <th>Preferred date1</th>
+                                <th>Preferred date2</th>
+                                <th>Residential address</th>
+                                <th>Pin</th>
+                                <th>Phd</th>
+                            </tr>
+                            <tr class="success">    
                                 <td><%= @refresher_course.mobile %></td>
                                 <td><%= @refresher_course.university_pin %></td>
                                 <td><%= @refresher_course.dob %></td>
@@ -71,9 +79,9 @@
                                 <td><%= @refresher_course.pref_date1 %></td>
                                 <td><%= @refresher_course.pref_date2 %></td>
                                 <td><%= @refresher_course.res_address %></td>
+                                <td><%= @refresher_course.pin %></td>
                                 <td><%= @refresher_course.phd %></td>
-                            </tr>
-                        </tbody>    
+                            </tr>        
                       </table>
                 </div>
                 <!-- /.table-responsive -->    
