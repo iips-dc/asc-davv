@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150121162413) do
+ActiveRecord::Schema.define(:version => 20150130085143) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20150121162413) do
     t.datetime "updated_at",          :null => false
     t.string   "std_code"
     t.integer  "course_id"
+    t.string   "image"
   end
 
   add_index "interaction_programs", ["course_id"], :name => "index_interaction_programs_on_course_id"
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20150121162413) do
     t.string   "std_code"
     t.string   "alternate_email"
     t.integer  "course_id"
+    t.string   "image"
   end
 
   add_index "orientation_courses", ["course_id"], :name => "index_orientation_courses_on_course_id"
@@ -136,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20150121162413) do
     t.string   "std_code"
     t.string   "alternate_email"
     t.integer  "course_id"
+    t.string   "image"
   end
 
   add_index "refresher_courses", ["course_id"], :name => "index_refresher_courses_on_course_id"
@@ -171,6 +174,7 @@ ActiveRecord::Schema.define(:version => 20150121162413) do
     t.string   "std_code"
     t.string   "alternate_email"
     t.integer  "course_id"
+    t.string   "image"
   end
 
   add_index "shortterm_courses", ["course_id"], :name => "index_shortterm_courses_on_course_id"

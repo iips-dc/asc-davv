@@ -10,6 +10,7 @@
 <!-- row -->
 <div class="row">
     <div class="col-lg-12">
+          <%= image_tag(@refresher_course.image_url(:thumb).to_s, :class => @refresher_course.image? ? "img-responsive img-thumbnail" : nil) %>  
           <div class="table-responsive">
             <table class="table table-striped table-hover">        
                             <tr>

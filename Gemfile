@@ -31,6 +31,12 @@ gem 'client_side_validations', :github => 'bcardarella/client_side_validations',
 # To Use Pagination for table
 gem 'kaminari'
 
+# To Provide File Upload Functionality
+gem 'carrierwave'
+
+# To Perform Image Processing For Images 
+gem 'mini_magick'
+
 # To Use Bootstrap Datepicker
 gem 'bootstrap-datepicker-rails'
 
