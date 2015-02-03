@@ -21,7 +21,7 @@
 
     <select autofocus required>
     <% @courses.each do |course| %>
-          <% if course.course_type == 'interaction program' %>
+          <% if course.course_type.downcase == 'interaction program' %>
             <option selected disabled value="">Select a Course</option>
                     <option><%= course.course_name %></option>
           <% end %>

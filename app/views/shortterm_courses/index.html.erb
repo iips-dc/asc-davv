@@ -22,7 +22,7 @@ Dated:20/11/2014
     <h3>Select a Course</h3>
     <select autofocus required>
     <% @courses.each do |course| %>
-        <% if course.course_type == 'shortterm course' %>
+        <% if course.course_type.downcase == 'shortterm course' %>
         <option selected disabled value="">Select a Course</option>
                 <option><%= course.course_name %></option>
         <% end %>

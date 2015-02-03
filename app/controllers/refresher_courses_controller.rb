@@ -9,7 +9,7 @@ class RefresherCoursesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @refresher_courses }
+      format.json { render json: @courses }
     end
   end
 

@@ -9,7 +9,7 @@ class InteractionProgramsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @interaction_programs }
+      format.json { render json: @courses }
     end
   end
 

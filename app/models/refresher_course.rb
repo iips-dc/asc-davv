@@ -17,7 +17,7 @@ class RefresherCourse < ActiveRecord::Base
     message: "only alphabets and spaces are allowed" }
 end
 
-#following fiels must contain integer
+#following fields must contain integer
 class RefresherCourse < ActiveRecord::Base
   validates :pin,:university_pin, numericality: true
   validates :landline, :std_code, :mobile, numericality: { only_integer: true }
@@ -37,6 +37,16 @@ class RefresherCourse < ActiveRecord::Base
   
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
 end
+
+#validates date
+class RefresherCourse < ActiveRecord::Base
+  validate :valid_dates
+  def valid_dates
+    if pref_date1 >= pref_date2
+      self.errors.add :pref_date2, ' has to be after preferred date1'
+    end
+  end
+end 
 
 #size of the image
 class ShorttermCourse < ActiveRecord::Base

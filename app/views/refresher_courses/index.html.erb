@@ -24,7 +24,7 @@ Dated:20/11/2014
 
     <select autofocus required>
     <% @courses.each do |course| %>
-        <% if course.course_type == 'refresher course' %>
+        <% if course.course_type.downcase == 'refresher course' %>
                 <option selected disabled value="">Select a Course</option>
                 <option><%= course.course_name %></option>
         <% end %>

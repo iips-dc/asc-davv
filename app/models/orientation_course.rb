@@ -17,7 +17,7 @@ class OrientationCourse < ActiveRecord::Base
     message: "only alphabets and spaces are allowed" }
 end
 
-#following fiels must contain integer
+#following fields must contain integer
 class OrientationCourse < ActiveRecord::Base
   validates :pin,:university_pin, numericality: true
   validates :landline,:mobile, :std_code, numericality: { only_integer: true }
@@ -25,7 +25,7 @@ end
 
 #Combination of fields that must be unique
 class OrientationCourse < ActiveRecord::Base
-  validates_uniqueness_of :name, scope: [:pref_date1, :pref_date2, :dob]
+  validates_uniqueness_of :name, scope: [:pref_date1, :dob]
 end
 
 #length of the fields
@@ -37,6 +37,16 @@ class OrientationCourse < ActiveRecord::Base
   
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
 end
+
+#validates date
+class OrientationCourse < ActiveRecord::Base
+  validate :valid_dates
+  def valid_dates
+    if pref_date1 >= pref_date2
+      self.errors.add :pref_date2, ' has to be after preferred date1'
+    end
+  end
+end  
 
 #size of the image
 class ShorttermCourse < ActiveRecord::Base

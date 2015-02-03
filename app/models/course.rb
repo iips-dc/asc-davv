@@ -22,3 +22,13 @@ end
 class Course < ActiveRecord::Base
   validates :course_name, :description, :course_type, length: { minimum: 2 }
 end  
+
+#validates date
+class Course < ActiveRecord::Base
+  validate :valid_dates
+  def valid_dates
+    if start_date >= end_date
+      self.errors.add :end_date, ' has to be after start date'
+    end
+  end
+end  

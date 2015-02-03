@@ -78,111 +78,23 @@ Dated: 11/01/2015
             <div class="col-lg-12">
                 <h2 class="page-header">Upcoming Programs</h2>
             </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                        <p>Refresher Course in Disaster Management from 10-12-2014 to 30-12-2014 </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                      	<p>One Week 1st Short term course on Sustainable Rural Livelihood from 22-09-14 to 27- 09-14</p>
+            <% @courses.each do |course| %>
+              <% if Date.today < course.start_date %>  
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="pull-left">
+                            <span class="fa-stack fa-2x">
+                                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                  <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+                            </span> 
+                        </div>
+                        <div class="media-body">
+                            <p><%= course.course_type %> in <%= course.course_name %> from <%= course.start_date %> to <%= course.end_date %> </p>
+                        </div>
                     </div>
                 </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                        <p>One Week 2nd Short term course on research paper writing and publication from13-10-14 to 18-10-14</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                        <p>One Week 1st Short Term course in Case Writing and Teaching through Case Studies (Management faculty) from 10-11-2014 to 15-11-2014</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                		<p>1st Refresher in Laser Physics and Electronics from 28-10-2014 to 17-11-2014 </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                        <p>Refresher Course in Disaster Management 25-11-2014 to 15-12-2014</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                        <p>26th Refresher in Environment Education for sustainable future (ID) from 07-1-2015 to 27-01-2015 </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                        <p>3rd Refresher in Human Rights (ID) 11-11-2014 to 02-12-2014 </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
-                        </span> 
-                    </div>
-                    <div class="media-body">
-                        <p>2nd special Summer school in Teaching Paradigm from 23-09-2014 to 13-10-2014 </p>
-                    </div>
-                </div>
-            </div>
+              <% end %>      
+            <% end %>    
         </div>
         <!-- /.row -->
         <hr>
