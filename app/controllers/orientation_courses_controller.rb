@@ -5,11 +5,6 @@ class OrientationCoursesController < ApplicationController
 
   respond_to :html
 
-  def index
-    @courses = Course.all
-    respond_with(@courses)
-  end
-
   def show
     respond_with(@orientation_course)
   end

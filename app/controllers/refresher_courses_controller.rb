@@ -2,17 +2,6 @@ class RefresherCoursesController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
-  # GET /refresher_courses
-  # GET /refresher_courses.json
-  def index
-    @courses = Course.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
-    end
-  end
-
   # GET /refresher_courses/1
   # GET /refresher_courses/1.json
   def show

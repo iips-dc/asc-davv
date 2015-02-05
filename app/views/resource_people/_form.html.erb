@@ -1,0 +1,31 @@
+<%= form_for(@resource_person, :html => {:class => 'form-horizontal'}, :validate =>true) do |f| %>
+  <% if @resource_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resource_person.errors.count, "error") %> prohibited this resource_person from being saved:</h2>
+
+      <ul>
+      <% @resource_person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+  <div class="form-group">
+    <%= f.label :person_name, :class => 'label-control' %><br />
+    <%= f.text_field :person_name, :placeholder => 'Enter Resource Person Name', :class => 'form-control', autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'label-control' %><br />
+    <%= f.text_field :email, :placeholder => 'Enter E-mail Address', :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mobile, :class => 'label-control' %><br />
+    <%= f.text_field :mobile, :placeholder => 'Enter Mobile Number', :class => 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
+  </div>
+</fieldset>  
+<% end %>

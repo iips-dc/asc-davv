@@ -1,17 +1,22 @@
 AscDavv::Application.routes.draw do
   
+  resources :resource_people
+
+
   devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]
   as :admin do
     get 'signin' => 'devise/sessions#new', :as => :new_admin_session
     post 'signin' => 'devise/sessions#create', :as => :admin_session
     delete 'signout' => 'devise/sessions#destroy', :as => :destroy_admin_session
-    get 'signup' => 'registration#new', :as => :new_admin_registration
+    get 'crap_you_dont_belong_here' => 'registration#new', :as => :new_admin_registration
     get 'edit' => 'registration#edit', :as => :edit_admin_registration
   end
 
   resources :courses
 
   match '/courses_success' => 'courses#success'
+
+  resources :resource_people
 
   resources :refresher_courses
 

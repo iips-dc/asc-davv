@@ -1,0 +1,2 @@
+module ResourcePeopleHelper
+end
