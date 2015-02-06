@@ -32,7 +32,7 @@ gem 'client_side_validations', :github => 'bcardarella/client_side_validations',
 gem 'kaminari'
 
 # To Provide File Upload Functionality
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.10.0'
 
 # To Perform Image Processing For Images 
 gem 'mini_magick'

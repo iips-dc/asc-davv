@@ -142,7 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
-  carrierwave
+  carrierwave (~> 0.10.0)
   client_side_validations!
   coffee-rails (~> 3.2.1)
   devise

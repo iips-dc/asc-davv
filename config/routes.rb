@@ -15,9 +15,6 @@ AscDavv::Application.routes.draw do
   resources :courses
 
   match '/courses_success' => 'courses#success'
-
-  resources :resource_people
-
   resources :refresher_courses
 
   match '/refresher_record' => 'refresher_courses#record'
