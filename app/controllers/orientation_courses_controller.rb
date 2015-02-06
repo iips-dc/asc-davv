@@ -1,4 +1,4 @@
-class OrientationCoursesController < ApplicationController
+  class OrientationCoursesController < ApplicationController
   before_filter :set_orientation_course, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record] 
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
@@ -6,8 +6,7 @@ class OrientationCoursesController < ApplicationController
   respond_to :html
 
   def index
-    @courses = Course.all
-    respond_with(@courses)
+    raise ActionController::RoutingError.new('Not Found')
   end
 
   def show

@@ -1,6 +1,6 @@
 class InteractionProgram < ActiveRecord::Base
   belongs_to :course
-  attr_accessible :category, :city, :college, :date_of_joining_phd, :district, :email, :gender, :landline, :marital_status, :mobile, :name, :pin, :religion, :res_address, :research_experience, :state, :stream, :university, :university_pin, :std_code
+  attr_accessible :category, :city, :college, :date_of_joining_phd, :district, :email, :gender, :landline, :marital_status, :mobile, :name, :pin, :religion, :res_address, :research_experience, :state, :stream, :university, :university_pin, :std_code, :image, :course_id
   mount_uploader :image, ImageUploader
 end
 
@@ -8,7 +8,7 @@ end
 class  InteractionProgram < ActiveRecord::Base
   validates :name, :gender, :religion,:category, :marital_status,:stream,
   :college,:university,:city,:district,:state, :research_experience,
-  :pin,:university_pin,:date_of_joining_phd, :res_address, :email, :image, presence: true
+  :pin,:university_pin,:date_of_joining_phd, :res_address, :email, :course_id, :image, presence: true
 end
 
 #field must contain alphabets and space

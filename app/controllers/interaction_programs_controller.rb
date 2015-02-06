@@ -2,16 +2,11 @@ class InteractionProgramsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
-  # GET /interaction_programs
-  # GET /interaction_programs.json
+   # GET /interaction_programs
+   # GET /interaction_programs.json
   def index
-    @courses = Course.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
-    end
-  end
+    raise ActionController::RoutingError.new('Not Found')
+  end 
 
   # GET /interaction_programs/1
   # GET /interaction_programs/1.json

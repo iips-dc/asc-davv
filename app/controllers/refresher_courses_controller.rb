@@ -5,12 +5,7 @@ class RefresherCoursesController < ApplicationController
   # GET /refresher_courses
   # GET /refresher_courses.json
   def index
-    @courses = Course.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
-    end
+    raise ActionController::RoutingError.new('Not Found')
   end
 
   # GET /refresher_courses/1

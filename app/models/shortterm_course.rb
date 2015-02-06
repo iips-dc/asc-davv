@@ -1,6 +1,6 @@
 class ShorttermCourse < ActiveRecord::Base
   belongs_to :course
-  attr_accessible :category, :city, :college, :program_course, :date_of_joining, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :payscale, :phd, :pin, :position, :pref_date1, :pref_date2, :religion, :res_address, :state, :stream, :university, :university_pin, :std_code, :alternate_email, :image
+  attr_accessible :category, :city, :college, :subject, :date_of_joining, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :payscale, :phd, :pin, :position, :pref_date1, :pref_date2, :religion, :res_address, :state, :stream, :university, :university_pin, :std_code, :alternate_email, :image, :course_id
   mount_uploader :image, ImageUploader
 end
 
@@ -8,12 +8,12 @@ end
 class  ShorttermCourse < ActiveRecord::Base
   validates :name, :gender, :dob, :religion,:category, :marital_status,:stream,
   :college,:university,:city,:district,:state,
-  :position,:payscale,:program_course,:pin,:university_pin,:date_of_joining,:pref_date1,:pref_date2,:res_address, :email, :image, presence: true
+  :position,:payscale,:subject,:pin,:university_pin,:date_of_joining,:pref_date1,:pref_date2,:res_address, :email, :image, :course_id, presence: true
 end
 
 #field must contain alphabets
 class ShorttermCourse < ActiveRecord::Base
-  validates :name, :city, :college, :district, :stream, :university, :program_course, format: { with: /\A[a-zA-Z\s.,]+\z/,
+  validates :name, :city, :college, :district, :stream, :university, :subject, format: { with: /\A[a-zA-Z\s.,]+\z/,
     message: "only alphabets and spaces are allowed" }
 end
 
