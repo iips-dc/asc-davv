@@ -34,7 +34,7 @@ $(document).ready ->
     return
 
   
-  #Preferred date Tab
+  #Course Details Tab
   $("#toggle5").click ->
     $("#tabs a[href=\"#detail2\"]").tab "show"
     return

@@ -7,13 +7,12 @@ end
 #field not remain blank
 class  ShorttermCourse < ActiveRecord::Base
   validates :name, :gender, :dob, :religion,:category, :marital_status,:stream,
-  :college,:university,:city,:district,:state,
-  :position,:payscale,:subject,:pin,:university_pin,:date_of_joining,:pref_date1,:pref_date2,:res_address, :email, :image, presence: true
+  :college,:university,:city,:district,:state,:position,:payscale,:subject,:pin,:university_pin,:date_of_joining,:pref_date1,:pref_date2,:res_address, :email, :image, :course_id, presence: true
 end
 
 #field must contain alphabets
 class ShorttermCourse < ActiveRecord::Base
-  validates :name, :city, :college, :district, :stream, :university, format: { with: /\A[a-zA-Z\s.,]+\z/,
+  validates :name, :city, :college, :district, :stream, :university, :subject, format: { with: /\A[a-zA-Z\s.,]+\z/,
     message: "only alphabets and spaces are allowed" }
 end
 

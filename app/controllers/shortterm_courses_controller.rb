@@ -2,6 +2,11 @@ class ShorttermCoursesController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
+  # GET /shortterm_courses
+  # GET /shortterm_courses.json
+  def index
+    raise ActionController::RoutingError.new('Not Found')      
+  end
   # GET /shortterm_courses/1
   # GET /shortterm_courses/1.json
   def show

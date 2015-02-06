@@ -2,6 +2,12 @@ class RefresherCoursesController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
+  # GET /refresher_courses
+  # GET /refresher_courses.json
+  def index
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
   # GET /refresher_courses/1
   # GET /refresher_courses/1.json
   def show

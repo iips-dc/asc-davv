@@ -20,7 +20,7 @@ Dated:20/11/2014
   <ul id="tabs" class="nav nav-pills custom" role="tablist">
     <li role="presentation" class="active"><a href="#detail1"  aria-controls="detail1" role="tab" data-toggle="tab">Personal Details</a></li>
     <li role="presentation"><a href="#detail2" aria-controls="detail2" role="tab" data-toggle="tab">University Details</a></li>
-    <li role="presentation"><a href="#detail3" aria-controls="detail3" role="tab" data-toggle="tab">Preferred Dates</a></li>
+    <li role="presentation"><a href="#detail3" aria-controls="detail3" role="tab" data-toggle="tab">Course Details</a></li>
     <li role="presentation"><a href="#detail4" aria-controls="detail4" role="tab" data-toggle="tab">Contact Details</a></li>
   </ul>
 
@@ -152,7 +152,7 @@ Dated:20/11/2014
 
             <div class="form-group">
               <div class="col-sm-2 label-control">
-                <%= f.label :Subject %>
+                <%= f.label :subject %>
               </div>
               <div class="col-sm-10">
                 <%= f.text_field :subject, :placeholder => "Enter Subject", :class => 'form-control', :required => true %>
@@ -280,17 +280,18 @@ Dated:20/11/2014
       
     <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail3">
           <div class="panel-heading input-lg">
-              <h4> Preferred Dates </h4>
+              <h4> Course Details </h4>
           </div>
           <!-- Panel-head -->
 
           <div class="panel-body">
               <div class="form-group">
                 <div class="col-sm-2 label-control">
-                  <%= f.label :select_course %>
+                  <%= f.label :course %>
                 </div>
                 <div class="col-sm-10">
-                  <%= f.collection_select :orientation_course, :course_id, Course.find(:all, :conditions => ["lower(course_type) = 'orientation course'"]), :id, :course_name, :prompt => "Select a course" %>
+                  <%= collection_select(:orientation_course, :course_id, Course.find(:all, :conditions => ["lower(course_type)='orientation course'"]), :id, :course_name, {:prompt => "Select a Course"})  %>
+                  <p class="help-block"> Choose a course to apply </p>
                 </div>
               </div>
               <!-- Course Field -->
