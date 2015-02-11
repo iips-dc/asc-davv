@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150205111943) do
+ActiveRecord::Schema.define(:version => 20150210102630) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -142,6 +142,14 @@ ActiveRecord::Schema.define(:version => 20150205111943) do
   end
 
   add_index "refresher_courses", ["course_id"], :name => "index_refresher_courses_on_course_id"
+
+  create_table "resource_people", :force => true do |t|
+    t.string   "person_name"
+    t.string   "mobile"
+    t.string   "person_email"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "shortterm_courses", :force => true do |t|
     t.string   "name"
