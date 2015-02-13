@@ -10,7 +10,6 @@
 <!-- row -->
 <div class="row">
     <div class="col-lg-12">
-        <%= image_tag(@shortterm_course.image_url(:thumb).to_s, :class => @shortterm_course.image? ? "img-responsive img-thumbnail" : nil) %>  
           <div class="table-responsive">
                       <table class="table table-striped table-hover">        
                             <tr>
@@ -86,8 +85,8 @@
                       </table>
                 </div>
                 <!-- /.table-responsive -->    
-            <%= link_to 'Edit', edit_shortterm_course_path(@shortterm_course), :class => 'btn btn-default' %>
-            <%= link_to 'Delete', shortterm_course_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } %> 
+            <%= link_to 'Edit', edit_shortterm_course_path(@shortterm_course), :class => 'btn btn-default' if can? :update, ShorttermCourse%>
+            <%= link_to 'Delete', shortterm_course_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } if can? :destroy, ShorttermCourse %> 
             <%= link_to 'Back', shortterm_record_path, :class => 'btn btn-default' %>
         </div>
         <!-- /.col-lg-12 -->    

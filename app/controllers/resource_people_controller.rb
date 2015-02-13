@@ -1,6 +1,7 @@
 class ResourcePeopleController < ApplicationController
   before_filter :set_resource_person, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin!
+  load_and_authorize_resource 
   layout "adminDashboard"
 
   respond_to :html

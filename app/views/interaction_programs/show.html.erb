@@ -66,8 +66,8 @@
                     </table>
                 </div>
                 <!-- /.table-responsive -->
-                <%= link_to 'Edit', edit_interaction_program_path(@interaction_program), :class => 'btn btn-default' %> 
-                <%= link_to 'Delete', interaction_program_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' %>
+                <%= link_to 'Edit', edit_interaction_program_path(@interaction_program), :class => 'btn btn-default' if can? :update, InteractionProgram %> 
+                <%= link_to 'Delete', interaction_program_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' if can? :destroy, InteractionProgram %>
                 <%= link_to 'Back', interaction_record_path, :class => 'btn btn-default' %>    
         </div>
         <!-- /.col-lg-12 --> 

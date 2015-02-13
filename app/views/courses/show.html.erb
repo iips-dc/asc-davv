@@ -41,10 +41,10 @@
               </div>
               <!-- /.panel-body -->
             </div>
-            <!-- /. panel -->    
-          <%= link_to 'Edit', edit_course_path(@course), :class => 'btn btn-default' %>
-          <%= link_to 'Delete', course_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' %> 
-          <%= link_to 'Back', courses_path, :class => 'btn btn-default' %>
+            <!-- /. panel -->      
+          <%= link_to 'Edit', edit_course_path(@course), :class => 'btn btn-default' if can? :update, Course %>
+          <%= link_to 'Delete', course_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' if can? :destroy, Course %> 
+          <%= link_to 'Back', courses_path, :class => 'btn btn-default' %>          
         </div>
         <!-- /.col-lg-12 -->    
 </div>

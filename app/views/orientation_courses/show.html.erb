@@ -86,8 +86,8 @@
                       </table>
                 </div>
                 <!-- /.table-responsive -->
-            <%= link_to 'Edit', edit_orientation_course_path(@orientation_course), :class => 'btn btn-default' %> 
-            <%= link_to 'Delete', orientation_course_path, :class => 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit', edit_orientation_course_path(@orientation_course), :class => 'btn btn-default' if can? :update, OrientationCourse %> 
+            <%= link_to 'Delete', orientation_course_path, :class => 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, OrientationCourse %>
             <%= link_to 'Back', orientation_record_path, :class => 'btn btn-default' %>        
         </div>
         <!-- /.col-lg-12 -->

@@ -1,6 +1,7 @@
   class OrientationCoursesController < ApplicationController
   before_filter :set_orientation_course, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record] 
+  load_and_authorize_resource :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
   respond_to :html

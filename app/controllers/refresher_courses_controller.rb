@@ -1,5 +1,6 @@
 class RefresherCoursesController < ApplicationController
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record]
+  load_and_authorize_resource :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
   # GET /refresher_courses

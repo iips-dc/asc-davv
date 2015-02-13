@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_filter :authenticate_admin!
+  load_and_authorize_resource 
   layout "adminDashboard"
   # GET /courses
   # GET /courses.json

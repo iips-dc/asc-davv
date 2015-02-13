@@ -53,10 +53,12 @@ Dated:11/01/2014
                           <i class="fa fa-navicon"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
+                        <% if can? :update, Admin %>
                         <li role="presentation">
                           <%= link_to "Account Settings", edit_admin_registration_path, :method => :get, :class => 'fa fa-gear' %>
                         </li>
                         <li class="divider"></li>
+                        <% end %>
                         <li role="presentation">
                             <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete, :class => 'fa fa-sign-out' %>
                         </li>
@@ -73,6 +75,7 @@ Dated:11/01/2014
                         <li>
                             <a class="active" href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+                        <% if can? :manage, Course %>
                         <li>
                             <a href="#"><i class="fa fa-calendar fa-fw"></i> Courses<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -85,6 +88,9 @@ Dated:11/01/2014
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <% end %>
+
+                        <% if can? :manage, ResourcePerson %>
                         <li>
                             <a href="#"><i class="fa fa-calendar fa-fw"></i> Resource Person<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -97,9 +103,12 @@ Dated:11/01/2014
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <% end %> 
+                       
+                        <% if can? :record, ShorttermCourse %>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Application Forms<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a href="#"><i class="fa fa-edit fa-fw"></i>Application Forms<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">        
                                 <li>
                                     <%= link_to "Short-term Course", shortterm_record_path %> 
                                 </li>
@@ -115,6 +124,7 @@ Dated:11/01/2014
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>    
+                        <% end %>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

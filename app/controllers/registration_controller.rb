@@ -19,8 +19,5 @@ class RegistrationController < Devise::RegistrationsController
 		else
 			render :action => "new"
 		end		
-	end	
-
-	def edit
-	end	
+	end
 end
