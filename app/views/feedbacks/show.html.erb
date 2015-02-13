@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Communication skill:</b>
+  <%= @feedback.communication_skill %>
+</p>
+
+<p>
+  <b>Usefulness topic:</b>
+  <%= @feedback.usefulness_topic %>
+</p>
+
+<p>
+  <b>Competency subject:</b>
+  <%= @feedback.competency_subject %>
+</p>
+
+<p>
+  <b>Quality lecture:</b>
+  <%= @feedback.quality_lecture %>
+</p>
+
+<p>
+  <b>Resource person:</b>
+  <%= @feedback.resource_person %>
+</p>
+
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>

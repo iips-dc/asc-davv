@@ -1,0 +1,37 @@
+<%= form_for(@feedback) do |f| %>
+  <% if @feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% @feedback.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :communication_skill %><br />
+    <%= f.number_field :communication_skill %>
+  </div>
+  <div class="field">
+    <%= f.label :usefulness_topic %><br />
+    <%= f.number_field :usefulness_topic %>
+  </div>
+  <div class="field">
+    <%= f.label :competency_subject %><br />
+    <%= f.number_field :competency_subject %>
+  </div>
+  <div class="field">
+    <%= f.label :quality_lecture %><br />
+    <%= f.number_field :quality_lecture %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_person %><br />
+    <%= f.text_field :resource_person %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

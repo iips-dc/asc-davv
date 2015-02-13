@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  communication_skill: 1
+  usefulness_topic: 1
+  competency_subject: 1
+  quality_lecture: 1
+  resource_person: 
+
+two:
+  communication_skill: 1
+  usefulness_topic: 1
+  competency_subject: 1
+  quality_lecture: 1
+  resource_person: 

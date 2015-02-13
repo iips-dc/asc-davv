@@ -1,7 +1,8 @@
 AscDavv::Application.routes.draw do
   
-  resources :resource_people
+  resources :feedbacks
 
+  resources :resource_people
 
   devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]
   as :admin do
