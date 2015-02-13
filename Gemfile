@@ -23,6 +23,9 @@ end
 # For Authentication
 gem 'devise'
 
+# For Authorization
+gem 'cancan'
+
 gem 'jquery-rails'
 
 # Form-validation 
