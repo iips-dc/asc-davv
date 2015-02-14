@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150213135945) do
+ActiveRecord::Schema.define(:version => 20150214092536) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20150213135945) do
     t.string   "std_code"
     t.string   "alternate_email"
     t.integer  "course_id"
-    t.string   "picture"
+    t.string   "image"
   end
 
   add_index "orientation_courses", ["course_id"], :name => "index_orientation_courses_on_course_id"

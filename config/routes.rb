@@ -2,6 +2,8 @@ AscDavv::Application.routes.draw do
   
   resources :feedbacks
 
+  match '/recorded' => 'feedbacks#success'
+
   resources :resource_people
 
   devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]
@@ -16,6 +18,7 @@ AscDavv::Application.routes.draw do
   resources :courses
 
   match '/courses_success' => 'courses#success'
+  
   resources :refresher_courses
 
   match '/refresher_record' => 'refresher_courses#record'

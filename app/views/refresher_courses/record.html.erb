@@ -21,7 +21,7 @@
                                 <th>Date of birth</th>
                                 <th>Mobile</th>
                                 <th>Residential address</th>
-                                <th>City</th>
+                                <th>Course</th>
                             </tr>
                         </thead>    
                         <% @refresher_courses.each do |refresher_course| %>
@@ -34,7 +34,7 @@
                                 <td><%= refresher_course.dob %></td>
                                 <td><%= refresher_course.mobile %></td>
                                 <td><%= refresher_course.res_address %></td>
-                                <td><%= refresher_course.city %></td>
+                                <td><%= refresher_course.course.course_name %></td>
                               </tr>
                           </tbody>    
                         <% end %>
