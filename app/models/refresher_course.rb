@@ -48,7 +48,7 @@ class RefresherCourse < ActiveRecord::Base
 end 
 
 #size of the image
-class ShorttermCourse < ActiveRecord::Base
+class RefresherCourse < ActiveRecord::Base
     validate :image_size_validation, :if => "image?"
 
     def image_size_validation

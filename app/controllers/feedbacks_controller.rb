@@ -1,6 +1,7 @@
 class FeedbacksController < ApplicationController
   before_filter :set_feedback, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin!
+  layout "adminDashboard"
   respond_to :html
 
   def index

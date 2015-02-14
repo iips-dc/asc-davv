@@ -48,7 +48,7 @@ class OrientationCourse < ActiveRecord::Base
 end  
 
 #size of the image
-class ShorttermCourse < ActiveRecord::Base
+class OrientationCourse < ActiveRecord::Base
     validate :image_size_validation, :if => "image?"
 
     def image_size_validation

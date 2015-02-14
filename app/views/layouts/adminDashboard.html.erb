@@ -92,7 +92,7 @@ Dated:11/01/2014
 
                         <% if can? :manage, ResourcePerson %>
                         <li>
-                            <a href="#"><i class="fa fa-calendar fa-fw"></i> Resource Person<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Resource Person<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <%= link_to "Resource People", resource_people_path %> 
@@ -125,6 +125,17 @@ Dated:11/01/2014
                             <!-- /.nav-second-level -->
                         </li>    
                         <% end %>
+
+                        <li>
+                            <a href="#"><i class="fa fa-folder fa-fw"></i> Feedback<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">        
+                                <li>
+                                    <%= link_to "New Feedback", new_feedback_path %> 
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

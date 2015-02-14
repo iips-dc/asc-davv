@@ -38,7 +38,7 @@ class ShorttermCourse < ActiveRecord::Base
 end
 
 #validates date
-class OrientationCourse < ActiveRecord::Base
+class ShorttermCourse < ActiveRecord::Base
   validate :valid_dates
   def valid_dates
     if pref_date1 >= pref_date2

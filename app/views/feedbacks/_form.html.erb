@@ -1,4 +1,4 @@
-<%= form_for(@feedback) do |f| %>
+<%= form_for(@feedback, :html => { :class => 'form-horizontal'}, :validate => true) do |f| %>
   <% if @feedback.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
@@ -10,28 +10,71 @@
       </ul>
     </div>
   <% end %>
+  <fieldset>
+    <div class="form-group">
+      <%= f.label :communication_skill, :class => 'label-control' %><br />
+      <%= f.radio_button :communication_skill, '1', :required => true %>        
+      <%= label :communication_skill, '1' %>
+      <%= f.radio_button :communication_skill, '2', :required => true %>        
+      <%= label :communication_skill, '2' %>
+      <%= f.radio_button :communication_skill, '3', :required => true %>        
+      <%= label :communication_skill, '3' %>
+      <%= f.radio_button :communication_skill, '4', :required => true %>        
+      <%= label :communication_skill, '4' %>
+      <%= f.radio_button :communication_skill, '5', :required => true %>        
+      <%= label :communication_skill, '5' %>
+      <p class="help-block">Select any one</p>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :usefulness_topic, :class => 'label-control' %><br />
+      <%= f.radio_button :usefulness_topic, '1', :required => true %>        
+      <%= label :usefulness_topic, '1' %>
+      <%= f.radio_button :usefulness_topic, '2', :required => true %>        
+      <%= label :usefulness_topic, '2' %>
+      <%= f.radio_button :usefulness_topic, '3', :required => true %>        
+      <%= label :usefulness_topic, '3' %>
+      <%= f.radio_button :usefulness_topic, '4', :required => true %>        
+      <%= label :usefulness_topic, '4' %>
+      <%= f.radio_button :usefulness_topic, '5', :required => true %>        
+      <%= label :usefulness_topic, '5' %>
+      <p class="help-block">Select any one</p>
+    </div>
 
-  <div class="field">
-    <%= f.label :communication_skill %><br />
-    <%= f.number_field :communication_skill %>
-  </div>
-  <div class="field">
-    <%= f.label :usefulness_topic %><br />
-    <%= f.number_field :usefulness_topic %>
-  </div>
-  <div class="field">
-    <%= f.label :competency_subject %><br />
-    <%= f.number_field :competency_subject %>
-  </div>
-  <div class="field">
-    <%= f.label :quality_lecture %><br />
-    <%= f.number_field :quality_lecture %>
-  </div>
-  <div class="field">
-    <%= f.label :resource_person %><br />
-    <%= f.text_field :resource_person %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+      <%= f.label :competency_subject, :class => 'label-control' %><br />
+      <%= f.radio_button :competency_subject, '1', :required => true %>        
+      <%= label :competency_subject, '1' %>
+      <%= f.radio_button :competency_subject, '2', :required => true %>        
+      <%= label :competency_subject, '2' %>
+      <%= f.radio_button :competency_subject, '3', :required => true %>        
+      <%= label :competency_subject, '3' %>
+      <%= f.radio_button :competency_subject, '4', :required => true %>        
+      <%= label :competency_subject, '4' %>
+      <%= f.radio_button :competency_subject, '5', :required => true %>        
+      <%= label :competency_subject, '5' %>
+      <p class="help-block">Select any one</p>
+    </div>
+    <div class="form-group">
+      <%= f.label :quality_lecture, :class => 'label-control' %><br />
+      <%= f.radio_button :quality_lecture, '1', :required => true %>        
+      <%= label :quality_lecture, '1' %>
+      <%= f.radio_button :quality_lecture, '2', :required => true %>        
+      <%= label :quality_lecture, '2' %>
+      <%= f.radio_button :quality_lecture, '3', :required => true %>        
+      <%= label :quality_lecture, '3' %>
+      <%= f.radio_button :quality_lecture, '4', :required => true %>        
+      <%= label :quality_lecture, '4' %>
+      <%= f.radio_button :quality_lecture, '5', :required => true %>        
+      <%= label :quality_lecture, '5' %>
+      <p class="help-block">Select any one</p>
+    </div>
+    <div class="form-group">
+      <%= f.label :resource_person %><br />
+      <%= collection_select(:feedback, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"})  %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
+  </fieldset>  
 <% end %>

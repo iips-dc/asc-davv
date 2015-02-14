@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150213054803) do
+ActiveRecord::Schema.define(:version => 20150213135945) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(:version => 20150213054803) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "feedbacks", :force => true do |t|
+    t.integer  "communication_skill"
+    t.integer  "usefulness_topic"
+    t.integer  "competency_subject"
+    t.integer  "quality_lecture"
+    t.integer  "resource_person_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "feedbacks", ["resource_person_id"], :name => "index_feedbacks_on_resource_person_id"
 
   create_table "interaction_programs", :force => true do |t|
     t.string   "name"
@@ -103,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20150213054803) do
     t.string   "std_code"
     t.string   "alternate_email"
     t.integer  "course_id"
-    t.string   "image"
+    t.string   "picture"
   end
 
   add_index "orientation_courses", ["course_id"], :name => "index_orientation_courses_on_course_id"
