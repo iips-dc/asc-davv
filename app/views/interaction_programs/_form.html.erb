@@ -259,7 +259,7 @@ Dated:08/1/2015
                   <%= f.label :course %>
                 </div>
                 <div class="col-sm-10">
-                  <%= collection_select(:interaction_program, :course_id, Course.find(:all, :conditions => ["lower(course_type)='interaction program'"]), :id, :course_name, {:prompt => "Select a Course"})  %>
+                  <%= collection_select(:interaction_program, :course_id, Course.find(:all, :conditions => ["lower(course_type)='interaction program' AND date('now') < start_date "]), :id, :course_name, {:prompt => "Select a Course"})  %>
                   <p class="help-block"> Choose a course to apply </p>
                 </div>
               </div>

@@ -129,6 +129,11 @@ Dated:11/01/2014
                         <li>
                             <a href="#"><i class="fa fa-folder fa-fw"></i> Feedback<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">        
+                                <% if can? :read, Feedback %>
+                                <li>
+                                    <%= link_to "Feedback Data", feedbacks_path %> 
+                                </li>
+                                <% end %>
                                 <li>
                                     <%= link_to "New Feedback", new_feedback_path %> 
                                 </li>

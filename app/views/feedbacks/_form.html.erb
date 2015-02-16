@@ -12,67 +12,110 @@
   <% end %>
   <fieldset>
     <div class="form-group">
-      <%= f.label :communication_skill, :class => 'label-control' %><br />
-      <%= f.radio_button :communication_skill, '1', :required => true %>        
-      <%= label :communication_skill, '1' %>
-      <%= f.radio_button :communication_skill, '2', :required => true %>        
-      <%= label :communication_skill, '2' %>
-      <%= f.radio_button :communication_skill, '3', :required => true %>        
-      <%= label :communication_skill, '3' %>
-      <%= f.radio_button :communication_skill, '4', :required => true %>        
-      <%= label :communication_skill, '4' %>
-      <%= f.radio_button :communication_skill, '5', :required => true %>        
-      <%= label :communication_skill, '5' %>
-      <p class="help-block">Select any one</p>
+      <div class="col-sm-6">
+        <%= f.label :course %>
+      </div>
+      <div class="col-sm-6">
+        <%= collection_select(:feedback, :course_id, Course.all, :id, :course_name, {:prompt => "Select a Course"})  %>
+      </div>  
     </div>
-    
+
+
     <div class="form-group">
-      <%= f.label :usefulness_topic, :class => 'label-control' %><br />
-      <%= f.radio_button :usefulness_topic, '1', :required => true %>        
-      <%= label :usefulness_topic, '1' %>
-      <%= f.radio_button :usefulness_topic, '2', :required => true %>        
-      <%= label :usefulness_topic, '2' %>
-      <%= f.radio_button :usefulness_topic, '3', :required => true %>        
-      <%= label :usefulness_topic, '3' %>
-      <%= f.radio_button :usefulness_topic, '4', :required => true %>        
-      <%= label :usefulness_topic, '4' %>
-      <%= f.radio_button :usefulness_topic, '5', :required => true %>        
-      <%= label :usefulness_topic, '5' %>
-      <p class="help-block">Select any one</p>
+      <div class="col-sm-6">
+        <%= f.label :resource_person %>
+      </div>
+      <div class="col-sm-6">
+        <%= collection_select(:feedback, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"})  %>
+      </div>  
     </div>
 
     <div class="form-group">
-      <%= f.label :competency_subject, :class => 'label-control' %><br />
-      <%= f.radio_button :competency_subject, '1', :required => true %>        
-      <%= label :competency_subject, '1' %>
-      <%= f.radio_button :competency_subject, '2', :required => true %>        
-      <%= label :competency_subject, '2' %>
-      <%= f.radio_button :competency_subject, '3', :required => true %>        
-      <%= label :competency_subject, '3' %>
-      <%= f.radio_button :competency_subject, '4', :required => true %>        
-      <%= label :competency_subject, '4' %>
-      <%= f.radio_button :competency_subject, '5', :required => true %>        
-      <%= label :competency_subject, '5' %>
-      <p class="help-block">Select any one</p>
-    </div>
+      <div class="table-responsive">
+        <table class="table borderless">
+        <thead>
+                <tr>
+                  <th style="border:none"></th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+        </thead>  
+        <tbody>           
+                <tr>
+                  <th class="active" style="border:none">Communication Skill</th>  
+                  <td class="info"><%= f.radio_button :communication_skill, '1', :required => true %></td>
+                  <td class="info"><%= f.radio_button :communication_skill, '2', :required => true %></td>
+                  <td class="info"><%= f.radio_button :communication_skill, '3', :required => true %></td>
+                  <td class="info"><%= f.radio_button :communication_skill, '4', :required => true %></td>
+                  <td class="info"><%= f.radio_button :communication_skill, '5', :required => true %></td>
+                </tr>
+        </tbody> 
+        </table>
+      </div>
+      <!-- /.table-responsive -->
+    </div> 
+    <!-- /.form-group --> 
+      
     <div class="form-group">
-      <%= f.label :quality_lecture, :class => 'label-control' %><br />
-      <%= f.radio_button :quality_lecture, '1', :required => true %>        
-      <%= label :quality_lecture, '1' %>
-      <%= f.radio_button :quality_lecture, '2', :required => true %>        
-      <%= label :quality_lecture, '2' %>
-      <%= f.radio_button :quality_lecture, '3', :required => true %>        
-      <%= label :quality_lecture, '3' %>
-      <%= f.radio_button :quality_lecture, '4', :required => true %>        
-      <%= label :quality_lecture, '4' %>
-      <%= f.radio_button :quality_lecture, '5', :required => true %>        
-      <%= label :quality_lecture, '5' %>
-      <p class="help-block">Select any one</p>
-    </div>
+      <div class="table-responsive">
+        <table class="table">
+        <tbody>
+                <tr>
+                  <th class="active" style="border:none">Usefulness Of Topic</th>
+                  <td class="info"><%= f.radio_button :usefulness_topic, '1', :required => true %></td>
+                  <td class="info"><%= f.radio_button :usefulness_topic, '2', :required => true %></td>
+                  <td class="info"><%= f.radio_button :usefulness_topic, '3', :required => true %></td>
+                  <td class="info"><%= f.radio_button :usefulness_topic, '4', :required => true %></td>
+                  <td class="info"><%= f.radio_button :usefulness_topic, '5', :required => true %></td>
+                </tr>
+        </tbody> 
+        </table>
+      </div>
+      <!-- /.table-responsive -->
+    </div> 
+    <!-- /.form-group -->
+
     <div class="form-group">
-      <%= f.label :resource_person %><br />
-      <%= collection_select(:feedback, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"})  %>
-    </div>
+      <div class="table-responsive">
+        <table class="table">
+        <tbody>
+                <tr>
+                  <th class="active" style="border:none">Competency Subject</th>
+                  <td class="info"><%= f.radio_button :competency_subject, '1', :required => true %></td>
+                  <td class="info"><%= f.radio_button :competency_subject, '2', :required => true %></td>
+                  <td class="info"><%= f.radio_button :competency_subject, '3', :required => true %></td>
+                  <td class="info"><%= f.radio_button :competency_subject, '4', :required => true %></td>
+                  <td class="info"><%= f.radio_button :competency_subject, '5', :required => true %></td>
+                </tr>
+        </tbody> 
+        </table>
+      </div>
+      <!-- /.table-responsive -->
+    </div> 
+    <!-- /.form-group -->
+
+    <div class="form-group">
+      <div class="table-responsive">
+        <table class="table">
+        <tbody>
+                <tr>
+                  <th class="active" style="border:none">Quality Of Lecture</th>
+                  <td class="info"><%= f.radio_button :quality_lecture, '1', :required => true %></td>
+                  <td class="info"><%= f.radio_button :quality_lecture, '2', :required => true %></td>
+                  <td class="info"><%= f.radio_button :quality_lecture, '3', :required => true %></td>
+                  <td class="info"><%= f.radio_button :quality_lecture, '4', :required => true %></td>
+                  <td class="info"><%= f.radio_button :quality_lecture, '5', :required => true %></td>
+                </tr>
+        </tbody> 
+        </table>
+      </div>
+      <!-- /.table-responsive -->
+    </div> 
+    <!-- /.form-group -->
+
     <div class="form-group">
       <%= f.submit "Submit", :class => "btn btn-primary" %>
     </div>
