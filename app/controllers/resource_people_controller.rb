@@ -26,7 +26,6 @@ class ResourcePeopleController < ApplicationController
   def create
     @resource_person = ResourcePerson.new(params[:resource_person])
     
-    respond_with(@resource_person)
     respond_to do |format|
       if @resource_person.save
         format.html { redirect_to courses_success_path }

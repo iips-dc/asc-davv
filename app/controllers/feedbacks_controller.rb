@@ -7,7 +7,6 @@ class FeedbacksController < ApplicationController
 
   def index
     @feedbacks = Kaminari.paginate_array(Feedback.all).page(params[:page]).per(4)
-    respond_with(@feedbacks)
   end
 
   def show
