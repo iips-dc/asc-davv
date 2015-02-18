@@ -3,7 +3,7 @@ class FeedbacksController < ApplicationController
   before_filter :authenticate_admin!
   load_and_authorize_resource
   layout "adminDashboard"
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @feedbacks = Kaminari.paginate_array(Feedback.all).page(params[:page]).per(4)
