@@ -14,3 +14,4 @@
 //= require bootstrap-datepicker
 //= require rails.validations
 //= require_tree .
+//= require d3

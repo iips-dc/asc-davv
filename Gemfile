@@ -60,3 +60,4 @@ gem "font-awesome-rails"
 
 # To use debugger
 # gem 'debugger'
+gem "d3-rails"
