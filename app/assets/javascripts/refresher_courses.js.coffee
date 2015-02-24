@@ -49,7 +49,14 @@ $(document).ready ->
     $("#tabs a[href=\"#detail3\"]").tab "show"
     return
 
-  $("#toggle8").attr "disabled", true
-  return
+  $("#toggle8").click ->
+    $("#tabs a[href=\"#detail5\"]").tab "show"
+    return
 
-  
+  #Payment Details Tab
+  $("#toggle9").click ->
+    $("#tabs a[href=\"#detail4\"]").tab "show"
+    return
+
+  $("#toggle10").attr "disabled", true
+  return  

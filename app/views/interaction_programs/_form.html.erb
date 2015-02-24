@@ -22,6 +22,7 @@ Dated:08/1/2015
     <li role="presentation"><a href="#detail2" aria-controls="detail2" role="tab" data-toggle="tab">University Details</a></li>
     <li role="presentation"><a href="#detail3" aria-controls="detail3" role="tab" data-toggle="tab">Course Details</a></li>
     <li role="presentation"><a href="#detail4" aria-controls="detail4" role="tab" data-toggle="tab">Contact Details</a></li>
+    <li role="presentation"><a href="#detail5" aria-controls="detail5" role="tab" data-toggle="tab">Payment Details</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -382,15 +383,76 @@ Dated:08/1/2015
               <span class="btn btn-success" id="toggle8">Next</span>
             </div>
             <!-- Prev-Next Button -->
-
-            <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
-              <%= link_to 'Back', root_path, :class => "btn btn-default" %>
-              <%= f.submit "Submit", :class => "btn btn-primary"%>        
-            </div>
-            <!-- Submit Button-->  
+  
     </div>    
     <!-- Panel -->
       
+    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail5">
+          <div class="panel-heading input-lg">
+              <h4> Payment Details </h4>
+          </div>
+          <!-- Panel-head -->
+
+          <div class="panel-body">
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :dd_number %>
+                </div>
+                <div class="col-sm-10">
+                  <%= f.text_field :dd_number, :placeholder => "Enter DD Number", :class => 'form-control', :required => true %>
+                </div>
+              </div>
+              <!-- DD number Field -->
+
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :dd_date %>
+                </div>
+                <div class="col-sm-10">
+                  <%= f.text_field :dd_date, :placeholder => "Enter DD date", :class => 'datepicker', :required => true %>
+                  <i class="fa fa-calendar"></i>
+                  <p class="help-block"> Date Format: YYYY/MM/DD </p>
+                </div>
+              </div>
+              <!-- DD Date Field -->
+
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :bank_name %>
+                </div>
+                <div class="col-sm-10">
+                  <%= f.text_field :bank_name, :placeholder => "Enter Bank Name", :class => 'form-control', :required => true %>
+                </div>
+              </div>
+              <!-- Bank name Field -->
+
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :amount %>
+                </div>
+                <div class="col-sm-10">
+                  <%= f.text_field :amount, :placeholder => "Enter DD Amount", :class => 'form-control', :required => true %>
+                </div>
+              </div>
+              <!-- Amount Field -->
+          </div>
+          <!-- Panel-body -->
+
+          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+            <span class="btn btn-success" id="toggle9">Previous</span>
+            <span class="btn btn-success" id="toggle10">Next</span>
+          </div>
+          <!-- Prev-Next Button -->
+
+          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+            <%= link_to 'Back', root_path, :class => "btn btn-default" %>
+            <%= f.submit "Submit", :class => "btn btn-primary"%>        
+          </div>
+          <!-- Submit Button-->  
+      
+      </div>    
+      <!-- Panel -->
+
   </div>
   <!-- Tab Content-->
 
