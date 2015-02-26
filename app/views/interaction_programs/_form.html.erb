@@ -39,7 +39,7 @@ Dated:08/1/2015
                 <div class="col-sm-2 label-control">
                   <%= f.label :Name %>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                   <%= f.text_field :name, :placeholder => "Enter Full Name", :class => 'form-control', :autofocus => true, :required => true %>
                 </div>
             </div>
@@ -47,10 +47,12 @@ Dated:08/1/2015
             
             <div class="form-group">
                 <div class="col-sm-2 label-control">
-                  <%= f.label :Upload_image %>
+                  <%= f.label :Upload_image, "Upload Your Image" %>
                 </div>
                 <div class="col-sm-10">
                   <%= f.file_field :image, :required => true %>
+                  <%= f.hidden_field :image_cache %>
+                  <p class="help-block">Image Size Should Be Less Than 1 MB</p>
                 </div>
             </div>
             <!-- Image Field -->
@@ -59,7 +61,7 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">          
                 <%= f.label :Gender %>
               </div>           
-              <div class="col-sm-10">   
+              <div class="col-sm-8">   
                 <%= f.radio_button :gender, 'male', :required => true %>        
                 <%= label :Gender, 'Male' %>
                 <%= f.radio_button :gender, 'female', :required => true %>
@@ -79,20 +81,19 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">
                 <%= f.label :Religion %>
               </div>
-              <div class="col-sm-10">
-                <%= f.select :religion, options_for_select([['Select a Religion',''], "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity" ]), :required => true %>
+              <div class="col-sm-4">
+                <%= f.select(:religion,[['Select a Religion',''], "Hinduism", "Sikhism", "Buddhism", "Jainism", "Islam", "Christanity", "Other" ], {}, { :class => 'form-control', :required => true })  %>
                 <p class="help-block"> Select Your Religion </p>
               </div>
             </div>
             <!-- Religion Field -->
-  
 
             <div class="form-group">
               <div class="col-sm-2 label-control">
                 <%= f.label :Category %>
               </div>
-              <div class="col-sm-10">
-                <%= f.select :category, options_for_select([['Select a Category',''],"General", "OBC", "SC", "ST" ]), :required => true %>
+              <div class="col-sm-4">
+                <%= f.select(:category,[['Select a Category',''], "General", "OBC", "SC", "ST", "Other" ],  {}, { :class => 'form-control', :required => true }) %>
               </div>
               <span class="col-sm-offset-2 col-sm-10">        
               <p class="help-block"> Select Your Category </p>
@@ -100,24 +101,24 @@ Dated:08/1/2015
             </div>
             <!-- Category Field -->
 
-            
             <div class="form-group">
               <div class="col-sm-2 label-control">
-                <%= f.label :Marital_status %>
+                <%= f.label :Marital_status, "Marital Status" %>
               </div>
               <div class="col-sm-10">
-                <%= f.radio_button :marital_status, 'married', :required => true %>        
+                <%= f.radio_button :marital_status, 'Married', :required => true %>        
                 <%= label :Marital_status, 'Married' %>
-                <%= f.radio_button :marital_status, 'unmarried', :required => true %>
+                <%= f.radio_button :marital_status, 'Unmarried', :required => true %>
                 <%= label :Marital_status, 'Unmarried' %>
-                <%= f.radio_button :marital_status, 'divorced', :required => true %>
+                <%= f.radio_button :marital_status, 'Divorced', :required => true %>
                 <%= label :Marital_status, 'Divorced' %>
-                <%= f.radio_button :marital_status, 'widow', :required => true %>
+                <%= f.radio_button :marital_status, 'Widow', :required => true %>
                 <%= label :Marital_status, 'Widow' %>
+                <%= f.radio_button :marital_status, 'Widower', :required => true %>
+                <%= label :Marital_status, 'Widower' %>
               </div>   
             </div>
             <!-- Marital Status Field -->
-
         </div>
         <!-- Panel-body -->
    
@@ -141,7 +142,7 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">
                 <%= f.label :Stream %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :stream, :placeholder => "Enter Stream", :class => 'form-control', :required => true %>
               </div>
             </div>
@@ -149,9 +150,10 @@ Dated:08/1/2015
 
             
             <div class="form-group">
-              <div class="col-sm-2 label-control"><%= f.label :Date_Of_Joining_phd %>
+              <div class="col-sm-2 label-control">
+                <%= f.label :Date_Of_Joining_phd, "Date OF Joining In phd" %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :date_of_joining_phd, :placeholder => "Select Your Date Of Joining", :class => 'datepicker', :required => true %>
                 <i class="fa fa-calendar"></i>
                 <p class="help-block"> Date Format: YYYY/MM/DD </p>
@@ -162,9 +164,9 @@ Dated:08/1/2015
 
             
             <div class="form-group">
-              <div class="col-sm-2 label-control"><%= f.label :research_experience %>
+              <div class="col-sm-2 label-control"><%= f.label :research_experience, "Research Experience" %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :research_experience, :placeholder => "Enter Research Experience", :class => 'form-control', :required => true %>
                 <p class="help-block"> Exampele: 1 years 3 months </p>
               </div>
@@ -177,7 +179,7 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">
                 <%= f.label :College %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :college, :placeholder => "Enter College/UTD", :class => 'form-control', :required => true %>
               </div>
             </div>
@@ -187,7 +189,7 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">
                 <%= f.label :University %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :university, :placeholder => "Enter University", :class => 'form-control', :required => true %>
               </div>
             </div>
@@ -199,7 +201,7 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">
                 <%= f.label :City %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :city, :placeholder => "Enter City", :class => 'form-control', :required => true %>
               </div>
             </div>
@@ -209,7 +211,7 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">
                 <%= f.label :District %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :district, :placeholder => "Enter District", :class => 'form-control', :required => true %>
               </div>
             </div>
@@ -219,8 +221,8 @@ Dated:08/1/2015
               <div class="col-sm-2 label-control">
                 <%= f.label :State %>
               </div>
-              <div class="col-sm-10">
-                <%= f.select :state, options_for_select([['Select a State',''],"Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]), :required => true %>
+              <div class="col-sm-4">
+                <%= f.select(:state, [['Select a State',''],"Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha" , "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"],  {}, { :class => 'form-control', :required => true }) %>
                 <p class="help-block"> Select State </p>
               </div>
             </div>
@@ -229,9 +231,9 @@ Dated:08/1/2015
 
             <div class="form-group">
               <div class="col-sm-2 label-control">
-                <%= f.label :University_pin %>
+                <%= f.label :University_pin, "University Pin" %>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <%= f.text_field :university_pin, :placeholder => "Enter Pin", :class => 'form-control', :required => true %>
               </div>
             </div>
@@ -259,38 +261,9 @@ Dated:08/1/2015
                 <div class="col-sm-2 label-control">
                   <%= f.label :course %>
                 </div>
-                <div class="col-sm-10">
-                  <%= collection_select(:interaction_program, :course_id, Course.find(:all, :conditions => ["lower(course_type)='interaction program' AND date('now') < start_date "]), :id, :course_name, {:prompt => "Select a Course"})  %>
+                <div class="col-sm-4">
+                  <%= collection_select(:interaction_program, :course_id, Course.find(:all, :conditions => ["lower(course_type)='interaction program' AND date('now') < start_date "]), :id, :course_name, {:prompt => "Select a Course"}, { :class => 'form-control'})  %>
                   <p class="help-block"> Choose a course to apply </p>
-                </div>
-              </div>
-              <!-- Course Field -->
-          </div>
-          <!-- Panel-body -->
-
-          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
-            <span class="btn btn-success" id="toggle5">Previous</span>
-            <span class="btn btn-success" id="toggle6">Next</span>
-          </div>
-          <!-- Prev-Next Button -->
-
-      </div>    
-      <!-- Panel -->
-  
-    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail3">
-          <div class="panel-heading input-lg">
-              <h4> Course Details </h4>
-          </div>
-          <!-- Panel-head -->
-
-          <div class="panel-body">
-              <div class="form-group">
-                <div class="col-sm-2 label-control">
-                  <%= f.label :select_course %>
-                </div>
-                <div class="col-sm-10">
-                  <%= collection_select :shortterm_course, :course_id, Course.find(:all, :conditions => ["lower(course_type) = 'shortterm course'"]), :id, :course_name, :prompt => "Select a course" %>
-                  <p class="help-block"> Select a Course to Apply</p>
                 </div>
               </div>
               <!-- Course Field -->
@@ -317,7 +290,7 @@ Dated:08/1/2015
                   <div class="col-sm-2 label-control">
                     <%= f.label :Email %>
                   </div>
-                  <div class="col-sm-10">
+                  <div class="col-sm-8">
                     <%= f.text_field :email, :placeholder => "Enter E-mail Address", :class => 'form-control', :required => true %>
                   </div>
                 </div>
@@ -329,10 +302,10 @@ Dated:08/1/2015
                   <div class="col-sm-2 label-control">
                     <%= f.label :Landline %>
                   </div>
-                  <div class="col-sm-3">
+                  <div class="col-sm-2">
                     <%= f.text_field :std_code, :placeholder => "STD Code", :class => 'form-control' %> <!-- STD Code Field not added in table -->
                   </div>
-                  <div class="col-sm-7">
+                  <div class="col-sm-6">
                     <%= f.text_field :landline, :placeholder => "Enter Landline Number", :class => 'form-control' %>
                   </div>
                 </div>
@@ -345,7 +318,7 @@ Dated:08/1/2015
                   <div class="col-sm-2 label-control">
                     <%= text_field_tag(:mobile, "+91", :class => 'form-control', :disabled => true) %> 
                   </div>
-                  <div class="col-sm-8">
+                  <div class="col-sm-6">
                     <%= f.text_field :mobile, :placeholder => "Enter Mobile Number", :class => 'form-control', :required => true %>
                   </div>
                 </div>
@@ -356,7 +329,7 @@ Dated:08/1/2015
                   <div class="col-sm-2 label-control">
                     <%= f.label :residential_Address %>
                   </div>
-                  <div class="col-sm-10">
+                  <div class="col-sm-8">
                     <%= f.text_area :res_address, :class => 'form-control', :placeholder => "Enter Full Residential Address", :style => "height:100px", :required => true %><br/>
                   </div>
                 </div>
@@ -366,10 +339,9 @@ Dated:08/1/2015
 
                 <div class="form-group">
                   <div class="col-sm-2 label-control">
-
                     <%= f.label :Pin %>
                   </div>
-                  <div class="col-sm-10">
+                  <div class="col-sm-8">
                     <%= f.text_field :pin, :placeholder => "Enter pin", :class => 'form-control', :required => true %>
                   </div>
                 </div>
@@ -396,9 +368,9 @@ Dated:08/1/2015
           <div class="panel-body">
               <div class="form-group">
                 <div class="col-sm-2 label-control">
-                  <%= f.label :dd_number %>
+                  <%= f.label :dd_number, "DD Number" %>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                   <%= f.text_field :dd_number, :placeholder => "Enter DD Number", :class => 'form-control', :required => true %>
                 </div>
               </div>
@@ -406,9 +378,9 @@ Dated:08/1/2015
 
               <div class="form-group">
                 <div class="col-sm-2 label-control">
-                  <%= f.label :dd_date %>
+                  <%= f.label :dd_date, "DD Date" %>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                   <%= f.text_field :dd_date, :placeholder => "Enter DD date", :class => 'datepicker', :required => true %>
                   <i class="fa fa-calendar"></i>
                   <p class="help-block"> Date Format: YYYY/MM/DD </p>
@@ -418,9 +390,9 @@ Dated:08/1/2015
 
               <div class="form-group">
                 <div class="col-sm-2 label-control">
-                  <%= f.label :bank_name %>
+                  <%= f.label :bank_name, "Bank Name" %>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                   <%= f.text_field :bank_name, :placeholder => "Enter Bank Name", :class => 'form-control', :required => true %>
                 </div>
               </div>
@@ -430,7 +402,7 @@ Dated:08/1/2015
                 <div class="col-sm-2 label-control">
                   <%= f.label :amount %>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                   <%= f.text_field :amount, :placeholder => "Enter DD Amount", :class => 'form-control', :required => true %>
                 </div>
               </div>

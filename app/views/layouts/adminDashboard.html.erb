@@ -137,9 +137,11 @@ Dated:11/01/2014
                                     <%= link_to "Feedback Data", feedbacks_path %> 
                                 </li>
                                 <% end %>
+                                <% if can? :read, Feedback %>
                                 <li>
                                     <%= link_to "Feedback Report", report_path %> 
                                 </li>
+                                <% end %>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
