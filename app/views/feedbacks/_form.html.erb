@@ -12,21 +12,21 @@
   <% end %>
   <fieldset>
     <div class="form-group">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <%= f.label :course %>
       </div>
-      <div class="col-sm-6">
-        <%= collection_select(:feedback, :course_id, Course.all, :id, :course_name, {:prompt => "Select a Course"})  %>
+      <div class="col-md-6">
+        <%= collection_select(:feedback, :course_id, Course.all, :id, :course_name, {:prompt => "Select a Course"}, {:class => 'form-control'})  %>
       </div>  
     </div>
 
 
     <div class="form-group">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <%= f.label :resource_person %>
       </div>
-      <div class="col-sm-6">
-        <%= collection_select(:feedback, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"})  %>
+      <div class="col-md-6">
+        <%= collection_select(:feedback, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"}, {:class => 'form-control'})  %>
       </div>  
     </div>
 
@@ -117,7 +117,9 @@
     <!-- /.form-group -->
 
     <div class="form-group">
-      <%= f.submit "Submit", :class => "btn btn-primary" %>
+      <div class="col-md-offset-4 col-md-6">
+        <%= f.submit "Submit", :class => "btn btn-primary" %>
+      </div>  
     </div>
   </fieldset>  
 <% end %>

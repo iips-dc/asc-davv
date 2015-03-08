@@ -10,7 +10,6 @@
 <!-- row -->
 <div class="row">
     <div class="col-lg-12">
-        <%= paginate @resource_people %>
         <div class="panel panel-default">
             <div class="panel-heading">
               <b>List Of Courses</b>
@@ -38,6 +37,7 @@
                         <% end %>
                       </tbody>  
                     </table>
+                    <%= paginate @resource_people %>
                 </div>
                 <!-- /.table-responsive -->       
               </div>

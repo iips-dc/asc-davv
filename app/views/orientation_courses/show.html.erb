@@ -6,89 +6,144 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-<!-- row -->
-<div class="row">
-    <div class="col-lg-12">
-        <%= image_tag(@orientation_course.image_url(:thumb).to_s, :class => @orientation_course.image? ? "img-responsive img-thumbnail" : nil) %> 
-          <div class="table-responsive">
-            <table class="table table-striped table-hover">        
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Gender</th>
-                                <th>Religion</th>
-                                <th>Category</th>
-                                <th>Marital status</th>
-                                <th>Email</th>
-                                <th>Stream</th>
-                                <th>College</th>
-                            </tr>       
-                            <tr class="success">
-                                <td><%= @orientation_course.id %></td>
-                                <td><%= @orientation_course.name %></td>
-                                <td><%= @orientation_course.gender %></td>
-                                <td><%= @orientation_course.religion %></td>
-                                <td><%= @orientation_course.category %></td>
-                                <td><%= @orientation_course.marital_status %></td>
-                                <td><%= @orientation_course.email %></td>
-                                <td><%= @orientation_course.stream %></td>
-                                <td><%= @orientation_course.college %></td>
-                            </tr>    
-                      </table>   
-                      <table class="table table-striped table-hover">          
-                            <tr>    
-                                <th>University</th>
-                                <th>City</th>
-                                <th>District</th>
-                                <th>State</th>
-                                <th>Position</th>
-                                <th>Payscale</th>
-                                <th>Subject</th>
-                                <th>Std Code</th>
-                                <th>Landline</th>
-                            </tr>
-                            <tr class="success">
-                                <td><%= @orientation_course.university %></td>
-                                <td><%= @orientation_course.city %></td>
-                                <td><%= @orientation_course.district %></td>
-                                <td><%= @orientation_course.state %></td>
-                                <td><%= @orientation_course.position %></td>
-                                <td><%= @orientation_course.payscale %></td>
-                                <td><%= @orientation_course.subject %></td>
-                                <td><%= @orientation_course.std_code %></td>
-                                <td><%= @orientation_course.landline %></td>
-                            </tr>
-                      </table>                
-                      <table class="table table-striped table-hover">          
-                            <tr>    
-                                <th>Mobile</th>
-                                <th>University pin</th>
-                                <th>Dob</th>
-                                <th>Date of joining</th>
-                                <th>Preferred date1</th>
-                                <th>Preferred date2</th>
-                                <th>Residential address</th>
-                                <th>Pin</th>
-                                <th>Phd</th>
-                            </tr>
-                            <tr class="success">    
-                                <td><%= @orientation_course.mobile %></td>
-                                <td><%= @orientation_course.university_pin %></td>
-                                <td><%= @orientation_course.dob %></td>
-                                <td><%= @orientation_course.date_of_joining %></td>
-                                <td><%= @orientation_course.pref_date1 %></td>
-                                <td><%= @orientation_course.pref_date2 %></td>
-                                <td><%= @orientation_course.res_address %></td>
-                                <td><%= @orientation_course.pin %></td>
-                                <td><%= @orientation_course.phd %></td>
-                            </tr>        
-                      </table>
+
+<div class="col-md-offset-1 col-md-10 col-md-offset-1">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">#<%= @orientation_course.id %> <%= @orientation_course.name %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <%= image_tag(@orientation_course.image_url(:thumb).to_s, :class => @orientation_course.image? ? "img-responsive img-thumbnail" : nil) %> </div>
+                
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Date Of Birth:</td>
+                        <td><%= @orientation_course.dob %></td>
+                      </tr>  
+                      <tr>
+                        <td>Gender:</td>
+                        <td><%= @orientation_course.gender %></td>
+                      </tr>
+                      <tr>
+                        <td>Religion:</td>
+                        <td><%=@orientation_course.religion %></td>
+                      </tr>
+                      <tr>
+                        <td>Category</td>
+                        <td><%=@orientation_course.category %></td>
+                      </tr>
+                      <tr>
+                        <td>Marital Status:</td>
+                        <td><%= @orientation_course.marital_status %></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><%= @orientation_course.email %></td>
+                      </tr>
+                      <tr>
+                        <td>Stream</td>
+                        <td><%= @orientation_course.stream %></td>
+                      </tr>
+                      <tr>
+                        <td>College</td>
+                        <td><%= @orientation_course.college %></td>
+                      </tr>
+                      <tr>
+                        <td>University</td>
+                        <td><%= @orientation_course.university %></td>
+                      </tr>
+                      <tr>
+                        <td>University Pin</td>
+                        <td><%= @orientation_course.university_pin %></td>
+                      </tr>
+                      <tr>
+                        <td>City</td>
+                        <td><%= @orientation_course.city %></td>
+                      </tr>
+                      <tr>
+                        <td>District</td>
+                        <td><%= @orientation_course.district %></td>
+                      </tr>
+                      <tr>
+                        <td>State</td>
+                        <td><%= @orientation_course.state %></td>
+                      </tr>
+                      <tr>
+                        <td>Position</td>
+                        <td><%= @orientation_course.position %></td>
+                      </tr>
+                      <tr>
+                        <td>Phd</td>
+                        <td><%= @orientation_course.phd %></td>
+                      </tr>
+                      <tr>
+                        <td>Payscale</td>
+                        <td><%= @orientation_course.payscale %></td>
+                      </tr> 
+                      <tr>
+                        <td>Subject</td>
+                        <td><%= @orientation_course.subject %></td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Joining</td>
+                        <td><%= @orientation_course.date_of_joining %></td>
+                      </tr>
+                      <tr>
+                        <td>Landline</td>
+                        <td><%= @orientation_course.std_code %>-<%= @orientation_course.landline %></td>
+                      </tr>
+                      <tr>
+                        <td>Mobile</td>
+                        <td><%= @orientation_course.mobile %></td>
+                      </tr>
+                      <tr>
+                        <td>Preferred Date 1</td>
+                        <td><%= @orientation_course.pref_date1 %></td>
+                      </tr>
+                      <tr>
+                        <td>Preferred Date 2</td>
+                        <td><%= @orientation_course.pref_date2 %></td>
+                      </tr>
+                      <tr>
+                        <td>Residential Address</td>
+                        <td><%= @orientation_course.res_address %></td>
+                      </tr>
+                      <tr>
+                        <td>Pin</td>
+                        <td><%= @orientation_course.pin %></td>
+                      </tr>
+                      <tr>
+                        <td>DD Number</td>
+                        <td><%= @orientation_course.dd_number %></td>
+                      </tr>
+                      <tr>
+                        <td>DD Date</td>
+                        <td><%= @orientation_course.dd_date %></td>
+                      </tr>
+                      <tr>
+                        <td>Bank Name</td>
+                        <td><%= @orientation_course.bank_name %></td>
+                      </tr>
+                      <tr>
+                        <td>Amount</td>
+                        <td><%= @orientation_course.amount %></td>
+                      </tr>
+                    </tbody>
+                  </table>   
                 </div>
-                <!-- /.table-responsive -->
-            <%= link_to 'Edit', edit_orientation_course_path(@orientation_course), :class => 'btn btn-default' if can? :update, OrientationCourse %> 
-            <%= link_to 'Delete', orientation_course_path, :class => 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, OrientationCourse %>
-            <%= link_to 'Back', orientation_record_path, :class => 'btn btn-default' %>        
+                <!-- /. col-md-9 -->
+              </div>
+              <!-- /. row -->
         </div>
-        <!-- /.col-lg-12 -->
+        <!-- /. panel body -->
+
+    </div>
+    <!-- /. panel --> 
+    <%= link_to 'Edit', edit_orientation_course_path(@orientation_course), :class => 'btn btn-default' if can? :update, OrientationCourse%>
+    <%= link_to 'Delete', orientation_course_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } if can? :destroy, OrientationCourse %> 
+    <%= link_to 'Back', orientation_record_path, :class => 'btn btn-default' %>
 </div>
-<!-- /. row -->
+<!-- /. offset -->
