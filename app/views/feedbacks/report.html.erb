@@ -5,7 +5,6 @@
 </div>
 <svg class="chart center-block"></svg>
 <br />
-<button>Random Data</button>
  
 <style>
  
@@ -168,37 +167,5 @@ d3.select("#tooltip").classed("hidden", true);
  
 });
  
-// function generate bar
-function random_bar(data){
- 
-d3.selectAll(".bar")
-.data(data)
-.transition()
-//.delay(500)
-.duration(1000)
-.ease("linear")
-.attr("fill", function(d) { return "rgb(" + Math.round(d.communication_skill * 1000) + ",10, 100)"; })
-.attr("x", function(d) { return x(d.person_name); })
-.attr("y", function(d) { return y(d.communication_skill); })
-.attr("height", function(d) { return height - y(d.communication_skill); })
-;
-}
- 
-// random data
-d3.select("button")
-.on("click", function() {
- 
-//console.log(data.length);
-var numValues = data.length;
- 
-for (var i = 0; i < numValues; i++) {
- 
-var newNumber = Math.random() * 0.12 ; //New random integer (0-25)
-data[i].communication_skill = newNumber;//Add new number to array
-}
- 
-//console.log(data);
-random_bar(data);
-});
- 
+
 </script>
