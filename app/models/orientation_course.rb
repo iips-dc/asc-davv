@@ -1,6 +1,6 @@
 class OrientationCourse < ActiveRecord::Base
   belongs_to :course
-  attr_accessible :category, :city, :college, :subject, :date_of_joining, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :payscale, :phd, :pin, :position, :pref_date1, :pref_date2, :religion, :res_address, :state, :stream, :university, :university_pin, :std_code, :alternate_email, :image, :dd_number, :dd_date, :bank_name, :amount, :course_id
+  attr_accessible :category, :city, :college, :subject, :date_of_joining, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :payscale, :phd, :pin, :position, :pref_date1, :pref_date2, :religion, :res_address, :state, :stream, :university, :university_pin, :std_code, :alternate_email, :image, :image_cache, :dd_number, :dd_date, :bank_name, :amount, :course_id
   mount_uploader :image, ImageUploader
 end
 
