@@ -1,18 +1,19 @@
-<div id="tooltip">
 
-<span id="alfabet" style='line-height:3em; font:2em sans-serif;'></span>
-<p><span id="value">100</span></p>
-</div>
 <svg class="chart center-block"></svg>
 <br />
- 
+<div id="tooltip">
+
+<span id="alfabet" style='line-height:3em; font:1em sans-serif;'>A</span>
+<p><span id="value">100</span></p>
+</div>
 <style>
- 
+
 #tooltip {
 position: absolute;
 width: 220px;
 height: auto;
 padding: 10px;
+font-size: 15px;
 background-color: white;
 -webkit-border-radius: 10px;
 -moz-border-radius: 10px;
@@ -34,6 +35,13 @@ font-size: 16px;
 line-height: 20px;
 }
  
+
+
+
+
+
+
+
 .axis text {
 font: 10px sans-serif;
 }
@@ -50,7 +58,7 @@ display: none;
 }
  
 rect {
-	
+  
 -moz-transition: all 0.3s;
 -o-transition: all 0.3s;
 -webkit-transition: all 0.3s;
@@ -79,13 +87,15 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
 .scale(y)
 .orient("left");
+
+
  
 var chart = d3.select(".chart")
 .attr("width", width + margin.left + margin.right)
 .attr("height", height + margin.top + margin.bottom)
 .append("g")
 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
- 
+
 var data;
  
 d3.json("feedbacks.json", function(error, json) {
@@ -96,7 +106,7 @@ data = json;
  
 x.domain(data.map(function(d) { return d.person_name; }));
  
-y.domain([0, d3.max(data, function(d) { return d.communication_skill; })]);
+y.domain([0, d3.max(data, function(d) { return d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic; })]);
  console.log(data);
 chart.append("g")
 .attr("class", "x axis")
@@ -114,10 +124,11 @@ chart.selectAll(".bar")
 .attr("class", "bar")
 .attr("id", function(d) { return 'bar'+d.person_name;})
 .attr("x", function(d) { return x(d.person_name); })
-.attr("y", function(d) { return y(d.communication_skill); })
-.attr("height", function(d) { return height - y(d.communication_skill); })
+.attr("y", function(d) { return y(d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic); })
+.attr("height", function(d) { return height - y(d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic); })
 .attr("width", x.rangeBand())
 .attr("fill", function(d) { return "rgb(17,41,89)"; })
+
  
 .on("click", function(d){
 window.open(d.fb, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
@@ -127,7 +138,7 @@ window.open(d.fb, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,st
 d3.select(this)
 .transition()
 .duration(50)
-.attr("fill", "#389BF2");
+.attr("fill", "#CC0000");
  
 //Get this bar's x/y values, then augment for the tooltip
 var xPosition = parseFloat(d3.select(this).attr("x")) + x.rangeBand() / 2;
@@ -138,13 +149,12 @@ d3.select("#tooltip")
 .style("left", xPosition + "px")
 .style("top", yPosition + "px")
 .select("#value")
-.text(d.communication_skill);
+.text(d.frequency);
  
 d3.select("#alfabet")
-.text(d.person_name);
+.html("Name : "+d.person_name +"<br>"+ "Course Name : "+d.course_name + "<br>"+ "Communication skills : " + d.communication_skill +"<br>"+ "Competency Subject : " + d.competency_subject +"<br>"+ "Quality Lecture : " + d.quality_lecture +"<br>"+ "Usefulness Topic : " + d.usefulness_topic    );
  
-d3.select("#pic")
-.attr("src","img/"+d.pic);
+
  
 //Show the tooltip
 d3.select("#tooltip").classed("hidden", false);
@@ -155,17 +165,18 @@ d3.select(this)
 .transition()
 .delay(100)
 .duration(250)
-.attr("fill", function(d) { return "rgb(17,41,89)"; })
+.attr("fill", function(d) { return "rgb(" + Math.round(d.frequency * 1000) + ",10, 100)"; })
  
 //Hide the tooltip
 d3.select("#tooltip").classed("hidden", true);
  
 })
 .append("title")
-.text(function(d) {  return d.person_name + " value is " + d.communication_skill;});
+.text(function(d) {  return d.letter + " value is " + d.frequency;});
 ;
  
 });
  
+
 
 </script>
