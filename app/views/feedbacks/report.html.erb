@@ -55,6 +55,7 @@ shape-rendering: crispEdges;
  
 .x.axis path {
 display: none;
+
 }
  
 rect {
@@ -89,6 +90,10 @@ var yAxis = d3.svg.axis()
 .orient("left");
 
 
+
+var margin = {top: 30, right: 40, bottom: 100, left: 50}
+
+
  
 var chart = d3.select(".chart")
 .attr("width", width + margin.left + margin.right)
@@ -108,15 +113,23 @@ x.domain(data.map(function(d) { return d.person_name; }));
  
 y.domain([0, d3.max(data, function(d) { return d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic; })]);
  console.log(data);
-chart.append("g")
-.attr("class", "x axis")
-.attr("transform", "translate(0," + height + ")")
-.call(xAxis);
+
  
 chart.append("g")
 .attr("class", "y axis")
 .call(yAxis);
  
+ chart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+        .selectAll("text")  
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-65)" 
+                });
 chart.selectAll(".bar")
 .data(data)
 .enter()
@@ -130,9 +143,7 @@ chart.selectAll(".bar")
 .attr("fill", function(d) { return "rgb(17,41,89)"; })
 
  
-.on("click", function(d){
-window.open(d.fb, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
-})
+
  
 .on("mouseover", function(d) {
 d3.select(this)
