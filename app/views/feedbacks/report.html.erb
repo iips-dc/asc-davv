@@ -1,10 +1,12 @@
 
-<svg class="chart center-block"></svg>
+
+<svg class="chart center-block" style="    border-style: solid;border-width: 1px; position: fixed;
+    top:80px;padding-top:20px"></svg>
 <br />
 <div id="tooltip">
 
-<span id="alfabet" style='line-height:3em; font:1em sans-serif;'>A</span>
-<p><span id="value">100</span></p>
+<span id="alfabet" style='line-height:3em; font:1em sans-serif;'></span>
+<p><span id="value"></span></p>
 </div>
 <style>
 
@@ -119,6 +121,16 @@ chart.append("g")
 .attr("class", "y axis")
 .call(yAxis);
  
+ chart.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("padding", "16px 16px 16px 16px") 
+        .style("text-decoration", "underline")  
+        .text("Cummulative Score of the all the Resource Person");
+
+
  chart.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
