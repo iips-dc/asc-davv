@@ -1,5 +1,5 @@
 
-
+<label><input type="checkbox"> Sort values</label>
 <svg class="chart center-block" style="    border-style: solid;border-width: 1px; position: fixed;
     top:80px;padding-top:20px"></svg>
 <br />
@@ -8,6 +8,7 @@
 <span id="alfabet" style='line-height:3em; font:1em sans-serif;'></span>
 <p><span id="value"></span></p>
 </div>
+
 <style>
 
 #tooltip {
@@ -59,6 +60,11 @@ shape-rendering: crispEdges;
 display: none;
 
 }
+label {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+}
  
 rect {
   
@@ -74,8 +80,8 @@ cursor:pointer;
 <script>
  
 var margin = {top: 40, right: 30, bottom: 30, left: 40},
-width = 960 - margin.left - margin.right,
-height = 500 - margin.top - margin.bottom;
+width = 1060 - margin.left - margin.right,
+height = 600 - margin.top - margin.bottom;
  
 var x = d3.scale.ordinal()
 .rangeRoundBands([0, width], .1);
@@ -172,7 +178,7 @@ d3.select("#tooltip")
 .style("left", xPosition + "px")
 .style("top", yPosition + "px")
 .select("#value")
-.text(d.frequency);
+.text(d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic);
  
 d3.select("#alfabet")
 .html("Name : "+d.person_name +"<br>"+ "Course Name : "+d.course_name + "<br>"+ "Communication skills : " + d.communication_skill +"<br>"+ "Competency Subject : " + d.competency_subject +"<br>"+ "Quality Lecture : " + d.quality_lecture +"<br>"+ "Usefulness Topic : " + d.usefulness_topic    );
@@ -188,16 +194,48 @@ d3.select(this)
 .transition()
 .delay(100)
 .duration(250)
-.attr("fill", function(d) { return "rgb(" + Math.round(d.frequency * 1000) + ",10, 100)"; })
+.attr("fill", function(d) { return "rgb(17,41,89)"; })
  
 //Hide the tooltip
 d3.select("#tooltip").classed("hidden", true);
  
 })
 .append("title")
-.text(function(d) {  return d.letter + " value is " + d.frequency;});
+.text(function(d) {  return d.person_name + " value is " + d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic;});
 ;
  
+
+  d3.select("input").on("change", change);
+
+  var sortTimeout = setTimeout(function() {
+    d3.select("input").property("checked", true).each(change);
+  }, 2000);
+
+  function change() {
+    clearTimeout(sortTimeout);
+
+    // Copy-on-write since tweens are evaluated after a delay.
+    var x0 = x.domain(data.sort(this.checked
+        ? function(a, b) { return (b.communication_skill +b.competency_subject+b.quality_lecture +b.usefulness_topic) - (a.communication_skill +a.competency_subject+a.quality_lecture +a.usefulness_topic); }
+        : function(a, b) { return d3.ascending(a.person_name, b.person_name); })
+        .map(function(d) { return d.person_name; }))
+        .copy();
+
+    chart.selectAll(".bar")
+        .sort(function(a, b) { return x0(a.person_name) - x0(b.person_name); });
+
+    var transition = chart.transition().duration(750),
+        delay = function(d, i) { return i * 50; };
+
+    transition.selectAll(".bar")
+        .delay(delay)
+        .attr("x", function(d) { return x0(d.person_name); });
+
+    transition.select(".x.axis")
+        .call(xAxis)
+      .selectAll("g")
+        .delay(delay);
+  }
 });
  
 
