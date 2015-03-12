@@ -111,21 +111,21 @@ var chart = d3.select(".chart")
 
 var data;
  
-  d3.json("feedbacks.json", function(error, json) {
-   
-  if (error) return console.warn(error);
-   
-  data = json;
-   
-  x.domain(data.map(function(d) { return d.person_name; }));
-   
-  y.domain([0, d3.max(data, function(d) { return (d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic); })]);
-   console.log(data);
+d3.json("feedbacks.json", function(error, json) {
+ 
+if (error) return console.warn(error);
+ 
+data = json;
+ 
+x.domain(data.map(function(d) { return d.person_name; }));
+ 
+y.domain([0, d3.max(data, function(d) { return ((d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic)/(d.tr*4)); })]);
+ console.log(data);
 
-   
-  chart.append("g")
-  .attr("class", "y axis")
-  .call(yAxis);
+ 
+chart.append("g")
+.attr("class", "y axis")
+.call(yAxis);
  
  chart.append("text")
         .attr("x", (width / 2))             
@@ -148,50 +148,18 @@ var data;
             .attr("transform", function(d) {
                 return "rotate(-65)" 
                 });
-  chart.selectAll(".bar")
-  .data(data)
-  .enter()
-  .append("rect")
-  .attr("class", "bar")
-  .attr("id", function(d) { return 'bar'+d.person_name;})
-  .attr("x", function(d) { return x(d.person_name); })
-  .attr("y", function(d) { return y(d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic); })
-  .attr("height", function(d) { return height - y(d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic); })
-  .attr("width", x.rangeBand())
-  .attr("fill", function(d) { return "rgb(17,41,89)"; })
+chart.selectAll(".bar")
+.data(data)
+.enter()
+.append("rect")
+.attr("class", "bar")
+.attr("id", function(d) { return 'bar'+d.person_name;})
+.attr("x", function(d) { return x(d.person_name); })
+.attr("y", function(d) { return y((d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic)/(4*d.tr)); })
+.attr("height", function(d) { return height - y((d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic)/(4*d.tr)); })
+.attr("width", x.rangeBand())
+.attr("fill", function(d) { return "rgb(17,41,89)"; })
 
-
-d3.select("input").on("change", change);
-
-  var sortTimeout = setTimeout(function() {
-    d3.select("input").property("checked", true).each(change);
-  }, 2000);
-
-  function change() {
-    clearTimeout(sortTimeout);
-
-    // Copy-on-write since tweens are evaluated after a delay.
-    var x0 = x.domain(data.sort(this.checked
-        ? function(a, b) { return (b.communication_skill +b.competency_subject+b.quality_lecture +b.usefulness_topic) - (a.communication_skill +a.competency_subject+a.quality_lecture +a.usefulness_topic); }
-        : function(a, b) { return d3.ascending(a.person_name, b.person_name); })
-        .map(function(d) { return d.person_name; }))
-        .copy();
-
-    chart.selectAll(".bar")
-        .sort(function(a, b) { return x0(a.person_name) - x0(b.person_name); });
-
-    var transition = chart.transition().duration(750),
-        delay = function(d, i) { return i * 50; };
-
-    transition.selectAll(".bar")
-        .delay(delay)
-        .attr("x", function(d) { return x0(d.person_name); });
-
-    transition.select(".x.axis")
-        .call(xAxis)
-      .selectAll("g")
-        .delay(delay);
-  }
  
 
  
@@ -226,7 +194,7 @@ d3.select(this)
 .transition()
 .delay(100)
 .duration(250)
-.attr("fill", function(d) { return "rgb(17,41,89)"; });
+.attr("fill", function(d) { return "rgb(17,41,89)"; })
  
 //Hide the tooltip
 d3.select("#tooltip").classed("hidden", true);
@@ -234,10 +202,36 @@ d3.select("#tooltip").classed("hidden", true);
 })
 .append("title")
 .text(function(d) {  return d.person_name + " value is " + d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic;});
-;;
+;
  
 
-  
+  d3.select("input").on("change", change);
+
+  var sortTimeout = setTimeout(function() {
+    d3.select("input").property("checked", true).each(change);
+  }, 2000);
+
+  function change() {
+    clearTimeout(sortTimeout);
+
+    // Copy-on-write since tweens are evaluated after a delay.
+    var x0 = x.domain(data.sort(this.checked
+        ? function(a, b) { return (b.communication_skill +b.competency_subject+b.quality_lecture +b.usefulness_topic) - (a.communication_skill +a.competency_subject+a.quality_lecture +a.usefulness_topic); }
+        : function(a, b) { return d3.ascending(a.person_name, b.person_name); })
+        .map(function(d) { return d.person_name; }))
+        .copy();
+
+    chart.selectAll(".bar")
+        .sort(function(a, b) { return x0(a.person_name) - x0(b.person_name); });
+
+    var transition = chart.transition().duration(750),
+        delay = function(d, i) { return i * 50; };
+
+    transition.selectAll(".bar")
+        .delay(delay)
+        .attr("x", function(d) { return x0(d.person_name); });
+
+  }
 });
  
 

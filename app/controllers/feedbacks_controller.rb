@@ -45,6 +45,10 @@ class FeedbacksController < ApplicationController
     respond_with(@feedback)
   end
 
+  def report_iframe
+    render :layout => false
+  end 
+
   private
     def set_feedback
       @feedback = Feedback.find(params[:id])
