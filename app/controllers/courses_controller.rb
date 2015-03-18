@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Kaminari.paginate_array(Course.all).page(params[:page]).per(4)
+    @courses = Kaminari.paginate_array(Course.all).page(params[:page]).per(25)
 
     respond_to do |format|
       format.html # index.html.erb

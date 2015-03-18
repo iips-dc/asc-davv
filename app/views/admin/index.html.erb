@@ -1,7 +1,149 @@
 <!-- row -->
 <div class="row">
 	<% if admin_signed_in? %>
-		<h1>Welcome Aboard,</h3>
-		<hr>
+		<h1 class="page-header">Welcome Aboard,</h3>
 	<% end %>
 </div>
+
+<!-- row -->
+<div class="row">	
+  <div class="col-lg-6 col-md-6">
+      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-4x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><%= @shortterm_course %></div>
+                                    <div>Total Number Of Participants in Short-term Course</div>
+                                </div>
+                            </div>
+                        </div>
+          <a href="shortterm_record">
+            <div class="panel-footer">
+              <span class="pull-left">View Details</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+      </div>
+      <!-- /.panel-->
+
+      <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-4x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><%= @refresher_course %></div>
+                                    <div>Total Number Of Participants in Refresher Course</div>
+                                </div>
+                            </div>
+                        </div>
+          <a href="refresher_record">
+            <div class="panel-footer">
+              <span class="pull-left">View Details</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+      </div>
+      <!-- /.panel-->
+
+      <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-4x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><%= @courses %></div>
+                                    <div>Total Number Of Courses</div>
+                                </div>
+                            </div>
+                        </div>
+          <a href="courses">
+            <div class="panel-footer">
+              <span class="pull-left">View Details</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+      </div>
+      <!-- /.panel-->
+  </div>
+  <!-- /.col-lg-6--> 
+
+  <div class="col-lg-6 col-md-6">
+      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-4x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><%= @orientation_course %></div>
+                                    <div>Total Number Of Participants in Orientation Course</div>
+                                </div>
+                            </div>
+                        </div>
+          <a href="orientation_record">
+            <div class="panel-footer">
+              <span class="pull-left">View Details</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+      </div>
+      <!-- /.panel-->
+
+      <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-4x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><%= @interaction_program %></div>
+                                    <div>Total Number Of Participants in Interaction Course</div>
+                                </div>
+                            </div>
+                        </div>
+          <a href="interaction_record">
+            <div class="panel-footer">
+              <span class="pull-left">View Details</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+      </div>
+      <!-- /.panel-->
+
+      <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-4x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><%= @resource_people %></div>
+                                    <div>Total Number Of Resource Persons</div>
+                                </div>
+                            </div>
+                        </div>
+          <a href="resource_people">
+            <div class="panel-footer">
+              <span class="pull-left">View Details</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+      </div>
+      <!-- /.panel-->
+  </div>
+  <!-- /.col-lg-6-->
+
+</div>
+<!-- /.row -->		

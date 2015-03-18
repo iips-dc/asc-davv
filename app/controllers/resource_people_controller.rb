@@ -7,7 +7,7 @@ class ResourcePeopleController < ApplicationController
   respond_to :html
 
   def index
-    @resource_people = Kaminari.paginate_array(ResourcePerson.all).page(params[:page]).per(4)
+    @resource_people = Kaminari.paginate_array(ResourcePerson.all).page(params[:page]).per(25)
     respond_with(@resource_people)
   end
 
