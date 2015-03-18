@@ -30,8 +30,9 @@ class InteractionProgram < ActiveRecord::Base
   
   validates :university_pin, length: { is: 6 ,message: "must be of 6 digits"}
   
-  
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
+
+  validates :dd_number, length: { is: 6,message: "must be of 6 digits" }
 end
 
 #size of the image
