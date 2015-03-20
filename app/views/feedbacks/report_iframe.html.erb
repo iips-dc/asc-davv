@@ -163,7 +163,7 @@ d3.select("#tooltip")
 .text((d.communication_skill +d.competency_subject+d.quality_lecture +d.usefulness_topic));
  
 d3.select("#alfabet")
-.html("Name : "+d.person_name +"<br>"+ "Course Name : "+d.course_name + "<br>"+ "Communication skills : " + d.communication_skill +"<br>"+ "Competency Subject : " + d.competency_subject +"<br>"+ "Quality Lecture : " + d.quality_lecture +"<br>"+ "Usefulness Topic : " + d.usefulness_topic    );
+.html("Name : "+d.person_name +"<br>"+ "Course Name : "+d.course_name + "<br>"+ "Communication skills : " + (d.communication_skill/d.tr).toFixed(2) +"<br>"+ "Competency Subject : " + (d.competency_subject/d.tr).toFixed(2) +"<br>"+ "Quality Lecture : " + (d.quality_lecture/d.tr).toFixed(2) +"<br>"+ "Usefulness Topic : " + (d.usefulness_topic/d.tr).toFixed(2)  );
  
 
 //Show the tooltip
