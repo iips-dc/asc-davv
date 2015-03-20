@@ -10,7 +10,6 @@
 <!-- row -->
 <div class="row">
     <div class="col-lg-12">
-        <%= paginate @feedbacks %>
         <div class="panel panel-default">
             <div class="panel-heading">
               <b>List Of Feedback</b>
@@ -44,6 +43,7 @@
                         <% end %>
                       </tbody>  
                     </table>
+                    <%= paginate @feedbacks %>
                 </div>
                 <!-- /.table-responsive -->       
               </div>

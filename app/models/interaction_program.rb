@@ -1,6 +1,6 @@
 class InteractionProgram < ActiveRecord::Base
   belongs_to :course
-  attr_accessible :category, :city, :college, :date_of_joining_phd, :district, :email, :gender, :landline, :marital_status, :mobile, :name, :pin, :religion, :res_address, :research_experience, :state, :stream, :university, :university_pin, :std_code, :image, :course_id
+  attr_accessible :category, :city, :college, :date_of_joining_phd, :district, :email, :gender, :landline, :marital_status, :mobile, :name, :pin, :religion, :res_address, :research_experience, :state, :stream, :university, :university_pin, :std_code, :image, :image_cache, :dd_number, :dd_date, :bank_name, :amount, :course_id
   mount_uploader :image, ImageUploader
 end
 
@@ -30,8 +30,9 @@ class InteractionProgram < ActiveRecord::Base
   
   validates :university_pin, length: { is: 6 ,message: "must be of 6 digits"}
   
-  
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
+
+  validates :dd_number, length: { is: 6,message: "must be of 6 digits" }
 end
 
 #size of the image

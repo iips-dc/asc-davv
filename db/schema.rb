@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150216125833) do
+ActiveRecord::Schema.define(:version => 20150223173940) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -82,6 +82,10 @@ ActiveRecord::Schema.define(:version => 20150216125833) do
     t.string   "std_code"
     t.integer  "course_id"
     t.string   "image"
+    t.string   "dd_number"
+    t.date     "dd_date"
+    t.string   "bank_name"
+    t.integer  "amount"
   end
 
   add_index "interaction_programs", ["course_id"], :name => "index_interaction_programs_on_course_id"
@@ -118,6 +122,10 @@ ActiveRecord::Schema.define(:version => 20150216125833) do
     t.string   "alternate_email"
     t.integer  "course_id"
     t.string   "image"
+    t.string   "dd_number"
+    t.date     "dd_date"
+    t.string   "bank_name"
+    t.integer  "amount"
   end
 
   add_index "orientation_courses", ["course_id"], :name => "index_orientation_courses_on_course_id"
@@ -154,6 +162,10 @@ ActiveRecord::Schema.define(:version => 20150216125833) do
     t.string   "alternate_email"
     t.integer  "course_id"
     t.string   "image"
+    t.string   "dd_number"
+    t.date     "dd_date"
+    t.string   "bank_name"
+    t.integer  "amount"
   end
 
   add_index "refresher_courses", ["course_id"], :name => "index_refresher_courses_on_course_id"
@@ -198,6 +210,10 @@ ActiveRecord::Schema.define(:version => 20150216125833) do
     t.string   "alternate_email"
     t.integer  "course_id"
     t.string   "image"
+    t.string   "dd_number"
+    t.date     "dd_date"
+    t.string   "bank_name"
+    t.integer  "amount"
   end
 
   add_index "shortterm_courses", ["course_id"], :name => "index_shortterm_courses_on_course_id"

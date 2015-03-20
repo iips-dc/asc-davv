@@ -1,7 +1,7 @@
 <!-- row -->            
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Resource Person Table Records</h1>
+        <h1 class="page-header">Resource Persons Record</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -10,10 +10,9 @@
 <!-- row -->
 <div class="row">
     <div class="col-lg-12">
-        <%= paginate @resource_people %>
         <div class="panel panel-default">
             <div class="panel-heading">
-              <b>List Of Courses</b>
+              <b>List Of Resource Persons</b>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -38,6 +37,7 @@
                         <% end %>
                       </tbody>  
                     </table>
+                    <%= paginate @resource_people %>
                 </div>
                 <!-- /.table-responsive -->       
               </div>

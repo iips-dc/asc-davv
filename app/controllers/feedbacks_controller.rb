@@ -6,7 +6,7 @@ class FeedbacksController < ApplicationController
   respond_to :html, :json
 
   def index
-    @feedbacks = Kaminari.paginate_array(Feedback.all).page(params[:page]).per(4)
+    @feedbacks = Kaminari.paginate_array(Feedback.all).page(params[:page]).per(25)
   end
 
   def show
@@ -44,6 +44,10 @@ class FeedbacksController < ApplicationController
     @feedback.destroy
     respond_with(@feedback)
   end
+
+  def report_iframe
+    render :layout => false
+  end 
 
   private
     def set_feedback

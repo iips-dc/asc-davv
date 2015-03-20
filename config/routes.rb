@@ -4,6 +4,10 @@ AscDavv::Application.routes.draw do
 
   match '/recorded' => 'feedbacks#success'
 
+  match '/report' => 'feedbacks#report'
+
+  match '/graphs' => 'feedbacks#report_iframe'
+
   resources :resource_people
 
   devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]

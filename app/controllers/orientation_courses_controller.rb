@@ -15,7 +15,7 @@
   end
 
   def record
-    @orientation_courses = Kaminari.paginate_array(OrientationCourse.all).page(params[:page]).per(4)
+    @orientation_courses = Kaminari.paginate_array(OrientationCourse.all).page(params[:page]).per(25)
     respond_with(@orientation_courses)
   end
 

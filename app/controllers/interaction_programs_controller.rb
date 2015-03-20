@@ -21,7 +21,7 @@ class InteractionProgramsController < ApplicationController
   end
 
   def record
-    @interaction_programs = Kaminari.paginate_array(InteractionProgram.all).page(params[:page]).per(4)
+    @interaction_programs = Kaminari.paginate_array(InteractionProgram.all).page(params[:page]).per(25)
 
     respond_to do |format|
       format.html 
