@@ -5,12 +5,7 @@ class NoticesController < ApplicationController
   layout "adminDashboard"
 
   respond_to :html
-
-  def index
-    @notices = Kaminari.paginate_array(Notice.all).page(params[:page]).per(25)
-    respond_with(@notices)
-  end
-
+  
   def show
     respond_with(@notice)
   end
