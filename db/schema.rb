@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150223173940) do
+ActiveRecord::Schema.define(:version => 20150321143439) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -89,6 +89,14 @@ ActiveRecord::Schema.define(:version => 20150223173940) do
   end
 
   add_index "interaction_programs", ["course_id"], :name => "index_interaction_programs_on_course_id"
+
+  create_table "notices", :force => true do |t|
+    t.string   "title"
+    t.string   "body"
+    t.date     "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "orientation_courses", :force => true do |t|
     t.string   "name"

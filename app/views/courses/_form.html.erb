@@ -12,11 +12,11 @@
       <% end %>
 <fieldset>
   <div class="form-group">
-    <%= f.label :course_name, :class => 'label-control' %><br />
+    <%= f.label :course_name, "Course Name", :class => 'label-control' %><br />
     <%= f.text_field :course_name, :placeholder => 'Enter Course Name', :class => 'form-control', autofocus: true %>
   </div>
   <div class="form-group">
-    <%= f.label :course_type, :class => 'label-control' %><br />
+    <%= f.label :course_type, "Course Type", :class => 'label-control' %><br />
     <%= f.text_field :course_type, :placeholder => 'Enter Course Type', :class => 'form-control' %>
   </div>
   <div class="form-group">
@@ -24,11 +24,11 @@
     <%= f.text_area :description, :placeholder => 'Enter Course Description', :class => 'form-control', :style => "height:100px" %>
   </div>
   <div class="form-group">
-      <%= f.label :start_date, :class => 'label-control' %><br />
+      <%= f.label :start_date, "Start Date",  :class => 'label-control' %><br />
       <%= f.text_field :start_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
   </div>
   <div class="form-group">
-      <%= f.label :end_date, :class => 'label-control' %><br />
+      <%= f.label :end_date, "End Date", :class => 'label-control' %><br />
       <%= f.text_field :end_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
   </div>
   <div class="form-group">

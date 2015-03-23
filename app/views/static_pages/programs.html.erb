@@ -18,7 +18,7 @@ Dated: 11/01/2015
         </div>
         <!-- /.row -->
 
-        <!-- Service Tabs -->
+        <!-- Programs Tabs -->
         <div class="row">
             <div class="col-lg-12">
 		        <ul id="myTab" class="nav nav-tabs nav-justified">
@@ -73,10 +73,10 @@ Dated: 11/01/2015
         <!-- ./Row -->
         <hr>
 
-        <!-- Service List -->
+        <!-- Programs List -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Upcoming Programs</h2>
+                <h2 class="page-header">Upcoming <small>Programs</small></h2>
             </div>
             <% @courses.each do |course| %>
               <% if Date.today < course.start_date %>  
