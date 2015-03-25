@@ -26,6 +26,10 @@ gem 'devise'
 # For Authorization
 gem 'cancan'
 
+# For Twitter bootstrap
+gem "twitter-bootstrap-rails"
+
+# For jquery
 gem 'jquery-rails'
 
 # Form-validation 
