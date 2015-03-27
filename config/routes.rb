@@ -58,4 +58,6 @@ AscDavv::Application.routes.draw do
   match '/welcome' => 'static_pages#welcome'
 
   match '/admin' => 'admin#index'
+
+  match '/developers' => 'static_pages#developers'
 end
