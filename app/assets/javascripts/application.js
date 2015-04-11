@@ -9,10 +9,9 @@
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
-//= require twitter/bootstrap
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
 //= require rails.validations
 //= require_tree .
 //= require d3
