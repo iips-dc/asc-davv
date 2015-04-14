@@ -24,8 +24,7 @@
                             <th>Course Name</th>
                             <th>Course Type</th>
                             <th>Description</th>
-                            <th>Start date</th>
-                            <th>End date</th>
+                            <th>Resource Person</th>
                           </tr>
                       </thead>    
                       <tbody>
@@ -35,8 +34,7 @@
                             <td><%= course.course_name %></td>
                             <td><%= course.course_type %></td>
                             <td><%= course.description %></td>
-                            <td><%= course.start_date %></td>
-                            <td><%= course.end_date %></td>
+                            <td><%= course.resource_person.person_name %></td>
                           </tr>
                         <% end %>
                       </tbody>  

@@ -1,4 +1,5 @@
 class ResourcePerson < ActiveRecord::Base
+  has_many :courses	
   attr_accessible :mobile, :person_email, :person_name
 end
 

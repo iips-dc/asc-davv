@@ -17,7 +17,8 @@
   </div>
   <div class="form-group">
     <%= f.label :course_type, "Course Type", :class => 'label-control' %><br />
-    <%= f.text_field :course_type, :placeholder => 'Enter Course Type', :class => 'form-control' %>
+    <%= f.select(:course_type,[['Select a Course Type',''], "Short-term course", "Refresher course", "Orientation Course", "Interaction Program" ], {}, { :class => 'form-control' })  %>
+      <p class="help-block"> Select Course Type </p>
   </div>
   <div class="form-group">
     <%= f.label :description, :class => 'label-control' %><br />
@@ -30,6 +31,10 @@
   <div class="form-group">
       <%= f.label :end_date, "End Date", :class => 'label-control' %><br />
       <%= f.text_field :end_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
+  </div>
+  <div class="form-group">
+      <%= f.label :resource_person %><br />
+      <%= collection_select(:course, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"}, {:class => 'form-control'})  %>  
   </div>
   <div class="form-group">
     <div class="col-md-offset-4 col-md-6"> 
