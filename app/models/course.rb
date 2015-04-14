@@ -5,12 +5,12 @@ class Course < ActiveRecord::Base
   has_many :interaction_programs
   has_many :feedbacks
   belongs_to :resource_person
-  attr_accessible :course_name, :description, :end_date, :start_date, :course_type, :resource_person_id
+  attr_accessible :course_name, :description, :end_date, :start_date, :course_type, :session, :resource_person_id
 end
 
 #field not remain blank
 class  Course < ActiveRecord::Base
-  validates :course_name, :description, :end_date, :start_date, :course_type, :resource_person_id, presence: true
+  validates :course_name, :description, :end_date, :start_date, :course_type, :resource_person_id, :session, presence: true
 end
 
 #length of the fields

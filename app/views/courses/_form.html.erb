@@ -25,6 +25,10 @@
     <%= f.text_area :description, :placeholder => 'Enter Course Description', :class => 'form-control', :style => "height:100px" %>
   </div>
   <div class="form-group">
+      <%= f.label :resource_person %><br />
+      <%= collection_select(:course, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"}, {:class => 'form-control'})  %>  
+  </div>
+  <div class="form-group">
       <%= f.label :start_date, "Start Date",  :class => 'label-control' %><br />
       <%= f.text_field :start_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
   </div>
@@ -33,8 +37,8 @@
       <%= f.text_field :end_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
   </div>
   <div class="form-group">
-      <%= f.label :resource_person %><br />
-      <%= collection_select(:course, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"}, {:class => 'form-control'})  %>  
+    <%= f.label :session, "Academic Session", :class => 'label-control' %><br />
+    <%= f.text_field :session, :placeholder => 'Enter Academic Session', :class => 'form-control', autofocus: true %>
   </div>
   <div class="form-group">
     <div class="col-md-offset-4 col-md-6"> 
