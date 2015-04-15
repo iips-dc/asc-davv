@@ -1,0 +1,36 @@
+<div class="col-lg-12" id="filterrific_results">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>          
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>University</th>
+                                <th>Date of birth</th>
+                                <th>Mobile</th>
+                                <th>Residential address</th>
+                                <th>Course</th>
+                            </tr>
+                        </thead>    
+
+                    <% @shortterm_courses.each do |shortterm_course| %>
+                        <tbody>
+                            <tr>
+                                <td><%= link_to shortterm_course.id, shortterm_course %></td>
+                                <td><%= shortterm_course.name %></td>
+                                <td><%= shortterm_course.email %></td>
+                                <td><%= shortterm_course.university %></td>
+                                <td><%= shortterm_course.dob %></td>
+                                <td><%= shortterm_course.mobile %></td>
+                                <td><%= shortterm_course.res_address %></td>
+                                <td><%= shortterm_course.course.course_name %></td>
+                            </tr>
+                        </tbody>  
+                    <% end %>
+                    </table>
+                    <%= paginate @shortterm_courses %>    
+                </div>
+                <!-- /.table-responsive -->    
+</div>
+<!-- /.col-lg-12 -->    

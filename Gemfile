@@ -35,6 +35,9 @@ gem 'jquery-rails'
 # Form-validation 
 gem 'client_side_validations', :github => 'bcardarella/client_side_validations', :branch => '3-2-stable'
 
+# For Search and Filter
+gem 'filterrific'
+
 # To Use Pagination for table
 gem 'kaminari'
 
