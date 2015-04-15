@@ -4,23 +4,39 @@
   load_and_authorize_resource :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
-  respond_to :html
+  
 
   def index
     raise ActionController::RoutingError.new('Not Found')
   end
 
   def show
+    respond_to :html
     respond_with(@orientation_course)
   end
 
   def record
-    @orientation_courses = Kaminari.paginate_array(OrientationCourse.all).page(params[:page]).per(25)
-    respond_with(@orientation_courses)
+    @filterrific = initialize_filterrific(
+    OrientationCourse,
+    params[:filterrific],
+    select_options: {
+        sorted_by: OrientationCourse.options_for_sorted_by,
+        with_course_name: Course.where("LOWER(course_type)='orientation course'").pluck(:course_name)
+    },
+    persistence_id: 'shared_key',
+    default_filter_params: { sorted_by: 'created_at_desc' },
+    available_filters: [ 
+        :sorted_by,
+        :search_query,
+        :with_course_name ],
+    ) or return
+
+    @orientation_courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
   end
 
   def new
     @orientation_course = OrientationCourse.new
+    respond_to :html
     respond_with(@orientation_course)
   end
 
@@ -42,6 +58,7 @@
 
   def update
     @orientation_course.update_attributes(params[:orientation_course])
+    respond_to :html
     respond_with(@orientation_course)
   end
 
