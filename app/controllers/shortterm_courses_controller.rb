@@ -26,7 +26,7 @@ class ShorttermCoursesController < ApplicationController
     params[:filterrific],
     select_options: {
         sorted_by: ShorttermCourse.options_for_sorted_by,
-        with_course_name: Course.pluck(:course_name)
+        with_course_name: Course.where("LOWER(course_type)='short-term course'").pluck(:course_name)
     },
     persistence_id: 'shared_key',
     default_filter_params: { sorted_by: 'created_at_desc' },
