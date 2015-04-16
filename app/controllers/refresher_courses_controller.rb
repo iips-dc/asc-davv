@@ -21,12 +21,22 @@ class RefresherCoursesController < ApplicationController
   end
 
   def record
-    @refresher_courses = Kaminari.paginate_array(RefresherCourse.all).page(params[:page]).per(25)
+    @filterrific = initialize_filterrific(
+    RefresherCourse,
+    params[:filterrific],
+    select_options: {
+        sorted_by: RefresherCourse.options_for_sorted_by,
+        with_course_name: Course.where("LOWER(course_type)='refresher course'").pluck(:course_name)
+    },
+    persistence_id: 'shared_key',
+    default_filter_params: { sorted_by: 'created_at_desc' },
+    available_filters: [ 
+        :sorted_by,
+        :search_query,
+        :with_course_name ],
+    ) or return
 
-    respond_to do |format|
-      format.html 
-      format.json { render json: @refresher_courses }
-    end
+    @refresher_courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
   end
 
   # GET /refresher_courses/new

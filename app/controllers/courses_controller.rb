@@ -5,12 +5,22 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Kaminari.paginate_array(Course.all).page(params[:page]).per(25)
+    @filterrific = initialize_filterrific(
+    Course,
+    params[:filterrific],
+    select_options: {
+        sorted_by: Course.options_for_sorted_by,
+        with_session: Course.uniq.pluck(:session)
+    },
+    persistence_id: 'shared_key',
+    default_filter_params: { sorted_by: 'created_at_desc' },
+    available_filters: [ 
+        :sorted_by,
+        :search_query,
+        :with_session ],
+    ) or return
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
-    end
+    @courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
   end
 
   # GET /courses/1

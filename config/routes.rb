@@ -10,6 +10,8 @@ AscDavv::Application.routes.draw do
 
   resources :resource_people
 
+  resources :notices
+  
   devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]
   as :admin do
     get 'signin' => 'devise/sessions#new', :as => :new_admin_session
@@ -56,4 +58,6 @@ AscDavv::Application.routes.draw do
   match '/welcome' => 'static_pages#welcome'
 
   match '/admin' => 'admin#index'
+
+  match '/developers' => 'static_pages#developers'
 end

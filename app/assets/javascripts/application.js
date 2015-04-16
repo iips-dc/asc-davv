@@ -11,7 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require filterrific/filterrific-jquery
 //= require rails.validations
 //= require_tree .
 //= require d3

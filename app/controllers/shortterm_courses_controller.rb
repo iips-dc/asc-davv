@@ -21,7 +21,22 @@ class ShorttermCoursesController < ApplicationController
 
   #List of record
   def record
-    @shortterm_courses = Kaminari.paginate_array(ShorttermCourse.all).page(params[:page]).per(25)
+    @filterrific = initialize_filterrific(
+    ShorttermCourse,
+    params[:filterrific],
+    select_options: {
+        sorted_by: ShorttermCourse.options_for_sorted_by,
+        with_course_name: Course.where("LOWER(course_type)='short-term course'").pluck(:course_name)
+    },
+    persistence_id: 'shared_key',
+    default_filter_params: { sorted_by: 'created_at_desc' },
+    available_filters: [ 
+        :sorted_by,
+        :search_query,
+        :with_course_name ],
+    ) or return
+
+    @shortterm_courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
   end
 
   # GET /shortterm_courses/new
