@@ -4,6 +4,8 @@ class ResourcePeopleController < ApplicationController
   load_and_authorize_resource 
   layout "adminDashboard"
 
+  respond_to :html, :except => :index
+
   def index
     @filterrific = initialize_filterrific(
     ResourcePerson,
@@ -22,18 +24,15 @@ class ResourcePeopleController < ApplicationController
   end
 
   def show
-    respond_to :html
     respond_with(@resource_person)
   end
 
   def new
     @resource_person = ResourcePerson.new
-    respond_to :html
     respond_with(@resource_person)
   end
 
   def edit
-    respond_to :html
   end
 
   def create
@@ -52,13 +51,11 @@ class ResourcePeopleController < ApplicationController
 
   def update
     @resource_person.update_attributes(params[:resource_person])
-    respond_to :html
     respond_with(@resource_person)
   end
 
   def destroy
     @resource_person.destroy
-    respond_to :html
     respond_with(@resource_person)
   end
 

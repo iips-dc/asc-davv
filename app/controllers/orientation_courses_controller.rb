@@ -4,14 +4,13 @@
   load_and_authorize_resource :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
-  
+  respond_to :html, :except => :record
 
   def index
     raise ActionController::RoutingError.new('Not Found')
   end
 
   def show
-    respond_to :html
     respond_with(@orientation_course)
   end
 
@@ -36,7 +35,6 @@
 
   def new
     @orientation_course = OrientationCourse.new
-    respond_to :html
     respond_with(@orientation_course)
   end
 
@@ -58,7 +56,6 @@
 
   def update
     @orientation_course.update_attributes(params[:orientation_course])
-    respond_to :html
     respond_with(@orientation_course)
   end
 

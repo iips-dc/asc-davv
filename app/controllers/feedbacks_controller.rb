@@ -4,6 +4,8 @@ class FeedbacksController < ApplicationController
   load_and_authorize_resource
   layout "adminDashboard"
 
+  respond_to :html, :json, :except => :index
+
   def index
     @filterrific = initialize_filterrific(
     Feedback,
@@ -21,18 +23,15 @@ class FeedbacksController < ApplicationController
   end
 
   def show
-    respond_to :html, :json
     respond_with(@feedback)
   end
 
   def new
     @feedback = Feedback.new
-    respond_to :html, :json
     respond_with(@feedback)
   end
 
   def edit
-    respond_to :html, :json
   end
 
   def create
@@ -51,13 +50,11 @@ class FeedbacksController < ApplicationController
 
   def update
     @feedback.update_attributes(params[:feedback])
-    respond_to :html, :json
     respond_with(@feedback)
   end
 
   def destroy
     @feedback.destroy
-    respond_to :html, :json
     respond_with(@feedback)
   end
 
@@ -67,7 +64,6 @@ class FeedbacksController < ApplicationController
 
   private
     def set_feedback
-      respond_to :html, :json
       @feedback = Feedback.find(params[:id])
     end
 end
