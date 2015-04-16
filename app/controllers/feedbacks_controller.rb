@@ -62,7 +62,6 @@ class FeedbacksController < ApplicationController
   end
 
   def report_iframe
-    respond_to :html, :json
     render :layout => false
   end 
 
