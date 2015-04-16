@@ -1,0 +1,43 @@
+<div class="col-lg-12" id="filterrific_results">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <b>List Of Feedback</b>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                      <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Communication skill</th>
+                            <th>Usefulness topic</th>
+                            <th>Competency subject</th>
+                            <th>Quality lecture</th>
+                            <th>Course</th>
+                            <th>Resource person</th>
+                          </tr>
+                      </thead>  
+                      <tbody>  
+                        <% @feedbacks.each do |feedback| %>
+                          <tr>
+                            <td><%= link_to feedback.id, feedback %></td>
+                            <td><%= feedback.communication_skill %></td>
+                            <td><%= feedback.usefulness_topic %></td>
+                            <td><%= feedback.competency_subject %></td>
+                            <td><%= feedback.quality_lecture %></td>
+                            <td><%= feedback.course.course_name %></td>
+                            <td><%= feedback.resource_person.person_name %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>  
+                    </table>
+                    <%= paginate @feedbacks %>
+                </div>
+                <!-- /.table-responsive -->       
+              </div>
+              <!-- /.panel-body -->
+            </div>
+            <!-- /. panel -->    
+</div>
+<!-- /.col-lg-12 -->
