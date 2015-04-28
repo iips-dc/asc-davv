@@ -20,7 +20,8 @@ end
 #following fiels must contain integer
 class InteractionProgram < ActiveRecord::Base
   validates :pin,:university_pin, numericality: true
-  validates :landline,:mobile, :std_code, numericality: { only_integer: true }
+  validates :mobile, numericality: { only_integer: true }
+  validates :landline, :std_code, numericality: { only_integer: true }, :allow_blank => true
 end
 
 #length of the fields
@@ -32,7 +33,7 @@ class InteractionProgram < ActiveRecord::Base
   
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
 
-  validates :dd_number, length: { is: 6,message: "must be of 6 digits" }
+  validates :dd_number, length: { is: 6,message: "must be of 6 digits" }, :allow_blank => true
 end
 
 #size of the image

@@ -10,7 +10,7 @@ end
 
 #field not remain blank
 class  Course < ActiveRecord::Base
-  validates :course_name, :description, :end_date, :start_date, :course_type, :resource_person_id, :session, presence: true
+  validates :course_name, :description, :end_date, :start_date, :course_type, :session, presence: true
 end
 
 #length of the fields
