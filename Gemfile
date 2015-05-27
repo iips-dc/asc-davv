@@ -62,6 +62,9 @@ gem "d3-rails"
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
+# For Backup
+gem 'backup'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -16,7 +16,7 @@ end
 #length of the fields
 class Course < ActiveRecord::Base
   validates :course_name, :description, :course_type, length: { minimum: 2 }
-end  
+end
 
 #validates date
 class Course < ActiveRecord::Base
