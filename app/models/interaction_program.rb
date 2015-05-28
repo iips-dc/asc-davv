@@ -2,30 +2,22 @@ class InteractionProgram < ActiveRecord::Base
   belongs_to :course
   attr_accessible :category, :city, :college, :date_of_joining_phd, :district, :email, :gender, :landline, :marital_status, :mobile, :name, :pin, :religion, :res_address, :research_experience, :state, :stream, :university, :university_pin, :std_code, :image, :image_cache, :dd_number, :dd_date, :bank_name, :amount, :course_id
   mount_uploader :image, ImageUploader
-end
 
-#field not remain blank
-class  InteractionProgram < ActiveRecord::Base
+  #field not remain blank
   validates :name, :gender, :religion,:category, :marital_status,:stream,
   :college,:university,:city,:district,:state, :research_experience,
   :pin,:university_pin,:date_of_joining_phd, :res_address, :email, :course_id, :image, presence: true
-end
 
-#field must contain alphabets and space
-class InteractionProgram < ActiveRecord::Base
+  #field must contain alphabets and space
   validates :name, :city, :college, :district, :stream, :university, format: { with: /\A[a-zA-Z\s.,]+\z/,
     message: "only alphabets and spaces are allowed" }
-end
 
-#following fiels must contain integer
-class InteractionProgram < ActiveRecord::Base
+  #following fiels must contain integer
   validates :pin,:university_pin, numericality: true
   validates :mobile, numericality: { only_integer: true }
   validates :landline, :std_code, numericality: { only_integer: true }, :allow_blank => true
-end
 
-#length of the fields
-class InteractionProgram < ActiveRecord::Base
+  #length of the fields
   validates :name, length: { minimum: 2 }
   validates :pin, length: { is: 6 ,message: "must be of 6 digits"}
   
@@ -34,22 +26,18 @@ class InteractionProgram < ActiveRecord::Base
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
 
   validates :dd_number, length: { is: 6,message: "must be of 6 digits" }, :allow_blank => true
-end
 
-#size of the image
-class InteractionProgram < ActiveRecord::Base
-    validate :image_size_validation, :if => "image?"
+  #size of the image
+  validate :image_size_validation, :if => "image?"
 
     def image_size_validation
         if image.size > 1.megabytes
           errors.add(:base, "Image should be less than 1MB")
         end
     end
-end
 
-# searching and sorting
-class InteractionProgram < ActiveRecord::Base
-    filterrific(
+  # searching and sorting
+  filterrific(
       default_filter_params: { sorted_by: 'created_at_desc' },
       available_filters: [
         :sorted_by, 

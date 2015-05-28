@@ -1,27 +1,19 @@
 class ResourcePerson < ActiveRecord::Base
-  has_many :courses	
+  has_many :courses, dependent: :destroy	
   attr_accessible :mobile, :person_email, :person_name
-end
 
-#field not remain blank
-class  ResourcePerson < ActiveRecord::Base
+  #field not remain blank
   validates :mobile, :person_email, :person_name, presence: true
-end
 
-#field can contain only alphabets and space
-class ResourcePerson < ActiveRecord::Base
+  #field can contain only alphabets and space
   validates :person_name, format: { with: /\A[a-zA-Z\s.,\d]+\z/,
     message: "only alphabets and spaces are allowed" }
-end
 
-#length of the fields
-class ResourcePerson < ActiveRecord::Base
+  #length of the fields
 	validates :mobile, length: { is: 10,message: "must be of 10 digits" }
-end
 
-# searching and sorting
-class ResourcePerson < ActiveRecord::Base
-    filterrific(
+  # searching and sorting
+  filterrific(
       default_filter_params: { sorted_by: 'created_at_desc' },
       available_filters: [
         :sorted_by, 

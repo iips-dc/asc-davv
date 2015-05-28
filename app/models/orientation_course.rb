@@ -2,34 +2,28 @@ class OrientationCourse < ActiveRecord::Base
   belongs_to :course
   attr_accessible :category, :city, :college, :subject, :date_of_joining, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :payscale, :phd, :pin, :position, :pref_date1, :pref_date2, :religion, :res_address, :state, :stream, :university, :university_pin, :std_code, :alternate_email, :image, :image_cache, :dd_number, :dd_date, :bank_name, :amount, :course_id
   mount_uploader :image, ImageUploader
-end
 
-#field not remain blank
-class  OrientationCourse < ActiveRecord::Base
+  #field not remain blank
   validates :name, :gender, :dob, :religion,:category, :marital_status,:stream,
   :college,:university,:city,:district,:state,:position,:payscale,:subject,:pin,:university_pin,:date_of_joining,:pref_date1,:pref_date2,:res_address, :email, :image, :course_id, presence: true
-end
 
-#field must contain alphabets
-class OrientationCourse < ActiveRecord::Base
+
+  #field must contain alphabets
   validates :name, :city, :college, :district, :stream, :university, :subject, format: { with: /\A[a-zA-Z\s.,]+\z/,
     message: "only alphabets and spaces are allowed" }
-end
 
-#following fields must contain integer
-class OrientationCourse < ActiveRecord::Base
+
+  #following fields must contain integer
   validates :pin,:university_pin, numericality: true
   validates :mobile, numericality: { only_integer: true }
   validates :landline, :std_code, numericality: { only_integer: true }, :allow_blank => true
-end
 
-#Combination of fields that must be unique
-class OrientationCourse < ActiveRecord::Base
+
+  #Combination of fields that must be unique
   validates_uniqueness_of :name, scope: [:pref_date1, :dob]
-end
 
-#length of the fields
-class OrientationCourse < ActiveRecord::Base
+
+  #length of the fields
   validates :name, length: { minimum: 2 }
   validates :pin, length: { is: 6 ,message: "must be of 6 digits"}
   
@@ -38,32 +32,28 @@ class OrientationCourse < ActiveRecord::Base
   validates :mobile, length: { is: 10,message: "must be of 10 digits" }
 
   validates :dd_number, length: { is: 6,message: "must be of 6 digits" }, :allow_blank => true
-end
 
-#validates date
-class OrientationCourse < ActiveRecord::Base
+  #validates date
   validate :valid_dates
   def valid_dates
     if pref_date1 >= pref_date2
       self.errors.add :pref_date2, ' has to be after preferred date1'
     end
   end
-end  
 
-#size of the image
-class OrientationCourse < ActiveRecord::Base
-    validate :image_size_validation, :if => "image?"
+
+  #size of the image
+  validate :image_size_validation, :if => "image?"
 
     def image_size_validation
         if image.size > 1.megabytes
           errors.add(:base, "Image should be less than 1MB")
         end
     end
-end
 
-# searching and sorting
-class OrientationCourse < ActiveRecord::Base
-    filterrific(
+
+  #searching and sorting
+  filterrific(
       default_filter_params: { sorted_by: 'created_at_desc' },
       available_filters: [
         :sorted_by, 

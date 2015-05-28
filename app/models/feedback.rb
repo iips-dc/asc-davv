@@ -2,15 +2,11 @@ class Feedback < ActiveRecord::Base
   belongs_to :resource_person
   belongs_to :course
   attr_accessible :communication_skill, :competency_subject, :quality_lecture, :usefulness_topic, :resource_person_id, :course_id
-end
 
-#field not remain blank
-class  Feedback < ActiveRecord::Base
+  #field not remain blank
   validates :communication_skill, :competency_subject, :quality_lecture, :usefulness_topic, :resource_person_id, :course_id, presence: true
-end
 
-# searching and sorting
-class Feedback < ActiveRecord::Base
+  # searching and sorting
     filterrific(
       default_filter_params: { sorted_by: 'created_at_desc' },
       available_filters: [
