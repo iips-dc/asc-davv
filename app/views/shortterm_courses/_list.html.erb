@@ -21,7 +21,7 @@
                                 <td><%= shortterm_course.name %></td>
                                 <td><%= shortterm_course.email %></td>
                                 <td><%= shortterm_course.university %></td>
-                                <td><%= shortterm_course.dob %></td>
+                                <td><%= shortterm_course.dob.strftime('%d-%b-%Y') %></td>
                                 <td><%= shortterm_course.mobile %></td>
                                 <td><%= shortterm_course.res_address %></td>
                                 <td><%= shortterm_course.course.course_name %></td>

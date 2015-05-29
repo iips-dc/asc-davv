@@ -38,8 +38,8 @@
                           <% else %>
                             <td>N/A</td>
                           <% end %>  
-                          <td><%= @course.start_date %></td>
-                          <td><%= @course.end_date %></td>
+                          <td><%= @course.start_date.strftime('%d-%b-%Y') %></td>
+                          <td><%= @course.end_date.strftime('%d-%b-%Y') %></td>
                           <td><%= @course.session %></td>
                         </tr>
                       </tbody> 

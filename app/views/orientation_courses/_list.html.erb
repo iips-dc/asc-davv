@@ -20,7 +20,7 @@
                                 <td><%= orientation_course.name %></td>
                                 <td><%= orientation_course.email %></td>
                                 <td><%= orientation_course.university %></td>
-                                <td><%= orientation_course.dob %></td>
+                                <td><%= orientation_course.dob.strftime('%d-%b-%Y') %></td>
                                 <td><%= orientation_course.mobile %></td>
                                 <td><%= orientation_course.res_address %></td>
                                 <td><%= orientation_course.course.course_name %></td>    

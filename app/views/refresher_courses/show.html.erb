@@ -21,7 +21,7 @@
                     <tbody>
                       <tr>
                         <td>Date Of Birth:</td>
-                        <td><%= @refresher_course.dob %></td>
+                        <td><%= @refresher_course.dob.strftime('%d-%b-%Y') %></td>
                       </tr>  
                       <tr>
                         <td>Gender:</td>
@@ -89,7 +89,7 @@
                       </tr>
                       <tr>
                         <td>Date Of Joining</td>
-                        <td><%= @refresher_course.date_of_joining %></td>
+                        <td><%= @refresher_course.date_of_joining.strftime('%d-%b-%Y') %></td>
                       </tr>
                       <tr>
                         <td>Landline</td>
@@ -101,11 +101,11 @@
                       </tr>
                       <tr>
                         <td>Preferred Date 1</td>
-                        <td><%= @refresher_course.pref_date1 %></td>
+                        <td><%= @refresher_course.pref_date1.strftime('%d-%b-%Y') %></td>
                       </tr>
                       <tr>
                         <td>Preferred Date 2</td>
-                        <td><%= @refresher_course.pref_date2 %></td>
+                        <td><%= @refresher_course.pref_date2.strftime('%d-%b-%Y') %></td>
                       </tr>
                       <tr>
                         <td>Residential Address</td>
@@ -121,7 +121,11 @@
                       </tr>
                       <tr>
                         <td>DD Date</td>
-                        <td><%= @refresher_course.dd_date %></td>
+                        <% if @refresher_course.dd_date=''%>
+                          <td><%= @refresher_course.dd_date %></td>
+                        <% else %>    
+                          <td><%= @refresher_course.dd_date.strftime('%d-%b-%Y') %></td>
+                        <% end %>
                       </tr>
                       <tr>
                         <td>Bank Name</td>

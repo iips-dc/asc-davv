@@ -45,7 +45,7 @@
                       </tr>
                       <tr>
                         <td>Date Of Joining phd</td>
-                        <td><%= @interaction_program.date_of_joining_phd %></td>
+                        <td><%= @interaction_program.date_of_joining_phd.strftime('%d-%b-%Y') %></td>
                       </tr>
                       <tr>
                         <td>Research Experience</td>
@@ -97,7 +97,11 @@
                       </tr>
                       <tr>
                         <td>DD Date</td>
-                        <td><%= @interaction_program.dd_date %></td>
+                        <% if @interaction_program.dd_date=''%>
+                          <td><%= @interaction_program.dd_date %></td>
+                        <% else %>    
+                          <td><%= @interaction_program.dd_date.strftime('%d-%b-%Y') %></td>
+                        <% end %>
                       </tr>
                       <tr>
                         <td>Bank Name</td>

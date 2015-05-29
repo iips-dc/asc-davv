@@ -28,7 +28,7 @@
                         <tr class="info">
                           <td><%= @notice.title %></td>
                           <td><%= @notice.body %></td>
-                          <td><%= @notice.end_date %></td>
+                          <td><%= @notice.end_date.strftime('%d-%b-%y') %></td>
                         </tr>
                       </tbody> 
                   </table>
