@@ -26,7 +26,7 @@
   </div>
   <div class="form-group">
       <%= f.label :resource_person %><br />
-      <%= collection_select(:course, :resource_person_id, ResourcePerson.all, :id, :person_name, {:prompt => "Select a Resource Person"}, {:class => 'form-control'})  %>  
+      <%= collection_select(:course, :resource_person_id, ResourcePerson.all, :id, :person_name, {:include_blank => "Select a Resource Person"}, {:class => 'form-control'})  %>  
   </div>
   <div class="form-group">
       <%= f.label :start_date, "Start Date",  :class => 'label-control' %><br />

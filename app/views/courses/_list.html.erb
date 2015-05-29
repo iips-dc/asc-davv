@@ -13,6 +13,7 @@
                             <th>Course Name</th>
                             <th>Course Type</th>
                             <th>Description</th>
+                            <th>Resource Person</th>
                           </tr>
                       </thead>    
                       <tbody>
@@ -22,6 +23,11 @@
                             <td><%= course.course_name %></td>
                             <td><%= course.course_type %></td>
                             <td><%= course.description %></td>
+                            <% if course.resource_person_id!= nil %>
+                              <td><%= course.resource_person.person_name %></td>
+                            <% else %>
+                              <td>N/A</td>
+                            <% end %>    
                           </tr>
                         <% end %>
                       </tbody>  
