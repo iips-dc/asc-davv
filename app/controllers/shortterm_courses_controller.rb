@@ -19,6 +19,16 @@ class ShorttermCoursesController < ApplicationController
     end
   end
 
+  # Record Of applicant
+  def registered
+    @shortterm_course = ShorttermCourse.find(params[:id])   
+    
+    respond_to do |format|
+      format.html # registered.html.erb
+      format.json { render json: @shortterm_course }
+    end
+  end  
+
   #List of record
   def record
     @filterrific = initialize_filterrific(

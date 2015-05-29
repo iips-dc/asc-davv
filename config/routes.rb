@@ -33,7 +33,7 @@ AscDavv::Application.routes.draw do
 
   match '/shortterm_record' => 'shortterm_courses#record'
 
-  match '/registered' => 'shortterm_courses#registered'
+  match '/shortterm_registered/:id' => 'shortterm_courses#registered'
   
   resources :orientation_courses
 
