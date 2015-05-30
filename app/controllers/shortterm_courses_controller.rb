@@ -16,6 +16,7 @@ class ShorttermCoursesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @shortterm_course }
+      format.xlsx
     end
   end
 

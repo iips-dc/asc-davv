@@ -48,7 +48,6 @@ class ShorttermCourse < ActiveRecord::Base
         end
     end
 
-
   # searching and sorting
   filterrific(
       default_filter_params: { sorted_by: 'created_at_desc' },
@@ -114,4 +113,6 @@ class ShorttermCourse < ActiveRecord::Base
     scope :with_course_name, lambda { |course_name|
       where('courses.course_name = ?', course_name).joins(:course)
     }
+
+    acts_as_xlsx
 end    

@@ -34,7 +34,7 @@ AscDavv::Application.routes.draw do
   match '/shortterm_record' => 'shortterm_courses#record'
 
   match '/shortterm_registered' => 'shortterm_courses#registered'
-  
+
   resources :orientation_courses
 
   match '/orientation_record' => 'orientation_courses#record'

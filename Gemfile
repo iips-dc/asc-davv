@@ -62,8 +62,9 @@ gem "d3-rails"
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
-# For Backup
-gem 'backup'
+# For Spreadsheet
+gem 'acts_as_xlsx'
+gem 'axlsx_rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

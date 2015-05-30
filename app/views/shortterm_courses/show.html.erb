@@ -13,5 +13,6 @@
     <%= link_to 'Edit', edit_shortterm_course_path(@shortterm_course), :class => 'btn btn-default' if can? :update, ShorttermCourse%>
     <%= link_to 'Delete', shortterm_course_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } if can? :destroy, ShorttermCourse %> 
     <%= link_to 'Back', shortterm_record_path, :class => 'btn btn-default' %>
+    <%= link_to "Download as Excel", shortterm_course_path(format: "xlsx"), :class => 'btn btn-default' %>
 </div>
 <!-- /. offset -->
