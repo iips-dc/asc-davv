@@ -47,5 +47,6 @@
       partial: 'shortterm_courses/list',
       locals: { shortterm_courses: @shortterm_courses }
     ) %>
+    <%= link_to "Download As Excel", shortterm_record_path(format: "xlsx"), :class => 'btn btn-default' %>
 </div>
 <!-- /. row -->

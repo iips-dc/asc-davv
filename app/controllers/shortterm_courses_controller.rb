@@ -38,6 +38,12 @@ class ShorttermCoursesController < ApplicationController
     ) or return
 
     @shortterm_courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
+    respond_to do |format|
+      format.html # record.html.erb
+      format.js {}
+      format.json { render json: @shortterm_courses }
+      format.xlsx
+    end  
   end
 
   # GET /shortterm_courses/new

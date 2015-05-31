@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "List") do |sheet|
+  
+  sheet.add_row ["ID", "Name", "Email", "University", "Date Of Birth", "Mobile", "Residential Address", "Course"]
+  @shortterm_courses.each do |shortterm_course|
+  	sheet.add_row [shortterm_course.id, shortterm_course.name, shortterm_course.email, shortterm_course.university, shortterm_course.dob, shortterm_course.mobile, shortterm_course.res_address, shortterm_course.course.course_name]
+  end
+  
+end
