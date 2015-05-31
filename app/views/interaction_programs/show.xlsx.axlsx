@@ -1,0 +1,29 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Participant") do |sheet|
+  
+  sheet.add_row ["ID", @interaction_program.id]
+  sheet.add_row ["Name", @interaction_program.name]
+  sheet.add_row ["Gender", @interaction_program.gender]
+  sheet.add_row ["Religion", @interaction_program.religion]
+  sheet.add_row ["Category", @interaction_program.category]
+  sheet.add_row ["Marital Status", @interaction_program.marital_status]
+  sheet.add_row ["Email", @interaction_program.email]
+  sheet.add_row ["Stream", @interaction_program.stream]
+  sheet.add_row ["Date Of Joining Phd", @interaction_program.date_of_joining_phd]
+  sheet.add_row ["Research Experience", @interaction_program.research_experience]
+  sheet.add_row ["College", @interaction_program.college]
+  sheet.add_row ["University", @interaction_program.university]
+  sheet.add_row ["University Pin", @interaction_program.university_pin]
+  sheet.add_row ["City", @interaction_program.city]
+  sheet.add_row ["District", @interaction_program.district]
+  sheet.add_row ["State", @interaction_program.state]
+  sheet.add_row ["Landline", @interaction_program.std_code + '-' + @interaction_program.landline]
+  sheet.add_row ["Mobile", @interaction_program.mobile]
+  sheet.add_row ["Residential Address", @interaction_program.res_address]
+  sheet.add_row ["Pin", @interaction_program.pin]
+  sheet.add_row ["DD Number", @interaction_program.dd_number]
+  sheet.add_row ["DD Date", @interaction_program.dd_date]
+  sheet.add_row ["Bank Name", @interaction_program.bank_name]
+  sheet.add_row ["Amount", @interaction_program.amount]
+  
+end

@@ -86,6 +86,7 @@ class Course < ActiveRecord::Base
       where(session: [*session])
     }
 
+    acts_as_xlsx
 end
 
 

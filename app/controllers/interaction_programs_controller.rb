@@ -17,6 +17,7 @@
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @interaction_program }
+      format.xlsx
     end
   end
 
@@ -37,6 +38,12 @@
     ) or return
 
     @interaction_programs = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
+    respond_to do |format|
+      format.html # record.html.erb
+      format.js {}
+      format.json { render json: @interaction_programs }
+      format.xlsx
+    end
   end
 
 

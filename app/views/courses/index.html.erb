@@ -23,7 +23,7 @@
         <label class="label-control"> Filter:</label>
       </div>
       <div class="col-md-3">
-        <%= f.select(:with_session, @filterrific.select_options[:with_session], { include_blank: 'Select a Academic Session' }, { :class => 'filterrific-periodically-observed form-control'}) %>
+        <%= f.select(:with_session, @filterrific.select_options[:with_session], { include_blank: 'Select an Academic Session' }, { :class => 'filterrific-periodically-observed form-control'}) %>
       </div>
       <div class="col-md-1">
         <label class="label-control"> Sort By:</label>
@@ -47,6 +47,7 @@
       partial: 'courses/list',
       locals: { courses: @courses }
     ) %>    
+    <%= link_to "Download as Excel", courses_path(format: "xlsx"), :class => 'btn btn-default' %>
 </div>
 <!-- /. row -->    
     

@@ -42,9 +42,10 @@
 <!-- /.well -->
 
 <div class="row">
-     <%= render(
+    <%= render(
       partial: 'interaction_programs/list',
       locals: { interaction_programs: @interaction_programs }
     ) %>    
+    <%= link_to "Download as Excel", interaction_record_path(format: "xlsx"), :class => 'btn btn-default' %>
 </div>
 <!-- /. row -->

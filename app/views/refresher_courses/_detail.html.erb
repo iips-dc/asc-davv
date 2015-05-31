@@ -1,0 +1,137 @@
+<div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">#<%= @refresher_course.id %> <%= @refresher_course.name %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <%= image_tag(@refresher_course.image_url(:thumb).to_s, :class => @refresher_course.image? ? "img-responsive img-thumbnail" : nil) %> </div>
+                
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Date Of Birth:</td>
+                        <td><%= @refresher_course.dob.strftime('%d-%b-%Y') %></td>
+                      </tr>  
+                      <tr>
+                        <td>Gender:</td>
+                        <td><%= @refresher_course.gender %></td>
+                      </tr>
+                      <tr>
+                        <td>Religion:</td>
+                        <td><%=@refresher_course.religion %></td>
+                      </tr>
+                      <tr>
+                        <td>Category</td>
+                        <td><%=@refresher_course.category %></td>
+                      </tr>
+                      <tr>
+                        <td>Marital Status:</td>
+                        <td><%= @refresher_course.marital_status %></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><%= @refresher_course.email %></td>
+                      </tr>
+                      <tr>
+                        <td>Stream</td>
+                        <td><%= @refresher_course.stream %></td>
+                      </tr>
+                      <tr>
+                        <td>College</td>
+                        <td><%= @refresher_course.college %></td>
+                      </tr>
+                      <tr>
+                        <td>University</td>
+                        <td><%= @refresher_course.university %></td>
+                      </tr>
+                      <tr>
+                        <td>University Pin</td>
+                        <td><%= @refresher_course.university_pin %></td>
+                      </tr>
+                      <tr>
+                        <td>City</td>
+                        <td><%= @refresher_course.city %></td>
+                      </tr>
+                      <tr>
+                        <td>District</td>
+                        <td><%= @refresher_course.district %></td>
+                      </tr>
+                      <tr>
+                        <td>State</td>
+                        <td><%= @refresher_course.state %></td>
+                      </tr>
+                      <tr>
+                        <td>Position</td>
+                        <td><%= @refresher_course.position %></td>
+                      </tr>
+                      <tr>
+                        <td>Phd</td>
+                        <td><%= yesno(@refresher_course.phd) %></td>
+                      </tr>
+                      <tr>
+                        <td>Payscale</td>
+                        <td><%= @refresher_course.payscale %></td>
+                      </tr> 
+                      <tr>
+                        <td>Subject</td>
+                        <td><%= @refresher_course.subject %></td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Joining</td>
+                        <td><%= @refresher_course.date_of_joining.strftime('%d-%b-%Y') %></td>
+                      </tr>
+                      <tr>
+                        <td>Landline</td>
+                        <td><%= @refresher_course.std_code %>-<%= @refresher_course.landline %></td>
+                      </tr>
+                      <tr>
+                        <td>Mobile</td>
+                        <td><%= @refresher_course.mobile %></td>
+                      </tr>
+                      <tr>
+                        <td>Preferred Date 1</td>
+                        <td><%= @refresher_course.pref_date1.strftime('%d-%b-%Y') %></td>
+                      </tr>
+                      <tr>
+                        <td>Preferred Date 2</td>
+                        <td><%= @refresher_course.pref_date2.strftime('%d-%b-%Y') %></td>
+                      </tr>
+                      <tr>
+                        <td>Residential Address</td>
+                        <td><%= @refresher_course.res_address %></td>
+                      </tr>
+                      <tr>
+                        <td>Pin</td>
+                        <td><%= @refresher_course.pin %></td>
+                      </tr>
+                      <tr>
+                        <td>DD Number</td>
+                        <td><%= @refresher_course.dd_number %></td>
+                      </tr>
+                      <tr>
+                        <td>DD Date</td>
+                        <% if @refresher_course.dd_date=''%>
+                          <td><%= @refresher_course.dd_date %></td>
+                        <% else %>    
+                          <td><%= @refresher_course.dd_date.strftime('%d-%b-%Y') %></td>
+                        <% end %>
+                      </tr>
+                      <tr>
+                        <td>Bank Name</td>
+                        <td><%= @refresher_course.bank_name %></td>
+                      </tr>
+                      <tr>
+                        <td>Amount</td>
+                        <td><%= @refresher_course.amount %></td>
+                      </tr>
+                    </tbody>
+                  </table>   
+                </div>
+                <!-- /. col-md-9 -->
+              </div>
+              <!-- /. row -->
+          </div>
+          <!-- /. panel body -->
+</div>
+<!-- /. panel -->

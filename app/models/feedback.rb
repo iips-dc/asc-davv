@@ -10,7 +10,9 @@ class Feedback < ActiveRecord::Base
     filterrific(
       default_filter_params: { sorted_by: 'created_at_desc' },
       available_filters: [
-        :sorted_by
+        :sorted_by,
+        :with_course_name,
+        :with_resource_person
         ]
     )
 
@@ -35,4 +37,14 @@ class Feedback < ActiveRecord::Base
         ['Oldest first', 'created_at_asc']
       ]
     end
+
+    scope :with_course_name, lambda { |course_name|
+      where('courses.course_name = ?', course_name).joins(:course)
+    }
+
+    scope :with_resource_person, lambda { |person_name|
+      where('resource_people.person_name = ?', person_name).joins(:resource_person)
+    }
+
+    acts_as_xlsx
 end 

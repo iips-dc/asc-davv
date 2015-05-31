@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "List") do |sheet|
+  
+  sheet.add_row ["ID", "Name", "Email", "University", "Date Of Birth", "Mobile", "Residential Address", "Course"]
+  @orientation_courses.each do |orientation_course|
+  	sheet.add_row [orientation_course.id, orientation_course.name, orientation_course.email, orientation_course.university, orientation_course.dob, orientation_course.mobile, orientation_course.res_address, orientation_course.course.course_name]
+  end
+  
+end

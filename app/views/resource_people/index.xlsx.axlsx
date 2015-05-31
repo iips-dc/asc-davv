@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "List") do |sheet|
+  
+  sheet.add_row ["ID", "Person Name", "Mobile", "Email"]
+  @resource_people.each do |resource_person|
+  	sheet.add_row [resource_person.id, resource_person.person_name, resource_person.mobile, resource_person.person_email]
+  end
+  
+end

@@ -12,12 +12,22 @@
       <div class="col-md-1">
         <label class="label-control"> Sort By:</label>
       </div>
-      <div class="col-md-4">  
+      <div class="col-md-3">  
         <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by], { include_blank: 'Sort By:' }, { :class => 'filterrific-periodically-observed form-control'}) %>
+      </div>
+      <div class="col-md-1">
+        <label class="label-control"> Filter:</label>
+      </div>
+      <div class="col-md-3">
+        <%= f.select(:with_course_name, @filterrific.select_options[:with_course_name], { include_blank: 'Select a Course' }, { :class => 'filterrific-periodically-observed form-control'}) %>
+      </div>
+      <div class="col-md-3">
+        <%= f.select(:with_resource_person, @filterrific.select_options[:with_resource_person], { include_blank: 'Select a Resource Person' }, { :class => 'filterrific-periodically-observed form-control'}) %>
       </div>
       <br/>
       <br/>
       <br/>
+      <%= link_to 'Reset filters', reset_filterrific_url, :class => 'btn btn-sm btn-default' %>
       <%# add an automated spinner to your form when the list is refreshed %>
       <%= render_filterrific_spinner %>
     <% end %>
@@ -27,6 +37,7 @@
 <!-- row -->
 <div class="row">
     <%= render(partial: 'feedbacks/list', locals: { feedbacks: @feedbacks })  %>
+    <%= link_to "Download as Excel", feedbacks_path(format: "xlsx"), :class => 'btn btn-default' %>
 </div>
 <!-- /. row -->    
     

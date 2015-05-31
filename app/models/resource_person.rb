@@ -71,4 +71,6 @@ class ResourcePerson < ActiveRecord::Base
         ['Oldest first', 'created_at_asc']
       ]
     end
+
+    acts_as_xlsx
 end 

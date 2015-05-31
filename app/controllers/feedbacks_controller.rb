@@ -4,19 +4,23 @@ class FeedbacksController < ApplicationController
   load_and_authorize_resource
   layout "adminDashboard"
 
-  respond_to :html, :json, :except => :index
+  respond_to :html, :js, :json, :xlsx
 
   def index
     @filterrific = initialize_filterrific(
     Feedback,
     params[:filterrific],
     select_options: {
-        sorted_by: Feedback.options_for_sorted_by
+        sorted_by: Feedback.options_for_sorted_by,
+        with_course_name: Course.pluck(:course_name),
+        with_resource_person: ResourcePerson.pluck(:person_name)
     },
     persistence_id: 'shared_key',
     default_filter_params: { sorted_by: 'created_at_desc' },
     available_filters: [ 
-        :sorted_by ],
+        :sorted_by,
+        :with_course_name,
+        :with_resource_person],
     ) or return
 
     @feedbacks = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)

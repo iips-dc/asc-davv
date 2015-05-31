@@ -1,5 +1,5 @@
 wb = xlsx_package.workbook
-wb.add_worksheet(name: "Participants") do |sheet|
+wb.add_worksheet(name: "Participant") do |sheet|
   
   sheet.add_row ["ID", @shortterm_course.id]
   sheet.add_row ["Name", @shortterm_course.name]

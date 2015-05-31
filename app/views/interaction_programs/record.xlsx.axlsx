@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "List") do |sheet|
+  
+  sheet.add_row ["ID", "Name", "Email", "University", "Research Experience", "Mobile", "Residential Address", "Course"]
+  @interaction_programs.each do |interaction_program|
+  	sheet.add_row [interaction_program.id, interaction_program.name, interaction_program.email, interaction_program.university, interaction_program.research_experience, interaction_program.mobile, interaction_program.res_address, interaction_program.course.course_name]
+  end
+  
+end

@@ -1,0 +1,14 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "List") do |sheet|
+  
+  sheet.add_row ["Course ID", "Course Name", "Course Type", "Description", "Resource Person"]
+  @courses.each do |course|
+  	sheet.add_row [course.id, course.course_name, course.course_type, course.description, 
+  					 if course.resource_person_id!= nil
+                        course.resource_person.person_name 
+                     else 
+                        "N/A"
+                     end ]
+  end
+  
+end

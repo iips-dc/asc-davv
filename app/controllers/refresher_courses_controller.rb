@@ -17,6 +17,7 @@ class RefresherCoursesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @refresher_course }
+      format.xlsx
     end
   end
 
@@ -37,6 +38,12 @@ class RefresherCoursesController < ApplicationController
     ) or return
 
     @refresher_courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
+    respond_to do |format|
+      format.html # record.html.erb
+      format.js {}
+      format.json { render json: @refresher_courses }
+      format.xlsx
+    end
   end
 
   # GET /refresher_courses/new

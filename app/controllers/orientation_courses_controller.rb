@@ -4,7 +4,7 @@
   load_and_authorize_resource :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
 
-  respond_to :html, :except => :record
+  respond_to :html, :js, :json, :xlsx
 
   def index
     raise ActionController::RoutingError.new('Not Found')

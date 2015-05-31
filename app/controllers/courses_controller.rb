@@ -21,6 +21,12 @@ class CoursesController < ApplicationController
     ) or return
 
     @courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
+    respond_to do |format|
+      format.html # record.html.erb
+      format.js {}
+      format.json { render json: @courses }
+      format.xlsx
+    end
   end
 
   # GET /courses/1

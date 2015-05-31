@@ -41,6 +41,7 @@
       partial: 'resource_people/list',
       locals: { resource_people: @resource_people }
     ) %>        
+    <%= link_to "Download as Excel", resource_people_path(format: "xlsx"), :class => 'btn btn-default' %>
 </div>
 <!-- /. row -->    
     

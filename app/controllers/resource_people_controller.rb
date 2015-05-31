@@ -4,7 +4,7 @@ class ResourcePeopleController < ApplicationController
   load_and_authorize_resource 
   layout "adminDashboard"
 
-  respond_to :html, :except => :index
+  respond_to :html, :js, :json, :xlsx
 
   def index
     @filterrific = initialize_filterrific(

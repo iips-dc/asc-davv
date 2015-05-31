@@ -117,4 +117,6 @@ class OrientationCourse < ActiveRecord::Base
     scope :with_course_name, lambda { |course_name|
       where('courses.course_name = ?', course_name).joins(:course)
     }
+
+    acts_as_xlsx
 end 

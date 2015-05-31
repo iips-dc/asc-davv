@@ -1,0 +1,13 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "List") do |sheet|
+  
+  sheet.add_row ["Communication Skill", "Usefulness Of Topic", "Competency In Subject", "Quality Of Lecture", "Course Name", "Resource Person"]
+  @feedbacks.each do |feedback|
+  	sheet.add_row [feedback.communication_skill, feedback.usefulness_topic, feedback.competency_subject, feedback.quality_lecture, feedback.course.course_name, if feedback.resource_person_id!= nil
+                        feedback.resource_person.person_name 
+                     else 
+                        "N/A"
+                     end]
+  end
+  
+end
