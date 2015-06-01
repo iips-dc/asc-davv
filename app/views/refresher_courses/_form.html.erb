@@ -48,8 +48,12 @@ Dated:20/11/2014
                   <%= f.label :upload_image, "Upload Your Image" %>
                 </div>
                 <div class="col-sm-10">
-                  <%= f.file_field :image, :required => true %>
-                  <%= f.hidden_field :image_cache %>
+                  <% if @refresher_course.image? %>
+                      <%= image_tag(@refresher_course.image_url(:thumb).to_s, :class => @refresher_course.image? ? "img-responsive img-thumbnail" : nil) %>
+                    <% else %>  
+                      <%= f.file_field :image, :required => true %>
+                      <%= f.hidden_field :image_cache %>  
+                    <% end %>
                   <p class="help-block"> Image Size Should Be Less Than 1 MB </p>
                 </div>
             </div>

@@ -50,8 +50,12 @@ Dated:08/1/2015
                   <%= f.label :Upload_image, "Upload Your Image" %>
                 </div>
                 <div class="col-sm-10">
-                  <%= f.file_field :image, :required => true %>
-                  <%= f.hidden_field :image_cache %>
+                  <% if @interaction_program.image? %>
+                      <%= image_tag(@interaction_program.image_url(:thumb).to_s, :class => @interaction_program.image? ? "img-responsive img-thumbnail" : nil) %>
+                    <% else %>  
+                      <%= f.file_field :image, :required => true %>
+                      <%= f.hidden_field :image_cache %>  
+                    <% end %>
                   <p class="help-block">Image Size Should Be Less Than 1 MB</p>
                 </div>
             </div>
