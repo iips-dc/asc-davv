@@ -49,7 +49,9 @@ Dated:20/11/2014
                 </div>
                 <div class="col-sm-10">
                   <% if @refresher_course.image? %>
-                      <%= image_tag(@refresher_course.image_url(:thumb).to_s, :class => @refresher_course.image? ? "img-responsive img-thumbnail" : nil) %>
+                      <%= image_tag(@refresher_course.image_url(:thumb).to_s, :class => @refresher_course.image? ? "img-responsive img-thumbnail" : nil) %><br/>
+                      <%= f.check_box :remove_image %>
+                      Remove Image
                     <% else %>  
                       <%= f.file_field :image, :required => true %>
                       <%= f.hidden_field :image_cache %>  

@@ -51,7 +51,9 @@ Dated:08/1/2015
                 </div>
                 <div class="col-sm-10">
                   <% if @interaction_program.image? %>
-                      <%= image_tag(@interaction_program.image_url(:thumb).to_s, :class => @interaction_program.image? ? "img-responsive img-thumbnail" : nil) %>
+                      <%= image_tag(@interaction_program.image_url(:thumb).to_s, :class => @interaction_program.image? ? "img-responsive img-thumbnail" : nil) %><br/>
+                      <%= f.check_box :remove_image %>
+                      Remove Image
                     <% else %>  
                       <%= f.file_field :image, :required => true %>
                       <%= f.hidden_field :image_cache %>  
