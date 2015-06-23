@@ -3,7 +3,8 @@ class StaticPagesController < ApplicationController
 
 	def index
 		@notices=Notice.all
-		respond_with(@notices)
+		@downloads=Schedule.all
+		respond_with(@notices, @downloads)
 	end	
 
 	def programs

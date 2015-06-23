@@ -1,0 +1,38 @@
+<%= form_for(@schedule, :html => { :class => 'form-horizontal', :multipart => true}) do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+  <div class="form-group">
+    <span class="col-md-offset-1 col-md-3">
+      <%= f.label :description, :class => 'label-control' %>
+    </span>
+    <span class="col-md-6">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </span>  
+  </div>
+  <div class="form-group">
+    <span class="col-md-offset-1 col-md-3">
+      <%= f.label :attachment, :class => 'label-control' %>
+    </span>
+    <span class="col-md-6">
+      <%= f.file_field :attachment, :required => true %>
+      <%= f.hidden_field :attachment_cache %>
+    </span>  
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-4 col-md-6">
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
+  </div>
+</fieldset>  
+<% end %>

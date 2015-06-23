@@ -81,6 +81,12 @@ Dated:11/01/2014
                         </li>
                         <% end %>
 
+                        <% if can? :create, Schedule %>
+                        <li>
+                            <a class="<%= 'active' if current_page?(new_schedule_path) %>" href="/schedules/new"><i class="fa fa-upload fa-fw"></i> Upload</a>
+                        </li>
+                        <% end %>
+
                         <% if can? :manage, Course %>
                         <li>
                             <a href="#"><i class="fa fa-calendar fa-fw"></i> Course<span class="fa arrow"></span></a>

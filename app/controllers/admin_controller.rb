@@ -9,6 +9,7 @@ class AdminController < ApplicationController
 		@refresher_course= RefresherCourse.count
 		@orientation_course= OrientationCourse.count
 		@interaction_program= InteractionProgram.count
-		@notices = Notice.all 
+		@notices = Notice.all
+		@downloads=Schedule.all 
 	end
 end

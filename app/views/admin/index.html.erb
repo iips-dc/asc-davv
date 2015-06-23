@@ -109,31 +109,71 @@
 </div>
 <!-- /.row -->
 
-<div class="row">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Notices And Announcements
-    </div>
-      <div class="panel-body">
-        <% @notices.each do |notice| %>
-          <% if Date.today < notice.end_date %>  
-          <div class="col-md-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <%= link_to notice.title, notice %>
-              </div>
-              <div class="panel-body">
-                <%= notice.body %>
-              </div>
-              <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-          </div>
-          <!-- /.col-md-3 -->  
-          <% end %>
-        <% end %>
+<% if can? :manage, Notice %>
+  <% if @notices.any? %>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Notices And Announcements
       </div>
-      <!-- /. panel-body -->  
+        <div class="panel-body">
+          <% @notices.each do |notice| %>
+            <% if Date.today < notice.end_date %>  
+            <div class="col-md-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <%= link_to notice.title, notice %>
+                </div>
+                <div class="panel-body">
+                  <%= notice.body %>
+                </div>
+                <!-- /.panel-body -->
+              </div>
+              <!-- /.panel -->
+            </div>
+            <!-- /.col-md-3 -->  
+            <% end %>
+          <% end %>
+        </div>
+        <!-- /. panel-body -->  
+    </div>
   </div>
-</div>
-<!-- /.row -->    
+  <!-- /.row -->    
+  <% end %>
+<% end %>
+
+<% if can? :manage, Schedule %>
+  <% if @downloads.any? %>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Downloads
+      </div>
+        <div class="panel-body">
+          <% @downloads.each do |download| %>
+            <div class="col-md-3">
+                      <div class="media">
+                          <div class="pull-left">
+                              <span class="fa-stack fa-2x">
+                                    <i class="fa fa-circle fa-stack-1x text-primary"></i>
+                                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                              </span> 
+                          </div>
+                          <div class="media-body">
+                              <h5><%= download.description %><br/><small><%= link_to "Download", download.attachment.url, :class => 'btn btn-xs btn-primary', target: '_blank' %>
+                                <%= link_to "Delete", schedule_path(download), method: :delete, data: { confirm: "Are You Sure?" }, :class => 'btn btn-xs btn-default' %>
+                                  </small>
+                              </h5>
+                          </div>
+                      </div>
+                      <!-- /.media -->
+            </div>
+            <!-- /.col-md-3 --> 
+          <% end %>
+        </div>
+        <!-- /. panel-body -->  
+    </div>
+  </div>
+  <!-- /.row -->    
+  <% end %>
+<% end %>  

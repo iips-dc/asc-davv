@@ -1,5 +1,9 @@
 AscDavv::Application.routes.draw do
   
+  resources :schedules, only: [:new, :create, :destroy]
+
+  match '/upload_success' => 'schedules#success'
+
   resources :feedbacks
 
   match '/recorded' => 'feedbacks#success'
@@ -10,7 +14,7 @@ AscDavv::Application.routes.draw do
 
   resources :resource_people
 
-  resources :notices
+  resources :notices, except: [:index]
   
   devise_for :admins, :controllers => { :registrations => 'registration' }, :skip => [:sessions]
   as :admin do
