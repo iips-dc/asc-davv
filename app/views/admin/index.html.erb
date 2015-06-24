@@ -120,7 +120,7 @@
           <% @notices.each do |notice| %>
             <% if Date.today < notice.end_date %>  
             <div class="col-md-4">
-              <div class="panel panel-info">
+              <div class="panel panel-default">
                 <div class="panel-heading">
                   <%= link_to notice.title, notice %>
                 </div>

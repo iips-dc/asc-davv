@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150623181922) do
+ActiveRecord::Schema.define(:version => 20150624052918) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20150623181922) do
     t.datetime "updated_at",         :null => false
     t.integer  "resource_person_id"
     t.string   "session"
+    t.string   "syllabus"
   end
 
   add_index "courses", ["resource_person_id"], :name => "index_courses_on_resource_person_id"

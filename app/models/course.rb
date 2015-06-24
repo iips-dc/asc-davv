@@ -5,7 +5,9 @@ class Course < ActiveRecord::Base
   has_many :interaction_programs, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
   belongs_to :resource_person
-  attr_accessible :course_name, :description, :end_date, :start_date, :course_type, :session, :resource_person_id
+  attr_accessible :course_name, :description, :end_date, :start_date, :course_type, :session, :syllabus, :syllabus_cache, :remove_syllabus, :resource_person_id
+
+  mount_uploader :syllabus, SyllabusUploader
 
   #field not remain blank
   validates :course_name, :description, :end_date, :start_date, :course_type, :session, presence: true

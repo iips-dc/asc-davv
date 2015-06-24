@@ -37,8 +37,18 @@
       <%= f.text_field :end_date, :placeholder => 'Date Format: YYYY/MM/DD', :class => 'form-control prefdatepicker' %>
   </div>
   <div class="form-group">
-    <%= f.label :session, "Academic Session", :class => 'label-control' %><br />
-    <%= f.text_field :session, :placeholder => 'Enter Academic Session', :class => 'form-control', autofocus: true %>
+      <%= f.label :session, "Academic Session", :class => 'label-control' %><br />
+      <%= f.text_field :session, :placeholder => 'Enter Academic Session', :class => 'form-control', autofocus: true %>
+  </div>
+  <div class="form-group">
+      <%= f.label :syllabus, "Upload Resource Material", :class => 'label-control' %>    <br />
+      <% if @course.syllabus? %>
+        <%= link_to image_tag('/assets/fallback/file.png'), @course.syllabus.url, target: '_blank' %><br/>
+        <%= f.check_box :remove_syllabus %>
+      <% else %>   
+        <%= f.file_field :syllabus, :required => true %>
+        <%= f.hidden_field :syllabus_cache %>
+      <% end %>
   </div>
   <div class="form-group">
     <div class="col-md-offset-4 col-md-6"> 
