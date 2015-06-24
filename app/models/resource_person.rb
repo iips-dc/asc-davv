@@ -1,5 +1,6 @@
 class ResourcePerson < ActiveRecord::Base
-  has_many :courses, dependent: :destroy	
+  has_many :courses, dependent: :destroy
+  has_many :feedbacks, dependent: :destroy	
   attr_accessible :mobile, :person_email, :person_name
 
   #field not remain blank

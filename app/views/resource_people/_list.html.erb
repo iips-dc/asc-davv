@@ -9,16 +9,17 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                       <thead>
                         <tr>
-                          <th>ResourcePerson ID</th>
+                          <th>S.no</th>
                           <th>Person name</th>
                           <th>Mobile</th>
                           <th>Person email</th>
                         </tr>
                       </thead>  
-                      <tbody>  
+                      <tbody>
+                      <% i=0 %>  
                         <% @resource_people.each do |resource_person| %>
                           <tr>
-                            <td><%= link_to resource_person.id, resource_person %></td>
+                            <td><%= link_to i=i+1, resource_person %></td>
                             <td><%= resource_person.person_name %></td>
                             <td><%= resource_person.mobile %></td>
                             <td><%= resource_person.person_email %></td>

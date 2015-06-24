@@ -4,7 +4,7 @@
                         <thead>          
                           <tr>
                             <tr>
-                                <th>ID</td>
+                                <th>S.no</td>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>University</th>
@@ -15,10 +15,11 @@
                             </tr>
                           </tr>
                       </thead>    
+                      <% i=0 %>
                         <% @interaction_programs.each do |interaction_program| %>
                           <tbody>
                               <tr>
-                                <td><%= link_to interaction_program.id, interaction_program %></td>
+                                <td><%= link_to i=i+1, interaction_program %></td>
                                 <td><%= interaction_program.name %></td>
                                 <td><%= interaction_program.email %></td>
                                 <td><%= interaction_program.university %></td>

@@ -9,7 +9,7 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                       <thead>
                           <tr>
-                            <th>ID</th>
+                            <th>S.no</th>
                             <th>Communication skill</th>
                             <th>Usefulness Of topic</th>
                             <th>Competency In subject</th>
@@ -18,16 +18,23 @@
                             <th>Resource person</th>
                           </tr>
                       </thead>  
-                      <tbody>  
+                      <tbody>
+                      <% i=0 %>  
                         <% @feedbacks.each do |feedback| %>
                           <tr>
-                            <td><%= link_to feedback.id, feedback %></td>
+                            <td><%= link_to i=i+1, feedback %></td>
                             <td><%= feedback.communication_skill %></td>
                             <td><%= feedback.usefulness_topic %></td>
                             <td><%= feedback.competency_subject %></td>
                             <td><%= feedback.quality_lecture %></td>
                             <td><%= feedback.course.course_name %></td>
-                            <td><%= feedback.resource_person.person_name %></td>
+                            <td>
+                                <% if feedback.resource_person_id!= nil %> 
+                                  <%= feedback.resource_person.person_name %>
+                                <% else %>
+                                  <%= N/A %>
+                                <% end %>    
+                            </td>
                           </tr>
                         <% end %>
                       </tbody>  
