@@ -14,6 +14,15 @@
     respond_with(@orientation_course)
   end
 
+  def registered
+    @orientation_course = OrientationCourse.find(params[:id])
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: @orientation_course }
+    end
+  end
+
   def record
     @filterrific = initialize_filterrific(
     OrientationCourse,
@@ -45,7 +54,7 @@
     @orientation_course = OrientationCourse.new(params[:orientation_course])
     respond_to do |format|
       if @orientation_course.save
-        format.html { redirect_to registered_path }
+        format.html { redirect_to "/orientation_registered/#{@orientation_course.id}" }
         format.json { render json: @orientation_course, status: :created, location: @orientation_course }
       else
         format.html { render action: "new" }

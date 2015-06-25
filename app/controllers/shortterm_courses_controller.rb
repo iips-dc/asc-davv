@@ -20,6 +20,15 @@ class ShorttermCoursesController < ApplicationController
     end
   end
 
+  def registered
+    @shortterm_course=ShorttermCourse.find(params[:id])
+  
+    respond_to do |format|
+      format.html 
+      format.json { render json: @shortterm_course }
+    end
+  end  
+
   #List of record
   def record
     @filterrific = initialize_filterrific(
@@ -69,7 +78,7 @@ class ShorttermCoursesController < ApplicationController
 
     respond_to do |format|
       if @shortterm_course.save
-        format.html { redirect_to shortterm_registered_path }
+        format.html { redirect_to "/shortterm_registered/#{@shortterm_course.id}" }
         format.json { render json: @shortterm_course, status: :created, location: @shortterm_course }
       else
         format.html { render action: "new" }

@@ -21,6 +21,15 @@ class RefresherCoursesController < ApplicationController
     end
   end
 
+  def registered
+    @refresher_course = RefresherCourse.find(params[:id])
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: @refresher_course }
+    end
+  end
+
   def record
     @filterrific = initialize_filterrific(
     RefresherCourse,
@@ -69,7 +78,7 @@ class RefresherCoursesController < ApplicationController
 
     respond_to do |format|
       if @refresher_course.save
-        format.html { redirect_to registered_path }
+        format.html { redirect_to "/refresher_registered/#{@refresher_course.id}" }
         format.json { render json: @refresher_course, status: :created, location: @refresher_course }
       else
         format.html { render action: "new" }

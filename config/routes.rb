@@ -28,22 +28,28 @@ AscDavv::Application.routes.draw do
   resources :courses
 
   match '/courses_success' => 'courses#success'
-  
-  resources :refresher_courses
-
-  match '/refresher_record' => 'refresher_courses#record'
 
   resources :shortterm_courses
 
-  match '/shortterm_record' => 'shortterm_courses#record'
+  match '/shortterm_registered/:id' => 'shortterm_courses#registered'
 
-  match '/shortterm_registered' => 'shortterm_courses#registered'
+  match '/shortterm_record' => 'shortterm_courses#record'
+  
+  resources :refresher_courses
+
+  match '/refresher_registered/:id' => 'refresher_courses#registered'
+
+  match '/refresher_record' => 'refresher_courses#record'
 
   resources :orientation_courses
+
+  match '/orientation_registered/:id' => 'orientation_courses#registered'
 
   match '/orientation_record' => 'orientation_courses#record'
 
   resources :interaction_programs
+
+  match '/interaction_registered/:id' => 'interaction_programs#registered'
 
   match '/interaction_record' => 'interaction_programs#record'
   
