@@ -33,6 +33,17 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
+    @course_type=@course.course_type
+    
+    if @course_type=='Short-term Course'
+      @stats = @course.shortterm_courses
+    elsif @course_type=='Refresher Course'
+      @stats = @course.shortterm_courses
+    elsif @course_type=='Orientation Course'
+      @stats = @course.orientation_courses    
+    else
+      @stats = @course.interaction_programs        
+    end  
 
     respond_to do |format|
       format.html # show.html.erb
