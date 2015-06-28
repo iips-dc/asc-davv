@@ -31,11 +31,15 @@ AscDavv::Application.routes.draw do
 
   resources :shortterm_courses
 
+  match '/shortterm_instructions' => 'shortterm_courses#instructions'
+
   match '/shortterm_registered/:id' => 'shortterm_courses#registered'
 
   match '/shortterm_record' => 'shortterm_courses#record'
   
   resources :refresher_courses
+
+  match '/refresher_instructions' => 'refresher_courses#instructions'
 
   match '/refresher_registered/:id' => 'refresher_courses#registered'
 
@@ -43,11 +47,15 @@ AscDavv::Application.routes.draw do
 
   resources :orientation_courses
 
+  match '/orientation_instructions' => 'orientation_courses#instructions'
+
   match '/orientation_registered/:id' => 'orientation_courses#registered'
 
   match '/orientation_record' => 'orientation_courses#record'
 
   resources :interaction_programs
+
+  match '/interaction_instructions' => 'interaction_programs#instructions'
 
   match '/interaction_registered/:id' => 'interaction_programs#registered'
 
