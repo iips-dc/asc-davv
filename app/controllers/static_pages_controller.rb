@@ -1,10 +1,18 @@
 class StaticPagesController < ApplicationController
+	before_filter :authenticate_admin!, :only => [:download]
+
+	layout "adminDashboard", :only => [:download]
 	respond_to :html
 
 	def index
 		@notices=Notice.all
 		@downloads=Schedule.all
 		respond_with(@notices, @downloads)
+	end	
+
+	def download
+		@courses = Course.all
+		respond_with(@courses)
 	end	
 
 	def programs
