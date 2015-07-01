@@ -73,6 +73,10 @@ AscDavv::Application.routes.draw do
 
   match '/program' => 'static_pages#programs'
 
+  match '/search' => 'static_pages#search'
+
+  match '/result' => 'static_pages#result'
+
   match '/welcome' => 'static_pages#welcome'
 
   match '/admin' => 'admin#index'

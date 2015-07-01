@@ -62,6 +62,7 @@ Dated: 20/11/2014
         <!-- /.row -->
         <hr>
     
+<% if @notices.any? %>    
         <!-- Notices -->
         <div class="row">
             <div class="col-lg-12">
@@ -90,7 +91,9 @@ Dated: 20/11/2014
         </div>
         <!-- /.row -->
         <hr>
-    
+<% end %>        
+
+<% if @downloads.any? %>        
         <!-- Downloads -->
         <div class="row">
             <div class="col-lg-12">
@@ -118,4 +121,4 @@ Dated: 20/11/2014
         </div>
         <!-- /.row -->
         <hr>
-    
+<% end %>    

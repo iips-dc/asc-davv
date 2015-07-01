@@ -41,7 +41,7 @@ class CoursesController < ApplicationController
       @stats = @course.shortterm_courses
     elsif @course_type=='Orientation Course'
       @stats = @course.orientation_courses    
-    else
+    elsif @course_type=='Interaction Program'
       @stats = @course.interaction_programs        
     end  
 
