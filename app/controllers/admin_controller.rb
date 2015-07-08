@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 	layout "adminDashboard"
 	def index
 		@user = current_admin
-		@courses = Course.count
+		@courses = Course.all
 		@resource_people = ResourcePerson.count
 		@shortterm_course= ShorttermCourse.count
 		@refresher_course= RefresherCourse.count

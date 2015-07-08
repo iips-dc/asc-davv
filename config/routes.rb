@@ -69,8 +69,6 @@ AscDavv::Application.routes.draw do
 
   match '/contact' => 'static_pages#contact'
 
-  match '/download' => 'static_pages#download'
-
   match '/faq' => 'static_pages#faq'
 
   match '/program' => 'static_pages#programs'

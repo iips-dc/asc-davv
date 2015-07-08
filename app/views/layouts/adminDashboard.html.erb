@@ -87,10 +87,6 @@ Dated:11/01/2014
                         </li>
                         <% end %>
 
-                        <li>
-                            <a class="<%= 'active' if current_page?(download_path) %>" href="/download"><i class="fa fa-download fa-fw"></i> Download Course Material</a>
-                        </li>
-
                         <% if can? :manage, Course %>
                         <li>
                             <a href="#"><i class="fa fa-calendar fa-fw"></i> Course<span class="fa arrow"></span></a>
