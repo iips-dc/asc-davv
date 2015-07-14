@@ -5,7 +5,7 @@ Dated:08/1/2015
 <%= form_for(@interaction_program, :html => { :class => 'form-horizontal', :multipart => true}) do |f| %>
   <% if @interaction_program.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@interaction_program.errors.count, "error") %> prohibited this interaction_program from being saved:</h2>
+      <h2>Record Could Not be Saved Because of the following errors:</h2>
 
       <ul>
       <% @interaction_program.errors.full_messages.each do |msg| %>
@@ -58,7 +58,7 @@ Dated:08/1/2015
                       <%= f.file_field :image, :required => true %>
                       <%= f.hidden_field :image_cache %>  
                     <% end %>
-                  <p class="help-block">Image Size Should Be Less Than 1 MB</p>
+                  <p class="help-block">Image Size Should Be Less Than 3 MB</p>
                 </div>
             </div>
             <!-- Image Field -->
@@ -162,7 +162,7 @@ Dated:08/1/2015
               <div class="col-sm-8">
                 <%= f.text_field :date_of_joining_phd, :placeholder => "Select Your Date Of Joining", :class => 'datepicker', :required => true %>
                 <i class="fa fa-calendar"></i>
-                <p class="help-block"> Date Format: YYYY/MM/DD </p>
+                <p class="help-block"> Date Format: DD-MM-YYYY </p>
               </div>  
             </div>
             <!-- Date Of Joining Field -->
@@ -391,7 +391,7 @@ Dated:08/1/2015
                 <div class="col-sm-8">
                   <%= f.text_field :dd_date, :placeholder => "Enter DD date", :class => 'datepicker' %>
                   <i class="fa fa-calendar"></i>
-                  <p class="help-block"> Date Format: YYYY/MM/DD </p>
+                  <p class="help-block"> Date Format: DD-MM-YYYY </p>
                 </div>
                 <p class="help-block">(Optional)</p>
               </div>

@@ -4,7 +4,7 @@ Dated:20/11/2014
 <%= form_for(@refresher_course, :html => { :class => 'form-horizontal'}) do |f| %>
     <% if @refresher_course.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@refresher_course.errors.count, "error") %> prohibited this refresher_course from being saved:</h2>
+          <h2>Record Could Not be Saved Because of the following errors:</h2>
 
           <ul>
           <% @refresher_course.errors.full_messages.each do |msg| %>
@@ -56,7 +56,7 @@ Dated:20/11/2014
                       <%= f.file_field :image, :required => true %>
                       <%= f.hidden_field :image_cache %>  
                     <% end %>
-                  <p class="help-block"> Image Size Should Be Less Than 1 MB </p>
+                  <p class="help-block"> Image Size Should Be Less Than 3 MB </p>
                 </div>
             </div>
             <!-- Image Field -->
@@ -84,7 +84,7 @@ Dated:20/11/2014
               <div class="col-sm-8">
                 <%= f.text_field :dob, :placeholder => "Select Your Date Of Birth", :class => 'datepicker', :required => true %>
                 <i class="fa fa-calendar"></i>
-                <p class="help-block"> Date Format: YYYY-MM-DD </p>
+                <p class="help-block"> Date Format: DD-MM-YYYY </p>
               </div>
             </div>
             <!-- Date Of Birth -->
@@ -197,7 +197,7 @@ Dated:20/11/2014
               <div class="col-sm-8">
                 <%= f.text_field :date_of_joining, :placeholder => "Select Your Date Of Joining", :class => 'datepicker', :required => true %>
                 <i class="fa fa-calendar"></i>
-                <p class="help-block"> Date Format: YYYY-MM-DD </p>
+                <p class="help-block"> Date Format: DD-MM-YYYY </p>
               </div>  
             </div>
             <!-- Date Of Joining Field -->
@@ -313,7 +313,7 @@ Dated:20/11/2014
                 <div class="col-sm-8">
                   <%= f.text_field :pref_date1, :placeholder => "Select Your First Date Preference", :class => 'prefdatepicker', :required => true %>
                   <i class="fa fa-calendar"></i>
-                  <p class="help-block"> Date Format: YYYY/MM/DD </p>
+                  <p class="help-block"> Date Format: DD-MM-YYYY </p>
                 </div>
               </div>
               <!-- Preferred Date1 Field -->
@@ -325,7 +325,7 @@ Dated:20/11/2014
                 <div class="col-sm-8">
                   <%= f.text_field :pref_date2, :placeholder => "Select Your Second Date Preference", :class => 'prefdatepicker', :required => true %>
                   <i class="fa fa-calendar"></i>
-                  <p class="help-block"> Date Format: YYYY/MM/DD </p>
+                  <p class="help-block"> Date Format: DD-MM-YYYY </p>
                 </div> 
               </div>
               <!-- Preferred Date2 Field -->
@@ -452,7 +452,7 @@ Dated:20/11/2014
                 <div class="col-sm-8">
                   <%= f.text_field :dd_date, :placeholder => "Enter DD date", :class => 'datepicker' %>
                   <i class="fa fa-calendar"></i>
-                  <p class="help-block"> Date Format: YYYY/MM/DD </p>
+                  <p class="help-block"> Date Format: DD-MM-YYYY </p>
                 </div>
                 <p class="help-block">(Optional)</p>
               </div>

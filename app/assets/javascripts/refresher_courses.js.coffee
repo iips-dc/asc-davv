@@ -6,13 +6,13 @@ $(document).ready ->
   
   # bootstrap date picker 
   $(".datepicker").datepicker
-    format: "yyyy-mm-dd"
-    startDate: "1940-01-01"
+    format: "dd-mm-yyyy"
+    startDate: "01-01-1940"
     endDate: "0d"
   
   # Preferred Dates date picker 
   $(".prefdatepicker").datepicker 
-    format: "yyyy-mm-dd"
+    format: "dd-mm-yyyy"
     startDate: "0d"
 
   # Toggle Buttons For navigating between tabs 

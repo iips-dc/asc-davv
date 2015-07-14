@@ -13,17 +13,25 @@ class StaticPagesController < ApplicationController
 	end	
 
 	def result
+		date=Date.parse(params[:dob].to_s).strftime('%Y-%m-%d')
 		if params[:course_type] == 'Short-term Course'
-			@record=ShorttermCourse.find_by_dob_and_id(params[:dob], params[:registration_id])
+			@record=ShorttermCourse.find_by_dob_and_id(date, params[:registration_id])
 		elsif params[:course_type] == 'Refresher Course'
-			@record=RefresherCourse.find_by_dob_and_id(params[:dob], params[:registration_id])
+			@record=RefresherCourse.find_by_dob_and_id(date, params[:registration_id])
 		elsif params[:course_type] == 'Orientation Course'
-			@record=OrientationCourse.find_by_dob_and_id(params[:dob], params[:registration_id])
+			@record=OrientationCourse.find_by_dob_and_id(date, params[:registration_id])
 		elsif params[:course_type] == 'Interaction Program'
-			@record=InteractionProgram.find_by_dob_and_id(params[:dob], params[:registration_id])
+			@record=InteractionProgram.find_by_dob_and_id(date, params[:registration_id])
 		end
-		respond_to do |format|
-			format.html { render "static_pages/result", :layout => false}
-		end			
+
+		if @record.nil?
+			respond_to do |format|
+				format.html { redirect_to "/search", notice: 'No Record Found'}
+			end	
+		else	
+			respond_to do |format|
+				format.html { render "/static_pages/result", :layout => false}
+			end		
+		end	
 	end
 end

@@ -31,8 +31,8 @@ class InteractionProgram < ActiveRecord::Base
   validate :image_size_validation, :if => "image?"
 
     def image_size_validation
-        if image.size > 1.megabytes
-          errors.add(:base, "Image should be less than 1MB")
+        if image.size > 3.megabytes
+          errors.add(:base, "Image should be less than 3 MB")
         end
     end
 
