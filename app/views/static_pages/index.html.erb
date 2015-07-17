@@ -1,11 +1,54 @@
 <!--
 @Author: Dhaval
 Dated: 20/11/2014    
--->
+-->    
+</div>
+<!-- /.Container -->
+    <div class="row logo">
+    <hr>
+        <img class="img-responsive fill" src="../assets/asc.png" alt="">
+    <hr>
     </div>
-    <!-- /.Container -->
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                <h4><b>Notices And Announcements</b></h4>
+            </div>
+            <div class="panel-body">
+                <% i=0 %>
+                <% @notices.each do |notice| %>            
+                    <% if Date.today < notice.end_date && i<2 %> 
+                        <div class="media">
+                            <div class="pull-left">
+                                <span class="fa-stack fa-1x">
+                                      <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                      <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                                </span> 
+                            </div>
+                            <div class="media-body">
+                                <p><%= notice.title %><br/> <small class="text-muted"><%= notice.body %></small></p>
+                            </div>
+                        </div>
+                        <!-- /.media -->
+                        <% i+=1 %>
+                    <% end %> 
+                <% end %>
+                <% if i==0 %>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <p class="text-muted text-center"><b>No Upcoming Programs</b></p>
+                <% end %>
+            </div>
+            <div class="panel-heading text-center">
+                <a href="#notice" class="btn btn-default">View All</a>        
+            </div>    
+        </div>        
+    </div>    
     <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
+    <div id="myCarousel" class="carousel slide col-md-6">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -25,22 +68,63 @@ Dated: 20/11/2014
                 <img class="img-responsive fill" src="../assets/carousel/03.jpg" alt="">
             </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </header>
-
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                <h4><b>Upcoming Programs</b></h4>
+            </div>
+            <div class="panel-body">
+            <% j=0 %>
+            <% @courses.each do |course| %>            
+                <% if Date.today < course.start_date && j<3 %>
+                    <div class="media">
+                        <div class="pull-left">
+                            <span class="fa-stack fa-1x">
+                                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                  <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+                            </span> 
+                        </div>
+                        <div class="media-body">
+                            <p><%= course.course_type %> In <%= course.course_name %> From <%= course.start_date.strftime('%d-%b-%Y') %> To <%= course.end_date.strftime('%d-%b-%Y') %> </p>
+                        </div>
+                    </div>
+                    <% j+=1 %>
+                <% end %> 
+            <% end %>
+            <% if j==0 %>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <p class="text-muted text-center"><b>No Upcoming Programs</b></p>
+            <% end %>
+            </div>
+            <div class="panel-heading text-center">
+                <a href="/program#upcoming" class="btn btn-default">View All</a>        
+            </div>    
+        </div>
+    </div>    
+    <br />
+    <div class="row logo col-md-12">
+        <span class="col-md-3 text-muted">&nbsp;&nbsp;<%= Date.today.strftime("%A %d, %b %Y") %></span>
+    <hr>
+    </div>
     <!-- Page Content -->
-    <div class="container">
         <!-- Features Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Human Resource Development Center, DAVV</h2>
+        <div class="row logo">
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <h4><b>About University</b></h4>
+                    </div>
+                    <div class="panel-body">
+                        <a href="http://www.dauniv.ac.in/"><img class="img-responsive" src="../assets/davv1.png" alt=""></a>
+                        <p>Devi Ahilya Vishwavidyalaya (DAVV), formerly University of Indore, is a premier University in Central India.</p> 
+                        <p>It is the only State University of Madhya Pradesh which has been recently accredited with “A” grade by NAAC.</p> 
+                        <p>It was established in 1964, by an Act of Legislature of Madhya Pradesh.</p>    
+                    </div>    
+                </div>    
             </div>
             <div class="col-md-6">
                 <p>
@@ -55,19 +139,49 @@ Dated: 20/11/2014
                   In the years 1990,1993,1997,Indore HRDC was visited by the U.G.C. Review Committee for HRDC's, who were highly satisfied with its performance. In the latest review the term of HRDC, Indore has been extended for full five years, the maximum possible.
                 </p>
             </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="../assets/04.jpg" alt="">
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                            <p><u><b>Kindly provide your feedback and suggestions at the following link: </b></u></p>
+                            <p>
+                                <span class="fa-stack fa-1x">
+                                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                          <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+                                </span>
+                            <a href="#">Feedback Form</a></p>
+                            <p><u><b>Other Links</b></u></p>
+                            <p>
+                                <span class="fa-stack fa-1x">
+                                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                          <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+                                </span>
+                            <a href="http://www.dauniv.ac.in/vc_message.php">VC Message</a></p>
+                            <p>
+                                <span class="fa-stack fa-1x">
+                                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                          <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+                                </span>
+                            <a href="http://www.dauniv.ac.in/ugcinfonet.php">Library</a></p>
+                            <p>
+                                <span class="fa-stack fa-1x">
+                                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                          <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+                                </span>
+                            <a href="http://www.dauniv.ac.in/Notices.php">Current News</a></p>
+                    </div>    
+                </div>
             </div>
         </div>
         <!-- /.row -->
-        <hr>
     
+<div class="container">    
 <% if @notices.any? %>    
         <!-- Notices -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Notices <small>And Announcements</small></h2>
+                <h2 class="page-header">Notices And Announcements</h2>
             </div>
+            <a name="notice"></a>
             <% @notices.each do |notice| %>
               <% if Date.today < notice.end_date %>  
                 <div class="col-md-3">
@@ -80,7 +194,6 @@ Dated: 20/11/2014
                         </div>
                         <div class="media-body">
                             <h4><%= notice.title %><br/> <small><%= notice.body %></small></h4>
-                            
                         </div>
                     </div>
                     <!-- /.media -->

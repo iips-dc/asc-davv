@@ -4,7 +4,8 @@ class StaticPagesController < ApplicationController
 	def index
 		@notices=Notice.all
 		@downloads=Schedule.all
-		respond_with(@notices, @downloads)
+		@courses = Course.order(:start_date)
+		respond_with(@notices, @downloads, @courses)
 	end		
 
 	def programs
