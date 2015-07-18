@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
 	end		
 
 	def programs
-		@courses = Course.all
+		@courses = Course.order(:start_date)
 		respond_with(@courses)
 	end	
 
