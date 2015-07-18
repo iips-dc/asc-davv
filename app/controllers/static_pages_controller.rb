@@ -5,7 +5,8 @@ class StaticPagesController < ApplicationController
 		@notices=Notice.all
 		@downloads=Schedule.all
 		@courses = Course.order(:start_date)
-		respond_with(@notices, @downloads, @courses)
+		@quote=Quoth.get
+		respond_with(@notices, @downloads, @courses, @quote)
 	end		
 
 	def programs

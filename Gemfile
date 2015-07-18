@@ -66,6 +66,9 @@ gem 'jbuilder'
 gem 'acts_as_xlsx'
 gem 'axlsx_rails'
 
+# For quote of the day
+gem 'quoth'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
