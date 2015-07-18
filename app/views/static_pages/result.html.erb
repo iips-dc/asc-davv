@@ -24,15 +24,6 @@
 <body>
 <div class="col-md-offset-1 col-md-10 col-md-offset-1">
   
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#personal-detail" aria-controls="personal-detail" role="tab" data-toggle="tab">Personal Details</a></li>
-    <li role="presentation"><a href="#certificate" aria-controls="certificate" role="tab" data-toggle="tab">Certificate</a></li>
-  </ul>
-  
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="personal-detail">  
     	<div class="panel panel-default">
                 <div class="panel-body">
                   <div class="row">
@@ -175,45 +166,7 @@
         <!-- /. panel body -->
     	</div>	
     	<!-- /. panel -->
-    </div>
-    <!-- /.tab-pane -->
-
-    <div role="tabpanel" class="tab-pane" id="certificate">  
-      <div class="panel panel-default">
-                <div class="panel-body" style="font-size:16px;">
-                  <h2 class="text-center"><strong>Certificate for claiming TA/DA</strong></h2><br/>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To,</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Director</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UGC-Human Resource Development Centre</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Devi Ahilya Vishwavidyalaya</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indore - 452001</p><br/>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject: Certificate for claiming TA/DA.</p><br/>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dear Sir,</p>
-
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is to certify that our college/institution/organization (name of the institution) <strong><%= @record.college %></strong>
-                     is affiliated </p>  
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to <strong><%= @record.university %></strong> University since .................... and recognized under Section 2 (f) & included under Section 12(B) of UGC Act </p> 
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1956, vide letter No ............................................................ dated .................... received from University Grants Commission, New Delhi.</p><br/>
-
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The above information provided is true to our knowledge, and if found to be otherwise, the concerned teacher Mr./Mrs./Ms./Dr </p> 
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><%= @record.name %></strong> who is attending the course/programmes organized by UGC-HRDC, DAVV will not be entitled for his/her TA/DA </p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as per the new UGC Guidelines for HRDCs.</p><br/>
-                    
-                                                                              <p class="text-right" style="margin-right:120px">
-                                                                                Yours sincerely,
-                                                                              </p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date:</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place:</p>  
-                                                                              <p class="text-right" style="margin-right:80px">Principal/Head of Institution</p>
-                                                                              <p class="text-right" style="margin-right:100px">(Signature with seal)</p>                                                           
-                </div>
-                <!-- /. panel body -->
-      </div>  
-      <!-- /. panel -->
-    </div>
-     <!-- /.tab-pane -->  
-  </div>
-  <!-- /.tab-content -->  
+    
 	<span class="col-md-offset-5 col-md-2">
 		<%= link_to 'Back', search_path, :class => 'btn btn-default' %>
 	</span>	
