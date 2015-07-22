@@ -1,0 +1,21 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Participant") do |sheet|
+  
+  sheet.add_row ["ID", @principal_workshop.id]
+  sheet.add_row ["Name", @principal_workshop.name]
+  sheet.add_row ["Date Of Birth", @principal_workshop.dob.strftime("%d-%b-%Y")]
+  sheet.add_row ["Designation", @principal_workshop.designation]
+  sheet.add_row ["University", @principal_workshop.university]
+  sheet.add_row ["University type", @principal_workshop.univ_type]
+  sheet.add_row ["Academic Qualification", @principal_workshop.academic_qualification]
+  sheet.add_row ["Workshop", @principal_workshop.course.course_name]
+  sheet.add_row ["Email", @principal_workshop.email]
+  sheet.add_row ["Office Number", @principal_workshop.std_code + '-' + @principal_workshop.office_number]
+  sheet.add_row ["Mobile", @principal_workshop.mobile]
+  sheet.add_row ["Office Address", @principal_workshop.office_address]
+  sheet.add_row ["Residential Address", @principal_workshop.res_address]
+  sheet.add_row ["DD Number", @principal_workshop.dd_number]
+  sheet.add_row ["DD Date", @principal_workshop.dd_date]
+  sheet.add_row ["Bank Name", @principal_workshop.bank_name]
+  sheet.add_row ["Amount", @principal_workshop.amount]
+end

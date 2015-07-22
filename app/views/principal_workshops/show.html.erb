@@ -1,75 +1,18 @@
-<p id="notice"><%= notice %></p>
+<!-- row -->            
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Individual Record</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
 
-<p>
-  <b>Name:</b>
-  <%= @principal_workshop.name %>
-</p>
+<div class="col-md-offset-1 col-md-10 col-md-offset-1">
+    <%= render 'detail' %>
 
-<p>
-  <b>Designation:</b>
-  <%= @principal_workshop.designation %>
-</p>
-
-<p>
-  <b>University:</b>
-  <%= @principal_workshop.university %>
-</p>
-
-<p>
-  <b>Univ type:</b>
-  <%= @principal_workshop.univ_type %>
-</p>
-
-<p>
-  <b>Academic qualification:</b>
-  <%= @principal_workshop.academic_qualification %>
-</p>
-
-<p>
-  <b>Office address:</b>
-  <%= @principal_workshop.office_address %>
-</p>
-
-<p>
-  <b>Res address:</b>
-  <%= @principal_workshop.res_address %>
-</p>
-
-<p>
-  <b>Std code:</b>
-  <%= @principal_workshop.std_code %>
-</p>
-
-<p>
-  <b>Office number:</b>
-  <%= @principal_workshop.office_number %>
-</p>
-
-<p>
-  <b>Mobile:</b>
-  <%= @principal_workshop.mobile %>
-</p>
-
-<p>
-  <b>Fax code:</b>
-  <%= @principal_workshop.fax_code %>
-</p>
-
-<p>
-  <b>Fax number:</b>
-  <%= @principal_workshop.fax_number %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @principal_workshop.email %>
-</p>
-
-<p>
-  <b>Course:</b>
-  <%= @principal_workshop.course %>
-</p>
-
-
-<%= link_to 'Edit', edit_principal_workshop_path(@principal_workshop) %> |
-<%= link_to 'Back', principal_workshops_path %>
+    <%= link_to 'Edit', edit_principal_workshop_path(@principal_workshop), :class => 'btn btn-default' if can? :update, PrincipalWorkshop %>
+    <%= link_to 'Delete', principal_workshop_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } if can? :destroy, PrincipalWorkshop %> 
+    <%= link_to 'Back', workshop_record_path, :class => 'btn btn-default' %>
+    <%= link_to "Download as Excel", principal_workshop_path(format: "xlsx"), :class => 'btn btn-default' %>
+</div>
+<!-- /. offset -->

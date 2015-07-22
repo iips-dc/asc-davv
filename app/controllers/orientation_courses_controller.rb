@@ -64,7 +64,6 @@
   end
 
   def destroy
-    @orientation_course = OrientationCourse.find(params[:id])
     @orientation_course.destroy
 
     respond_to do |format|

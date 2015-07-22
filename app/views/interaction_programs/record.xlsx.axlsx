@@ -4,6 +4,5 @@ wb.add_worksheet(name: "List") do |sheet|
   sheet.add_row ["S.no", "Name", "Email", "University", "Research Experience", "Mobile", "Residential Address", "Course"]
   @interaction_programs.each do |interaction_program|
   	sheet.add_row [i+=1, interaction_program.name, interaction_program.email, interaction_program.university, interaction_program.research_experience, interaction_program.mobile, interaction_program.res_address, interaction_program.course.course_name]
-  end
-  
+  end  
 end

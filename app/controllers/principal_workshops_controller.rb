@@ -67,7 +67,11 @@ class PrincipalWorkshopsController < ApplicationController
 
   def destroy
     @principal_workshop.destroy
-    respond_with(@principal_workshop)
+
+    respond_to do |format|
+      format.html { redirect_to workshop_record_path}
+      format.json { head :no_content }
+    end
   end
 
   private

@@ -16,14 +16,17 @@ class StaticPagesController < ApplicationController
 
 	def result
 		date=Date.parse(params[:dob].to_s).strftime('%Y-%m-%d')
-		if params[:course_type] == 'Short-term Course'
+		@course_type=params[:course_type]
+		if @course_type == 'Short-term Course'
 			@record=ShorttermCourse.find_by_dob_and_id(date, params[:registration_id])
-		elsif params[:course_type] == 'Refresher Course'
+		elsif @course_type == 'Refresher Course'
 			@record=RefresherCourse.find_by_dob_and_id(date, params[:registration_id])
-		elsif params[:course_type] == 'Orientation Course'
+		elsif @course_type == 'Orientation Course'
 			@record=OrientationCourse.find_by_dob_and_id(date, params[:registration_id])
-		elsif params[:course_type] == 'Interaction Program'
+		elsif @course_type == 'Interaction Program'
 			@record=InteractionProgram.find_by_dob_and_id(date, params[:registration_id])
+		elsif @course_type == 'Principal Workshop'
+			@record=PrincipalWorkshop.find_by_dob_and_id(date, params[:registration_id])	
 		end
 
 		if @record.nil?

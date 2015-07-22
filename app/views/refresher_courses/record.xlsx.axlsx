@@ -3,7 +3,7 @@ wb.add_worksheet(name: "List") do |sheet|
   i=0
   sheet.add_row ["S.no", "Name", "Email", "University", "Date Of Birth", "Mobile", "Residential Address", "Course"]
   @refresher_courses.each do |refresher_course|
-  	sheet.add_row [i+=1, refresher_course.name, refresher_course.email, refresher_course.university, refresher_course.dob, refresher_course.mobile, refresher_course.res_address, refresher_course.course.course_name]
+  	sheet.add_row [i+=1, refresher_course.name, refresher_course.email, refresher_course.university, refresher_course.dob.strftime('%d-%b-%Y'), refresher_course.mobile, refresher_course.res_address, refresher_course.course.course_name]
   end
   
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150722054439) do
+ActiveRecord::Schema.define(:version => 20150722170812) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20150722054439) do
     t.date     "dd_date"
     t.string   "bank_name"
     t.integer  "amount"
+    t.date     "dob"
   end
 
   add_index "interaction_programs", ["course_id"], :name => "index_interaction_programs_on_course_id"
@@ -164,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20150722054439) do
     t.date     "dd_date"
     t.string   "bank_name"
     t.integer  "amount"
+    t.date     "dob"
   end
 
   add_index "principal_workshops", ["course_id"], :name => "index_principal_workshops_on_course_id"

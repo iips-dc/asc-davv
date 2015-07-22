@@ -1,10 +1,10 @@
 class InteractionProgram < ActiveRecord::Base
   belongs_to :course
-  attr_accessible :category, :city, :college, :date_of_joining_phd, :district, :email, :gender, :landline, :marital_status, :mobile, :name, :pin, :religion, :res_address, :research_experience, :state, :stream, :university, :university_pin, :std_code, :image, :image_cache, :remove_image, :dd_number, :dd_date, :bank_name, :amount, :course_id
+  attr_accessible :category, :city, :college, :date_of_joining_phd, :district, :dob, :email, :gender, :landline, :marital_status, :mobile, :name, :pin, :religion, :res_address, :research_experience, :state, :stream, :university, :university_pin, :std_code, :image, :image_cache, :remove_image, :dd_number, :dd_date, :bank_name, :amount, :course_id
   mount_uploader :image, ImageUploader
 
   #field not remain blank
-  validates :name, :gender, :religion,:category, :marital_status,:stream,
+  validates :name, :dob, :gender, :religion,:category, :marital_status,:stream,
   :college,:university,:city,:district,:state, :research_experience,
   :pin,:university_pin,:date_of_joining_phd, :res_address, :email, :course_id, :image, presence: true
 

@@ -8,13 +8,17 @@
                 
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
-                    <tbody>  
+                    <tbody>
                       <tr>
-                        <td>Gender:</td>
+                        <td>Date Of Birth</td>
+                        <td><%= @interaction_program.dob.strftime('%d-%b-%Y') %></td>
+                      </tr>  
+                      <tr>
+                        <td>Gender</td>
                         <td><%= @interaction_program.gender %></td>
                       </tr>
                       <tr>
-                        <td>Religion:</td>
+                        <td>Religion</td>
                         <td><%= @interaction_program.religion %></td>
                       </tr>
                       <tr>
@@ -22,7 +26,7 @@
                         <td><%= @interaction_program.category %></td>
                       </tr>
                       <tr>
-                        <td>Marital Status:</td>
+                        <td>Marital Status</td>
                         <td><%= @interaction_program.marital_status %></td>
                       </tr>
                       <tr>

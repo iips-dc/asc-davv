@@ -1,0 +1,87 @@
+<div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">#<%= @principal_workshop.id %> <%= @principal_workshop.name %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-offset-3 col-lg-offset-3 col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Date Of Birth</td>
+                        <td><%= @principal_workshop.dob.strftime('%d-%b-%Y') %></td>
+                      </tr>
+                      <tr>
+                        <td>Designation</td>
+                        <td><%= @principal_workshop.designation %></td>
+                      </tr>  
+                      <tr>
+                        <td>University</td>
+                        <td><%= @principal_workshop.university %></td>
+                      </tr>
+                      <tr>
+                        <td>University Type</td>
+                        <td><%=@principal_workshop.univ_type %></td>
+                      </tr>
+                      <tr>
+                        <td>Academic Qualification</td>
+                        <td><%=@principal_workshop.academic_qualification %></td>
+                      </tr>
+                      <tr>
+                        <td>Workshop</td>
+                        <td><%= @principal_workshop.course.course_name %></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><%= @principal_workshop.email %></td>
+                      </tr>
+                      <tr>
+                        <td>Office Number</td>
+                        <td><%= @principal_workshop.std_code %>-<%= @principal_workshop.office_number %></td>
+                      </tr>
+                      <tr>
+                        <td>Mobile</td>
+                        <td><%= @principal_workshop.mobile %></td>
+                      </tr>
+                      <tr>
+                        <td>Fax Number</td>
+                        <td><%= @principal_workshop.fax_code %>-<%= @principal_workshop.fax_number %></td>
+                      </tr>
+                      <tr>
+                        <td>Office Address</td>
+                        <td><%= @principal_workshop.office_address %></td>
+                      </tr>
+                      <tr>
+                        <td>Residential Address</td>
+                        <td><%= @principal_workshop.res_address %></td>
+                      </tr>
+                      <tr>
+                        <td>DD Number</td>
+                        <td><%= @principal_workshop.dd_number %></td>
+                      </tr>
+                      <tr>
+                        <td>DD Date</td>
+                        <% if @principal_workshop.dd_date=''%>
+                          <td><%= @principal_workshop.dd_date %></td>
+                        <% else %>    
+                          <td><%= @principal_workshop.dd_date.strftime('%d-%b-%Y') %></td>
+                        <% end %>
+                      </tr>
+                      <tr>
+                        <td>Bank Name</td>
+                        <td><%= @principal_workshop.bank_name %></td>
+                      </tr>
+                      <tr>
+                        <td>Amount</td>
+                        <td><%= @principal_workshop.amount %></td>
+                      </tr>
+                    </tbody>
+                  </table>   
+                </div>
+                <!-- /. col-md-9 -->
+              </div>
+              <!-- /. row -->
+        </div>
+        <!-- /. panel body -->
+</div>
+<!-- /. panel --> 

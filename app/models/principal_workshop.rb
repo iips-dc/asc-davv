@@ -1,9 +1,9 @@
 class PrincipalWorkshop < ActiveRecord::Base
   belongs_to :course
-  attr_accessible :academic_qualification, :designation, :email, :fax_code, :fax_number, :mobile, :name, :office_address, :office_number, :res_address, :std_code, :univ_type, :university, :dd_number, :dd_date, :bank_name, :amount, :course_id
+  attr_accessible :academic_qualification, :designation, :dob, :email, :fax_code, :fax_number, :mobile, :name, :office_address, :office_number, :res_address, :std_code, :univ_type, :university, :dd_number, :dd_date, :bank_name, :amount, :course_id
 
   #field not remain blank
-  validates :name, :designation, :university, :univ_type, :academic_qualification, :email, 
+  validates :name, :dob, :designation, :university, :univ_type, :academic_qualification, :email, 
   :std_code, :office_number, :mobile, :office_address, 
   :res_address, :course_id, presence: true
 
