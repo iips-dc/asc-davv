@@ -1,0 +1,284 @@
+<%= form_for(@principal_workshop, :html => { :class => 'form-horizontal', :multipart => true}) do |f| %>
+  <% if @principal_workshop.errors.any? %>
+    <div id="error_explanation">
+      <h2>Record Could Not be Saved Because of the following errors:</h2>
+
+      <ul>
+      <% @principal_workshop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul id="tabs" class="nav nav-pills custom" role="tablist">
+    <li role="presentation" class="active"><a href="#detail1"  aria-controls="detail1" role="tab" data-toggle="tab">Personal Details</a></li>
+    <li role="presentation"><a href="#detail2"  aria-controls="detail2" role="tab" data-toggle="tab">Workshop Details</a></li>
+    <li role="presentation"><a href="#detail3" aria-controls="detail3" role="tab" data-toggle="tab">Contact Details</a></li>
+    <li role="presentation"><a href="#detail4" aria-controls="detail4" role="tab" data-toggle="tab">Payment Details</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">  
+    <div role="tabpanel" class="panel panel-primary tab-pane active" style="margin-top:10px" id="detail1">
+        <div class="panel-heading input-lg">
+            <h4> Personal Details </h4>
+        </div>  
+        <!-- Panel-head -->
+
+        <div class="panel-body">
+          <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :name %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :name, :placeholder => "Enter Full Name", :class => 'form-control', :autofocus => true, :required => true %>
+                </div>
+          </div>
+          <!-- Name Field -->
+
+          <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :designation %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :designation, :placeholder => "Enter Designation", :class => 'form-control', :required => true %>
+                </div>
+          </div>
+          <!-- Designation Field -->
+
+          <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :university %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :university, :placeholder => "Enter University Name", :class => 'form-control', :required => true %>
+                </div>
+          </div>
+          <!-- University Field -->
+
+          <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :university, "University Type" %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.radio_button :univ_type, 'Government', :required => true %>        
+                  <%= label :Gender, 'Government' %>
+                  <%= f.radio_button :univ_type, 'Private', :required => true %>
+                  <%= label :Gender, 'Private' %>
+                </div>
+          </div>
+          <!-- University type Field -->
+            
+          <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :academic_qualification, "Academic Qualification" %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :academic_qualification, :placeholder => "Enter Academic Qualification", :class => 'form-control', :required => true %>
+                </div>
+          </div>
+          <!-- Academic Qualification Field -->          
+        </div>
+        <!-- Panel-body -->
+   
+        <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+          <span class="btn btn-success" id="toggle1">Previous</span>
+          <span class="btn btn-success" id="toggle2">Next</span>
+        </div>
+        <!-- Prev-Next Button -->
+    </div>
+    <!-- Panel -->
+
+    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail2">
+          <div class="panel-heading input-lg">
+              <h4> Course Details </h4>
+          </div>
+          <!-- Panel-head -->
+
+          <div class="panel-body">
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :course, "Workshop" %>
+                </div>
+                <div class="col-sm-4">
+                  <%= collection_select(:principal_workshop, :course_id, Course.find(:all, :conditions => ["course_type='Principal Workshop' AND date('now') < start_date "]), :id, :course_name, {:prompt => "Select a Workshop"}, { :class => 'form-control'})  %>
+                </div>
+              </div>
+              <!-- Course Field -->
+          </div>
+          <!-- Panel-body -->
+
+          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+            <span class="btn btn-success" id="toggle3">Previous</span>
+            <span class="btn btn-success" id="toggle4">Next</span>
+          </div>
+          <!-- Prev-Next Button -->
+    </div>    
+    <!-- Panel -->  
+
+    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail3">
+            <div class="panel-heading input-lg">
+                <h4> Contact Details </h4>
+            </div>
+            <!-- Panel head -->
+
+            <div class="panel-body">
+              <div class="form-group">
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :Email %>
+                  </div>
+                  <div class="col-sm-8">
+                    <%= f.text_field :email, :placeholder => "Enter E-mail Address", :class => 'form-control', :required => true %>
+                  </div>
+              </div>
+              <!-- Email Field -->
+
+              <div class="form-group">
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :office_number, "Office Number" %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= f.text_field :std_code, :placeholder => "STD Code", :class => 'form-control' %>
+                  </div>
+                  <div class="col-sm-6">
+                    <%= f.text_field :office_number, :placeholder => "Enter Office Number", :class => 'form-control' %>
+                  </div>
+              </div>
+              <!-- Office Number Field -->
+              
+              <div class="form-group">
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :Mobile %>
+                  </div>
+                  <div class="col-sm-2 label-control">
+                    <%= text_field_tag(:mobile, "+91", :class => 'form-control', :disabled => true) %> 
+                  </div>
+                  <div class="col-sm-6">
+                    <%= f.text_field :mobile, :placeholder => "Enter Mobile Number", :class => 'form-control', :required => true %>
+                  </div>
+              </div>
+              <!-- Mobile Field -->
+
+              <div class="form-group">
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :fax_number, "Fax Number" %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= f.text_field :fax_code, :placeholder => "Fax Code", :class => 'form-control' %>
+                  </div>
+                  <div class="col-sm-6">
+                    <%= f.text_field :fax_number, :placeholder => "Enter Fax Number", :class => 'form-control' %>
+                    <p class="help-block">(Optional)</p>
+                  </div>
+              </div>
+              <!-- Fax Number Field -->  
+
+              <div class="form-group">
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :office_address, "Office Address" %>
+                  </div>
+                  <div class="col-sm-8">
+                    <%= f.text_area :office_address, :class => 'form-control', :placeholder => "Enter Full Office Address", :style => "height:100px", :required => true %><br/>
+                  </div>
+              </div>
+              <!-- Office Address Field -->
+
+              <div class="form-group">
+                  <div class="col-sm-2 label-control">
+                    <%= f.label :residential_Address %>
+                  </div>
+                  <div class="col-sm-8">
+                    <%= f.text_area :res_address, :class => 'form-control', :placeholder => "Enter Full Residential Address", :style => "height:100px", :required => true %><br/>
+                  </div>
+              </div>
+              <!-- Residential Address Field -->              
+              
+          </div>
+          <!-- panel-body -->    
+
+          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+            <span class="btn btn-success" id="toggle5">Previous</span>
+            <span class="btn btn-success" id="toggle6">Next</span>
+          </div>
+          <!-- Prev-Next Button -->
+    </div>    
+    <!-- Panel -->  
+
+    <div role="tabpanel" class="panel panel-primary tab-pane" style="margin-top:10px" id="detail4">
+          <div class="panel-heading input-lg">
+              <h4> Payment Details </h4>
+          </div>
+          <!-- Panel-head -->
+
+          <div class="panel-body">
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :dd_number, "DD Number" %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :dd_number, :placeholder => "Enter DD Number", :class => 'form-control' %>
+                </div>
+                <p class="help-block">(Optional)</p>
+              </div>
+              <!-- DD number Field -->
+
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :dd_date, "DD Date" %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :dd_date, :placeholder => "Enter DD date", :class => 'datepicker' %>
+                  <i class="fa fa-calendar"></i>
+                  <p class="help-block"> Date Format: DD-MM-YYYY </p>
+                </div>
+                <p class="help-block">(Optional)</p>
+              </div>
+              <!-- DD Date Field -->
+
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :bank_name, "Bank Name" %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :bank_name, :placeholder => "Enter Bank Name", :class => 'form-control' %>
+                </div>
+                <p class="help-block">(Optional)</p>
+              </div>
+              <!-- Bank name Field -->
+
+              <div class="form-group">
+                <div class="col-sm-2 label-control">
+                  <%= f.label :amount %>
+                </div>
+                <div class="col-sm-8">
+                  <%= f.text_field :amount, :placeholder => "Enter DD Amount", :class => 'form-control' %>
+                </div>
+                <p class="help-block">(Optional)</p>
+              </div>
+              <!-- Amount Field -->
+          </div>
+          <!-- Panel-body -->
+
+          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+            <span class="btn btn-success" id="toggle7">Previous</span>
+            <span class="btn btn-success" id="toggle10">Next</span>
+          </div>
+          <!-- Prev-Next Button -->
+
+          <div class="actions col-sm-offset-3 col-sm-9" style="margin-top:10px" >
+            <%= link_to 'Back', root_path, :class => "btn btn-default" %>
+            <%= f.submit "Submit", :class => "btn btn-primary"%>        
+          </div>
+          <!-- Submit Button-->  
+      
+    </div>    
+    <!-- Panel -->
+  </div>
+  <!-- Tab Content-->
+
+</div>
+<!-- Tab Panel -->      
+<% end %>

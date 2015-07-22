@@ -1,0 +1,36 @@
+<div id="filterrific_results">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>          
+                            <tr>
+                                <th>S.no</th>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>University</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Residential address</th>
+                                <th>Workshop</th>
+                            </tr>
+                        </thead>    
+                        <% i=0 %>
+                        <% @principal_workshops.each do |principal_workshop| %>
+                          <tbody>
+                              <tr>
+                                <td><%= link_to i=i+1, principal_workshop %></td>
+                                <td><%= principal_workshop.name %></td>
+                                <td><%= principal_workshop.designation %></td>
+                                <td><%= principal_workshop.university %></td>
+                                <td><%= principal_workshop.email %></td>
+                                <td><%= principal_workshop.mobile %></td>
+                                <td><%= principal_workshop.res_address %></td>
+                                <td><%= principal_workshop.course.course_name %></td>    
+                              </tr>
+                          </tbody>    
+                        <% end %>
+                    </table>
+                    <%= paginate @principal_workshops %>    
+                </div>
+                <!-- /.table-responsive -->    
+</div>
+<!-- /.col-lg-12 -->

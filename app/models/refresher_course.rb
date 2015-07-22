@@ -21,7 +21,7 @@ class RefresherCourse < ActiveRecord::Base
 
 
   #Combination of fields that must be unique
-  validates_uniqueness_of :name, scope: [:pref_date1, :dob]
+  validates_uniqueness_of :name, scope: [:pref_date1, :dob], message: "Record Already Exist"
 
 
   #length of the fields

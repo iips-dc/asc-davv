@@ -1,5 +1,5 @@
   class OrientationCoursesController < ApplicationController
-  before_filter :set_orientation_course, only: [:show, :edit, :update, :destroy]
+  before_filter :set_orientation_course, only: [:show, :edit, :update, :destroy, :registered]
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record] 
   load_and_authorize_resource :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
@@ -15,12 +15,7 @@
   end
 
   def registered
-    @orientation_course = OrientationCourse.find(params[:id])
-
-    respond_to do |format|
-      format.html 
-      format.json { render json: @orientation_course }
-    end
+    respond_with(@orientation_course)
   end
 
   def record

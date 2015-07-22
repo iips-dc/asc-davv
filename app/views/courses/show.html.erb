@@ -61,14 +61,16 @@
                             <th>Total Number of Participants</th>
                             <td><%= @stats.count %></td>
                           </tr>
-                          <tr>  
-                            <th>Total Number of Female Participants</th>
-                            <td><%= @stats.where("lower(gender)='female'").count %></td>
-                          </tr>
-                          <tr>  
-                            <th>Total Number of Male Participants</th>
-                            <td><%= @stats.where("lower(gender)='male'").count %></td>
-                          </tr>  
+                          <% if @course.course_type!='Principal Workshop' %>
+                            <tr>  
+                              <th>Total Number of Female Participants</th>
+                              <td><%= @stats.where("lower(gender)='female'").count %></td>
+                            </tr>
+                            <tr>  
+                              <th>Total Number of Male Participants</th>
+                              <td><%= @stats.where("lower(gender)='male'").count %></td>
+                            </tr>
+                          <% end %>    
                           <tr>
                             <th>Course Material</th>
                             <td>
@@ -85,6 +87,8 @@
                 <!-- /.table-responsive --> 
                 <div class="table-responsive col-lg-12">
                   <table class="table">
+
+                    <% if @course.course_type=='Short-term Course' || @course.course_type=='Refresher Course' || @course.course_type=='Orientation Course' %>
                       <tbody>
                         <tr>
                           <th>Person Name</th>
@@ -107,6 +111,53 @@
                           </tr>
                         <% end %>
                       </tbody>
+
+                    <% elsif @course.course_type=='Interaction Program' %>
+                      <tbody>
+                        <tr>
+                          <th>Person Name</th>
+                          <th>Research Experience</th>
+                          <th>Stream</th>
+                          <th>College </th>
+                          <th>University</th>
+                          <th>City</th>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <% @stats.map do |participant| %>
+                          <tr class="active">
+                            <td><%= participant.name %></td>
+                            <td><%= participant.research_experience %></td>
+                            <td><%= participant.stream %></td>
+                            <td><%= participant.college %></td>
+                            <td><%= participant.university %></td>
+                            <td><%= participant.city%></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+
+                    <% elsif @course.course_type=='Principal Workshop' %>
+                      <tbody>
+                        <tr>
+                          <th>Person Name</th>
+                          <th>Desgination</th>
+                          <th>Academic Qualification</th>
+                          <th>University</th>
+                          <th>Email</th>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <% @stats.map do |participant| %>
+                          <tr class="active">
+                            <td><%= participant.name %></td>
+                            <td><%= participant.designation %></td>
+                            <td><%= participant.academic_qualification %></td>
+                            <td><%= participant.university %></td>
+                            <td><%= participant.email %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    <% end %>  
                   </table>         
                 </div>  
               </div>

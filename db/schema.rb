@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150624052918) do
+ActiveRecord::Schema.define(:version => 20150722054439) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -142,6 +142,31 @@ ActiveRecord::Schema.define(:version => 20150624052918) do
   end
 
   add_index "orientation_courses", ["course_id"], :name => "index_orientation_courses_on_course_id"
+
+  create_table "principal_workshops", :force => true do |t|
+    t.string   "name"
+    t.string   "designation"
+    t.string   "university"
+    t.string   "univ_type"
+    t.string   "academic_qualification"
+    t.text     "office_address"
+    t.text     "res_address"
+    t.string   "std_code"
+    t.string   "office_number"
+    t.string   "mobile"
+    t.string   "fax_code"
+    t.string   "fax_number"
+    t.string   "email"
+    t.integer  "course_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "dd_number"
+    t.date     "dd_date"
+    t.string   "bank_name"
+    t.integer  "amount"
+  end
+
+  add_index "principal_workshops", ["course_id"], :name => "index_principal_workshops_on_course_id"
 
   create_table "refresher_courses", :force => true do |t|
     t.string   "name"

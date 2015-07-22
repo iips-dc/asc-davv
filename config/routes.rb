@@ -1,5 +1,5 @@
 AscDavv::Application.routes.draw do
-  
+
   resources :schedules, only: [:new, :create, :destroy]
 
   match '/upload_success' => 'schedules#success'
@@ -60,6 +60,14 @@ AscDavv::Application.routes.draw do
   match '/interaction_registered/:id' => 'interaction_programs#registered'
 
   match '/interaction_record' => 'interaction_programs#record'
+
+  resources :principal_workshops
+
+  match '/workshop_instructions' => 'principal_workshops#instructions'
+
+  match '/workshop_registered/:id' => 'principal_workshops#registered'
+
+  match '/workshop_record' => 'principal_workshops#record'
   
   root to: 'static_pages#index'
 

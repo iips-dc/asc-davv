@@ -12,10 +12,13 @@ class InteractionProgram < ActiveRecord::Base
   validates :name, :city, :college, :district, :stream, :university, format: { with: /\A[a-zA-Z\s.,]+\z/,
     message: "only alphabets and spaces are allowed" }
 
-  #following fiels must contain integer
+  #following fields must contain integer
   validates :pin,:university_pin, numericality: true
   validates :mobile, numericality: { only_integer: true }
   validates :landline, :std_code, numericality: { only_integer: true }, :allow_blank => true
+
+  #Combination of fields that must be unique
+  validates_uniqueness_of :name, scope: [:email], message: "Record Already Exist"  
 
   #length of the fields
   validates :name, length: { minimum: 2 }
