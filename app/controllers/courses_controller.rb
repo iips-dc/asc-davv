@@ -38,7 +38,7 @@ class CoursesController < ApplicationController
     if @course_type=='Short-term Course'
       @stats = @course.shortterm_courses
     elsif @course_type=='Refresher Course'
-      @stats = @course.shortterm_courses
+      @stats = @course.refresher_courses
     elsif @course_type=='Orientation Course'
       @stats = @course.orientation_courses    
     elsif @course_type=='Interaction Program'
