@@ -1,0 +1,75 @@
+<!-- row -->            
+<div class="row">
+    <div class="col-lg-12">
+        <h4 class="page-header text-center"><strong>Enter The Following Details</strong></h4>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<!-- row -->            
+<div class="row">
+	<%= form_tag(dd_result_path, :class => 'form-horizontal', :multipart => true, method: :get) do %>
+		<div class="col-md-offset-3 col-md-6 panel panel-default">
+			<div class="panel-body">
+				<div class="form-group">
+					<span class="col-md-4">
+						<%= label_tag :registration_id, "Registration ID", :class =>'label-control' %>
+					</span>
+					<span class="col-md-7">
+						<%= text_field_tag :registration_id, params[:registration_id], :class => 'form-control', :placeholder => 'Enter your Registration ID', :required => true %>
+					</span>	
+				</div>
+				<div class="form-group">
+					<span class="col-md-4">
+						<%= label_tag :dob, "Date Of birth", :class =>'label-control' %>
+					</span>
+					<span class="col-md-7">	
+						<%= text_field :dob, params[:dob], :class => 'datepicker form-control', :placeholder => "Select Your Date Of Birth", :required => true %>
+						<p class="help-block">Date Format:DD-MM-YYYY</p>
+					</span>	
+				</div>
+				<div class="form-group">
+					<span class="col-md-4">
+						<%= label_tag :course_type, "Select Course", :class =>'label-control' %>
+					</span>
+					<span class="col-md-7">	
+						<%= select_tag(:course_type, options_for_select([['Select a Course Type',''], "Short-term Course", "Refresher Course", "Orientation Course", "Interaction Program", "Principal Workshop" ]), :class => 'form-control', :required => true) %>
+      					<p class="help-block"> Select Course Type </p>
+					</span>	
+				</div>
+				<div class="form-group">
+					<span class="col-md-4">
+						<%= label_tag :receipt_date, "Enter Receipt Date", :class =>'label-control' %>
+					</span>
+					<span class="col-md-7">	
+						<%= text_field :receipt_date, params[:receipt_date], :class => 'datepicker form-control', :placeholder => "Select Date", :required => true %>
+						<p class="help-block">Date Format:DD-MM-YYYY</p>
+					</span>	
+				</div>
+				<div class="form-group">
+					<span class="col-md-4">
+						<%= label_tag :certificate, "Duplicate Certificate Amount", :class =>'label-control' %>
+					</span>
+					<span class="col-md-7">	
+						<%= text_field :certificate, params[:certificate], :class => 'form-control', :placeholder => "Enter Duplicate Certificate Amount", :required => true %>
+					</span>	
+				</div>
+				<div class="form-group">
+					<span class="col-md-4">
+						<%= label_tag :others, "Other Expenses", :class =>'label-control' %>
+					</span>
+					<span class="col-md-7">	
+						<%= text_field :others, params[:others], :class => 'form-control', :placeholder => "Enter Other Expenses", :required => true %>
+					</span>	
+				</div>
+			</div>		
+		</div>
+		<div class="col-md-12">
+			<span class="col-md-offset-5 col-md-2">
+				<%= submit_tag "Search", :class => 'btn btn-primary' %>
+				<%= link_to "Back", index_path, :class => 'btn btn-default' %>
+			</span>
+		</div>	
+	<% end %>
+</div>	
