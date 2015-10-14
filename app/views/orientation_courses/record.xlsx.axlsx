@@ -1,9 +1,9 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "List") do |sheet|
   i=0
-  sheet.add_row ["S.no", "Name", "Email", "University", "Date Of Birth", "Mobile", "Residential Address", "Course"]
+  sheet.add_row ["S.no", "Name", "Subject", "College", "Email ID", "Mobile No.", "Course", "DD Number", "Bank Name", "DD Date"]
   @orientation_courses.each do |orientation_course|
-  	sheet.add_row [i+=1, orientation_course.name, orientation_course.email, orientation_course.university, orientation_course.dob.strftime('%d-%b-%Y'), orientation_course.mobile, orientation_course.res_address, orientation_course.course.course_name]
+  	sheet.add_row [i+=1, orientation_course.name, orientation_course.subject, orientation_course.college, orientation_course.email, orientation_course.mobile, orientation_course.course.course_name, orientation_course.dd_number, orientation_course.bank_name, orientation_course.dd_date]
   end
   
 end

@@ -1,8 +1,8 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "List") do |sheet|
   i=0
-  sheet.add_row ["S.no", "Name", "Email", "University", "Research Experience", "Mobile", "Residential Address", "Course"]
+  sheet.add_row ["S.no", "Name", "Stream", "College", "Email ID", "Mobile No.", "Course", "DD Number", "Bank Name", "DD Date"]
   @interaction_programs.each do |interaction_program|
-  	sheet.add_row [i+=1, interaction_program.name, interaction_program.email, interaction_program.university, interaction_program.research_experience, interaction_program.mobile, interaction_program.res_address, interaction_program.course.course_name]
+  	sheet.add_row [i+=1, interaction_program.name, interaction_program.stream, interaction_program.college, interaction_program.email, interaction_program.mobile, interaction_program.course.course_name, interaction_program.dd_number, interaction_program.bank_name, interaction_program.dd_date]
   end  
 end
