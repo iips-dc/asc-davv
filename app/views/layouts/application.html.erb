@@ -43,10 +43,13 @@ Dated:20/11/2014
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right">
                  <li>
+                    <%= link_to 'Home', index_path %> 
+                 </li>
+                 <li>
                     <%= link_to 'About HRDC', about_path %> 
                  </li>
                  <li>
-                    <%= link_to 'Programs', program_path %>
+                    <%= link_to 'Schedule/Programs', program_path %>
                  </li>
                  <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Online Application Forms<b class="caret"></b></a>
@@ -70,9 +73,6 @@ Dated:20/11/2014
                  </li>
                  <li>
                      <%= link_to 'Registration Receipt', search_path %>
-                 </li>
-                 <li>
-                     <%= link_to 'DD Receipt', dd_search_path %>
                  </li>
                  <li>
                      <%= link_to 'Contact Us', contact_path %>

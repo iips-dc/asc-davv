@@ -1,50 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <link rel="icon" type="image/png" href="../assets/favicon.ico" /><title>HRDC-DAVV</title>
-
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-<body>
 <div class="col-md-offset-1 col-md-10 col-md-offset-1">
   
     	<div class="panel panel-default">
-                <div class="panel-heading text-center">
-                      <h3>DEVI AHILYA VISHWAVIDYALAYA, INDORE</h3>
-                        <h4><strong>Human Resource Development Center</strong></h4>
+                <div class="panel-heading">
+                    <img class="img-responsive" src="../assets/asc.png" alt="">
                 </div>
                 <!--/.panel-heading-->
                 <div class="panel-body">
                   <div class="row">
-                      <div class="col-md-offset-1 col-md-2">
-                        <h4><strong>No.</strong></h4>
+                      <div class="col-md-offset-1 col-md-3">
+                        <h4><strong>Receipt No:</strong> <%= @record.course.course_name+'-'+@record.id.to_s%></h4>
                       </div>
-                      <div class="col-md-offset-6 col-md-2">
-                        <h4><strong>Book No.</strong></h4>
-                      </div>
-                      <div class="col-md-offset-9 col-md-3">
+                      <div class="col-md-offset-5 col-md-3">
                         <h4><strong>Date:</strong> <%= @receipt_date %></h4>
                       </div>
                   </div>
                   <!-- /. row -->
                   <br/>
-                  <h4 class="text-justify"> Received From Shri/Smt./Ku. <strong><span class="text-danger"><%= @record.name%></span></u></strong> the sum of Rs. <strong><span class="text-danger"><%= @record.amount ? @record.amount : 0 %>/-</span></strong> in Cash/Demand Draft No. <strong><span class="text-danger"><%= @record.dd_number %></span></u></strong> Date <strong><span class="text-danger"><%= @record.dd_date %></span></strong> on account of following:</h4>
+                  <h4 class="text-justify"> Received From Shri/Smt./Ku. <strong><span class="text-danger"><%= @record.name%></span></u></strong> the sum of Rs. <strong><span class="text-danger"><%= @record.amount ? @record.amount : 0 %>/-</span></strong> in Cash/Demand Draft No. <strong><span class="text-danger"><%= @record.dd_number %></span></u></strong> Date <strong><span class="text-danger"><%= @record.dd_date.strftime("%d-%b-%Y") %></span></strong> on account of following:</h4>
                   <br/>
                   <table class="table table-bordered">
                     <thead>
@@ -56,19 +28,19 @@
                     <tbody>
                       <tr>
                         <td class="text-center">Registration Fees</td>
-                        <td class="text-center"><%= @record.amount %></td>
+                        <td class="text-center"><i class="fa fa-inr"></i> <%= @record.amount %>/-</td>
                       </tr>  
                       <tr>
                         <td class="text-center">Duplicate Certificate</td>
-                        <td class="text-center"><%= @certificate_amt %>/-</td>
+                        <td class="text-center"><i class="fa fa-inr"></i> <%= @certificate_amt %>/-</td>
                       </tr>
                       <tr>
                         <td class="text-center">Others</td>
-                        <td class="text-center"><%= @others %>/-</td>
+                        <td class="text-center"><i class="fa fa-inr"></i> <%= @others %>/-</td>
                       </tr>
                       <tr>
                         <td class="text-right"><strong>Total =></strong></td>
-                        <td class="text-center"><%= @record.amount+@certificate_amt+@others%>/-</td>
+                        <td class="text-center"><i class="fa fa-inr"></i> <%= @record.amount+@certificate_amt+@others%>/-</td>
                       </tr>
                     </tbody>  
                   </table>  
@@ -82,8 +54,3 @@
     <%= link_to 'Back', dd_search_path, :class => 'btn btn-default' %>
 	</span>	
 </div>
-<footer>
-  <div class="row"></div>
-</footer>	
-</body>
-</html>

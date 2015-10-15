@@ -89,6 +89,10 @@ Dated:11/01/2014
 
                         <% if can? :manage, Course %>
                         <li>
+                            <a class="<%= 'active' if current_page?(dd_search_path) %>" href="/dd_search"><i class="fa fa-print fa-fw"></i> DD Receipt</a>
+                        </li>
+
+                        <li>
                             <a href="#"><i class="fa fa-calendar fa-fw"></i> Course<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li> 
