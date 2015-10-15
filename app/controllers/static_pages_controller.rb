@@ -29,15 +29,15 @@ class StaticPagesController < ApplicationController
 		@others=params[:others][0].to_i
 		
 		if @course_type == 'Short-term Course'
-			@record=ShorttermCourse.find(params[:registration_id])
+			@record=ShorttermCourse.find_by_id(params[:registration_id])
 		elsif @course_type == 'Refresher Course'
-			@record=RefresherCourse.find(params[:registration_id])
+			@record=RefresherCourse.find_by_id(params[:registration_id])
 		elsif @course_type == 'Orientation Course'
-			@record=OrientationCourse.find(params[:registration_id])
+			@record=OrientationCourse.find_by_id(params[:registration_id])
 		elsif @course_type == 'Interaction Program'
-			@record=InteractionProgram.find(params[:registration_id])
+			@record=InteractionProgram.find_by_id(params[:registration_id])
 		elsif @course_type == 'Principal Workshop'
-			@record=PrincipalWorkshop.find(params[:registration_id])
+			@record=PrincipalWorkshop.find_by_id(params[:registration_id])
 		end
 
 		if @record.nil?

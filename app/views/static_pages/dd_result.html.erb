@@ -16,7 +16,19 @@
                   </div>
                   <!-- /. row -->
                   <br/>
-                  <h4 class="text-justify"> Received From Shri/Smt./Ku. <strong><span class="text-danger"><%= @record.name%></span></u></strong> the sum of Rs. <strong><span class="text-danger"><%= @record.amount ? @record.amount : 0 %>/-</span></strong> in Cash/Demand Draft No. <strong><span class="text-danger"><%= @record.dd_number %></span></u></strong> Date <strong><span class="text-danger"><%= @record.dd_date.strftime("%d-%b-%Y") %></span></strong> on account of following:</h4>
+                  <h4 class="text-justify"> Received From Shri/Smt./Ku. <strong><span class="text-danger"><%= @record.name%></span></u></strong> the sum of Rs. <strong><span class="text-danger"><%= @record.amount ? @record.amount : 0 %>/-</span></strong> in Cash/Demand Draft No. <strong><span class="text-danger">
+                    <% if @record.dd_number.empty? %>
+                      ---
+                    <% else %>
+                      <%= @record.dd_number %>  
+                    <% end %> 
+                  </span></u></strong> Date <strong><span class="text-danger">
+                    <% if @record.dd_date.nil? %>
+                      ---
+                    <% else %>  
+                      <%= @record.dd_date.strftime("%d-%b-%Y") %>
+                    <% end %>  
+                  </span></strong> on account of following:</h4>
                   <br/>
                   <table class="table table-bordered">
                     <thead>
@@ -28,7 +40,7 @@
                     <tbody>
                       <tr>
                         <td class="text-center">Registration Fees</td>
-                        <td class="text-center"><i class="fa fa-inr"></i> <%= @record.amount %>/-</td>
+                        <td class="text-center"><i class="fa fa-inr"></i> <%= @record.amount ? @record.amount : 0 %>/-</td>
                       </tr>  
                       <tr>
                         <td class="text-center">Duplicate Certificate</td>
@@ -40,7 +52,13 @@
                       </tr>
                       <tr>
                         <td class="text-right"><strong>Total =></strong></td>
-                        <td class="text-center"><i class="fa fa-inr"></i> <%= @record.amount+@certificate_amt+@others%>/-</td>
+                        <td class="text-center"><i class="fa fa-inr"></i> 
+                          <% if @record.amount.nil? %>
+                            <%= @certificate_amt+@others%>/-
+                          <% else %>                        
+                            <%= @record.amount+@certificate_amt+@others%>/-
+                          <% end %>  
+                        </td>
                       </tr>
                     </tbody>  
                   </table>  
