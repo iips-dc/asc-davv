@@ -53,6 +53,14 @@ AscDavv::Application.routes.draw do
 
   match '/orientation_record' => 'orientation_courses#record'
 
+  resources :winter_schools
+
+  match '/winter_instructions' => 'winter_schools#instructions'
+
+  match '/winter_registered/:id' => 'winter_schools#registered'
+
+  match '/winter_record' => 'winter_schools#record'
+
   resources :interaction_programs
 
   match '/interaction_instructions' => 'interaction_programs#instructions'

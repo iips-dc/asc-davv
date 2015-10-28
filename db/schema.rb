@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150722170812) do
+ActiveRecord::Schema.define(:version => 20151028082021) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -264,5 +264,41 @@ ActiveRecord::Schema.define(:version => 20150722170812) do
   end
 
   add_index "shortterm_courses", ["course_id"], :name => "index_shortterm_courses_on_course_id"
+
+  create_table "winter_schools", :force => true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.string   "religion"
+    t.string   "category"
+    t.string   "marital_status"
+    t.string   "email"
+    t.string   "stream"
+    t.string   "college"
+    t.string   "university"
+    t.string   "city"
+    t.string   "district"
+    t.string   "state"
+    t.string   "position"
+    t.string   "payscale"
+    t.string   "subject"
+    t.string   "pin"
+    t.string   "landline"
+    t.string   "mobile"
+    t.string   "university_pin"
+    t.date     "dob"
+    t.date     "date_of_joining"
+    t.date     "pref_date1"
+    t.date     "pref_date2"
+    t.text     "res_address"
+    t.boolean  "phd"
+    t.string   "std_code"
+    t.string   "alternate_email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "image"
+    t.integer  "course_id"
+  end
+
+  add_index "winter_schools", ["course_id"], :name => "index_winter_schools_on_course_id"
 
 end

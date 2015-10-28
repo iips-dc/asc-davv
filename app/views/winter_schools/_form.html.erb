@@ -1,0 +1,117 @@
+<%= form_for(@winter_school) do |f| %>
+  <% if @winter_school.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@winter_school.errors.count, "error") %> prohibited this winter_school from being saved:</h2>
+
+      <ul>
+      <% @winter_school.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :religion %><br />
+    <%= f.text_field :religion %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :marital_status %><br />
+    <%= f.text_field :marital_status %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :stream %><br />
+    <%= f.text_field :stream %>
+  </div>
+  <div class="field">
+    <%= f.label :college %><br />
+    <%= f.text_field :college %>
+  </div>
+  <div class="field">
+    <%= f.label :university %><br />
+    <%= f.text_field :university %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :district %><br />
+    <%= f.text_field :district %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :payscale %><br />
+    <%= f.text_field :payscale %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br />
+    <%= f.text_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :pin %><br />
+    <%= f.text_field :pin %>
+  </div>
+  <div class="field">
+    <%= f.label :landline %><br />
+    <%= f.text_field :landline %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :university_pin %><br />
+    <%= f.text_field :university_pin %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br />
+    <%= f.date_select :dob %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_joining %><br />
+    <%= f.date_select :date_of_joining %>
+  </div>
+  <div class="field">
+    <%= f.label :pref_date1 %><br />
+    <%= f.date_select :pref_date1 %>
+  </div>
+  <div class="field">
+    <%= f.label :pref_date2 %><br />
+    <%= f.date_select :pref_date2 %>
+  </div>
+  <div class="field">
+    <%= f.label :res_address %><br />
+    <%= f.text_area :res_address %>
+  </div>
+  <div class="field">
+    <%= f.label :phd %><br />
+    <%= f.check_box :phd %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

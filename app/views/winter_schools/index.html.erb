@@ -1,0 +1,71 @@
+<h1>Listing winter_schools</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Religion</th>
+    <th>Category</th>
+    <th>Marital status</th>
+    <th>Email</th>
+    <th>Stream</th>
+    <th>College</th>
+    <th>University</th>
+    <th>City</th>
+    <th>District</th>
+    <th>State</th>
+    <th>Position</th>
+    <th>Payscale</th>
+    <th>Course</th>
+    <th>Pin</th>
+    <th>Landline</th>
+    <th>Mobile</th>
+    <th>University pin</th>
+    <th>Dob</th>
+    <th>Date of joining</th>
+    <th>Pref date1</th>
+    <th>Pref date2</th>
+    <th>Res address</th>
+    <th>Phd</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @winter_schools.each do |winter_school| %>
+  <tr>
+    <td><%= winter_school.name %></td>
+    <td><%= winter_school.gender %></td>
+    <td><%= winter_school.religion %></td>
+    <td><%= winter_school.category %></td>
+    <td><%= winter_school.marital_status %></td>
+    <td><%= winter_school.email %></td>
+    <td><%= winter_school.stream %></td>
+    <td><%= winter_school.college %></td>
+    <td><%= winter_school.university %></td>
+    <td><%= winter_school.city %></td>
+    <td><%= winter_school.district %></td>
+    <td><%= winter_school.state %></td>
+    <td><%= winter_school.position %></td>
+    <td><%= winter_school.payscale %></td>
+    <td><%= winter_school.course %></td>
+    <td><%= winter_school.pin %></td>
+    <td><%= winter_school.landline %></td>
+    <td><%= winter_school.mobile %></td>
+    <td><%= winter_school.university_pin %></td>
+    <td><%= winter_school.dob %></td>
+    <td><%= winter_school.date_of_joining %></td>
+    <td><%= winter_school.pref_date1 %></td>
+    <td><%= winter_school.pref_date2 %></td>
+    <td><%= winter_school.res_address %></td>
+    <td><%= winter_school.phd %></td>
+    <td><%= link_to 'Show', winter_school %></td>
+    <td><%= link_to 'Edit', edit_winter_school_path(winter_school) %></td>
+    <td><%= link_to 'Destroy', winter_school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Winter school', new_winter_school_path %>

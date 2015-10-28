@@ -1,5 +1,5 @@
-class OrientationCoursesController < ApplicationController
-  before_filter :set_orientation_course, only: [:show, :edit, :update, :destroy, :registered]
+class WinterSchoolsController < ApplicationController
+  before_filter :set_winter_school, only: [:show, :edit, :update, :destroy, :registered]
   before_filter :authenticate_admin!, :only => [:show, :edit, :update, :destroy, :record] 
   load_and_authorize_resource :only => [:show, :edit, :update, :destroy, :record]
   layout "adminDashboard", :only => [:show, :edit, :update, :destroy, :record]
@@ -11,11 +11,11 @@ class OrientationCoursesController < ApplicationController
   end
 
   def show
-    respond_with(@orientation_course)
+    respond_with(@winter_school)
   end
 
   def registered
-    respond_with(@orientation_course)
+    respond_with(@winter_school)
   end
 
   def record
@@ -34,37 +34,37 @@ class OrientationCoursesController < ApplicationController
         :with_course_name ],
     ) or return
 
-    @orientation_courses = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
+    @winter_schools = Kaminari.paginate_array(@filterrific.find).page(params[:page]).per(25)
   end
 
   def new
-    @orientation_course = OrientationCourse.new
-    respond_with(@orientation_course)
+    @winter_school = OrientationCourse.new
+    respond_with(@winter_school)
   end
 
   def edit
   end
 
   def create
-    @orientation_course = OrientationCourse.new(params[:orientation_course])
+    @winter_school = OrientationCourse.new(params[:winter_school])
     respond_to do |format|
-      if @orientation_course.save
-        format.html { redirect_to "/orientation_registered/#{@orientation_course.id}" }
-        format.json { render json: @orientation_course, status: :created, location: @orientation_course }
+      if @winter_school.save
+        format.html { redirect_to "/orientation_registered/#{@winter_school.id}" }
+        format.json { render json: @winter_school, status: :created, location: @winter_school }
       else
         format.html { render action: "new" }
-        format.json { render json: @orientation_course.errors, status: :unprocessable_entity }
+        format.json { render json: @winter_school.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-    @orientation_course.update_attributes(params[:orientation_course])
-    respond_with(@orientation_course)
+    @winter_school.update_attributes(params[:winter_school])
+    respond_with(@winter_school)
   end
 
   def destroy
-    @orientation_course.destroy
+    @winter_school.destroy
 
     respond_to do |format|
       format.html { redirect_to orientation_record_path}
@@ -73,7 +73,7 @@ class OrientationCoursesController < ApplicationController
   end
 
   private
-    def set_orientation_course
-      @orientation_course = OrientationCourse.find(params[:id])
+    def set_winter_school
+      @winter_school = OrientationCourse.find(params[:id])
     end
 end
