@@ -1,130 +1,18 @@
-<p id="notice"><%= notice %></p>
+<!-- row -->            
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Individual Record</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
 
-<p>
-  <b>Name:</b>
-  <%= @winter_school.name %>
-</p>
+<div class="col-md-offset-1 col-md-10 col-md-offset-1">
+    <%= render 'detail' %>
 
-<p>
-  <b>Gender:</b>
-  <%= @winter_school.gender %>
-</p>
-
-<p>
-  <b>Religion:</b>
-  <%= @winter_school.religion %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @winter_school.category %>
-</p>
-
-<p>
-  <b>Marital status:</b>
-  <%= @winter_school.marital_status %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @winter_school.email %>
-</p>
-
-<p>
-  <b>Stream:</b>
-  <%= @winter_school.stream %>
-</p>
-
-<p>
-  <b>College:</b>
-  <%= @winter_school.college %>
-</p>
-
-<p>
-  <b>University:</b>
-  <%= @winter_school.university %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @winter_school.city %>
-</p>
-
-<p>
-  <b>District:</b>
-  <%= @winter_school.district %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @winter_school.state %>
-</p>
-
-<p>
-  <b>Position:</b>
-  <%= @winter_school.position %>
-</p>
-
-<p>
-  <b>Payscale:</b>
-  <%= @winter_school.payscale %>
-</p>
-
-<p>
-  <b>Course:</b>
-  <%= @winter_school.course %>
-</p>
-
-<p>
-  <b>Pin:</b>
-  <%= @winter_school.pin %>
-</p>
-
-<p>
-  <b>Landline:</b>
-  <%= @winter_school.landline %>
-</p>
-
-<p>
-  <b>Mobile:</b>
-  <%= @winter_school.mobile %>
-</p>
-
-<p>
-  <b>University pin:</b>
-  <%= @winter_school.university_pin %>
-</p>
-
-<p>
-  <b>Dob:</b>
-  <%= @winter_school.dob %>
-</p>
-
-<p>
-  <b>Date of joining:</b>
-  <%= @winter_school.date_of_joining %>
-</p>
-
-<p>
-  <b>Pref date1:</b>
-  <%= @winter_school.pref_date1 %>
-</p>
-
-<p>
-  <b>Pref date2:</b>
-  <%= @winter_school.pref_date2 %>
-</p>
-
-<p>
-  <b>Res address:</b>
-  <%= @winter_school.res_address %>
-</p>
-
-<p>
-  <b>Phd:</b>
-  <%= @winter_school.phd %>
-</p>
-
-
-<%= link_to 'Edit', edit_winter_school_path(@winter_school) %> |
-<%= link_to 'Back', winter_schools_path %>
+    <%= link_to 'Edit', edit_winter_school_path(@winter_school), :class => 'btn btn-default' if can? :update, WinterSchool%>
+    <%= link_to 'Delete', winter_school_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } if can? :destroy, WinterSchool %> 
+    <%= link_to 'Back', winter_record_path, :class => 'btn btn-default' %>
+    <%= link_to "Download as Excel", winter_school_path(format: "xlsx"), :class => 'btn btn-default' %>
+</div>
+<!-- /. offset -->

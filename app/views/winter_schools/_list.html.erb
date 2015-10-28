@@ -1,0 +1,36 @@
+<div id="filterrific_results">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>          
+                            <tr>
+                                <th>S.no</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>University</th>
+                                <th>Date of birth</th>
+                                <th>Mobile</th>
+                                <th>Residential address</th>
+                                <th>Course</th>
+                            </tr>
+                        </thead>
+                        <% i=0 %>    
+                        <% @winter_schools.each do |winter_school| %>
+                          <tbody>
+                              <tr>
+                                <td><%= link_to i=i+1, winter_school %></td>
+                                <td><%= winter_school.name %></td>
+                                <td><%= winter_school.email %></td>
+                                <td><%= winter_school.university %></td>
+                                <td><%= winter_school.dob.strftime('%d-%b-%Y') %></td>
+                                <td><%= winter_school.mobile %></td>
+                                <td><%= winter_school.res_address %></td>
+                                <td><%= winter_school.course.course_name %></td>
+                              </tr>
+                          </tbody>    
+                        <% end %>
+                    </table>
+                    <%= paginate @winter_schools %>    
+                </div>
+                <!-- /.table-responsive -->    
+</div>
+<!-- /.col-lg-12 -->

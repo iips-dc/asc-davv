@@ -44,7 +44,9 @@ class CoursesController < ApplicationController
     elsif @course_type=='Interaction Program'
       @stats = @course.interaction_programs
     elsif @course_type=='Principal Workshop'
-      @stats = @course.principal_workshops                  
+      @stats = @course.principal_workshops  
+    elsif @course_type=='Winter School'
+      @stats = @course.winter_schools                    
     end  
 
     respond_to do |format|

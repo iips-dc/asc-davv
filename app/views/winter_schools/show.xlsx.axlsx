@@ -1,0 +1,31 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Participant") do |sheet|
+  
+  sheet.add_row ["ID", @winter_school.id]
+  sheet.add_row ["Name", @winter_school.name]
+  sheet.add_row ["DOB", @winter_school.dob.strftime('%d-%b-%Y')]
+  sheet.add_row ["Gender", @winter_school.gender]
+  sheet.add_row ["Religion", @winter_school.religion]
+  sheet.add_row ["Category", @winter_school.category]
+  sheet.add_row ["Marital Status", @winter_school.marital_status]
+  sheet.add_row ["Email", @winter_school.email]
+  sheet.add_row ["Stream", @winter_school.stream]
+  sheet.add_row ["College", @winter_school.college]
+  sheet.add_row ["University", @winter_school.university]
+  sheet.add_row ["University Pin", @winter_school.university_pin]
+  sheet.add_row ["City", @winter_school.city]
+  sheet.add_row ["District", @winter_school.district]
+  sheet.add_row ["State", @winter_school.state]
+  sheet.add_row ["Position", @winter_school.position]
+  sheet.add_row ["Phd", yesno(@winter_school.phd)]
+  sheet.add_row ["Payscale", @winter_school.payscale]
+  sheet.add_row ["Subject", @winter_school.subject]
+  sheet.add_row ["Date OF Joining", @winter_school.date_of_joining.strftime('%d-%b-%Y')]
+  sheet.add_row ["Landline", @winter_school.std_code + '-' + @winter_school.landline]
+  sheet.add_row ["Mobile", @winter_school.mobile]
+  sheet.add_row ["Preferred Date1", @winter_school.pref_date1.strftime('%d-%b-%Y')]
+  sheet.add_row ["Preferred Date2", @winter_school.pref_date2.strftime('%d-%b-%Y')]
+  sheet.add_row ["Residential Address", @winter_school.res_address]
+  sheet.add_row ["Pin", @winter_school.pin]
+  
+end

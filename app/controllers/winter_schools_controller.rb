@@ -20,11 +20,11 @@ class WinterSchoolsController < ApplicationController
 
   def record
     @filterrific = initialize_filterrific(
-    OrientationCourse,
+    WinterSchool,
     params[:filterrific],
     select_options: {
-        sorted_by: OrientationCourse.options_for_sorted_by,
-        with_course_name: Course.where("LOWER(course_type)='orientation course'").pluck(:course_name)
+        sorted_by: WinterSchool.options_for_sorted_by,
+        with_course_name: Course.where("LOWER(course_type)='winter school'").pluck(:course_name)
     },
     persistence_id: 'shared_key',
     default_filter_params: { sorted_by: 'created_at_desc' },
@@ -38,7 +38,7 @@ class WinterSchoolsController < ApplicationController
   end
 
   def new
-    @winter_school = OrientationCourse.new
+    @winter_school = WinterSchool.new
     respond_with(@winter_school)
   end
 
@@ -46,10 +46,10 @@ class WinterSchoolsController < ApplicationController
   end
 
   def create
-    @winter_school = OrientationCourse.new(params[:winter_school])
+    @winter_school = WinterSchool.new(params[:winter_school])
     respond_to do |format|
       if @winter_school.save
-        format.html { redirect_to "/orientation_registered/#{@winter_school.id}" }
+        format.html { redirect_to "/winter_registered/#{@winter_school.id}" }
         format.json { render json: @winter_school, status: :created, location: @winter_school }
       else
         format.html { render action: "new" }
@@ -67,13 +67,13 @@ class WinterSchoolsController < ApplicationController
     @winter_school.destroy
 
     respond_to do |format|
-      format.html { redirect_to orientation_record_path}
+      format.html { redirect_to winter_record_path}
       format.json { head :no_content }
     end
   end
 
   private
     def set_winter_school
-      @winter_school = OrientationCourse.find(params[:id])
+      @winter_school = WinterSchool.find(params[:id])
     end
 end

@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "List") do |sheet|
+  i=0
+  sheet.add_row ["S.no", "Name", "Subject", "College", "Email ID", "Mobile No.", "Course"]
+  @winter_schools.each do |winter_school|
+  	sheet.add_row [i+=1, winter_school.name, winter_school.subject, winter_school.college, winter_school.email, winter_school.mobile, winter_school.course.course_name]
+  end
+  
+end

@@ -1,0 +1,117 @@
+<div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">#<%= @winter_school.id %> <%= @winter_school.name %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <%= image_tag(@winter_school.image_url(:thumb).to_s, :class => @winter_school.image? ? "img-responsive img-thumbnail" : nil) %> </div>
+                
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Date Of Birth</td>
+                        <td><%= @winter_school.dob.strftime('%d-%b-%Y') %></td>
+                      </tr>  
+                      <tr>
+                        <td>Gender</td>
+                        <td><%= @winter_school.gender %></td>
+                      </tr>
+                      <tr>
+                        <td>Religion</td>
+                        <td><%=@winter_school.religion %></td>
+                      </tr>
+                      <tr>
+                        <td>Category</td>
+                        <td><%=@winter_school.category %></td>
+                      </tr>
+                      <tr>
+                        <td>Marital Status</td>
+                        <td><%= @winter_school.marital_status %></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><%= @winter_school.email %></td>
+                      </tr>
+                      <tr>
+                        <td>Stream</td>
+                        <td><%= @winter_school.stream %></td>
+                      </tr>
+                      <tr>
+                        <td>College</td>
+                        <td><%= @winter_school.college %></td>
+                      </tr>
+                      <tr>
+                        <td>University</td>
+                        <td><%= @winter_school.university %></td>
+                      </tr>
+                      <tr>
+                        <td>University Pin</td>
+                        <td><%= @winter_school.university_pin %></td>
+                      </tr>
+                      <tr>
+                        <td>City/Village</td>
+                        <td><%= @winter_school.city %></td>
+                      </tr>
+                      <tr>
+                        <td>District</td>
+                        <td><%= @winter_school.district %></td>
+                      </tr>
+                      <tr>
+                        <td>State/Union Territory</td>
+                        <td><%= @winter_school.state %></td>
+                      </tr>
+                      <tr>
+                        <td>Position</td>
+                        <td><%= @winter_school.position %></td>
+                      </tr>
+                      <tr>
+                        <td>Phd</td>
+                        <td><%= yesno(@winter_school.phd) %></td>
+                      </tr>
+                      <tr>
+                        <td>Payscale</td>
+                        <td><%= @winter_school.payscale %></td>
+                      </tr> 
+                      <tr>
+                        <td>Subject</td>
+                        <td><%= @winter_school.subject %></td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Joining</td>
+                        <td><%= @winter_school.date_of_joining.strftime('%d-%b-%Y') %></td>
+                      </tr>
+                      <tr>
+                        <td>Landline</td>
+                        <td><%= @winter_school.std_code %>-<%= @winter_school.landline %></td>
+                      </tr>
+                      <tr>
+                        <td>Mobile</td>
+                        <td><%= @winter_school.mobile %></td>
+                      </tr>
+                      <tr>
+                        <td>Preferred Date 1</td>
+                        <td><%= @winter_school.pref_date1.strftime('%d-%b-%Y') %></td>
+                      </tr>
+                      <tr>
+                        <td>Preferred Date 2</td>
+                        <td><%= @winter_school.pref_date2.strftime('%d-%b-%Y') %></td>
+                      </tr>
+                      <tr>
+                        <td>Residential Address</td>
+                        <td><%= @winter_school.res_address %></td>
+                      </tr>
+                      <tr>
+                        <td>Pin</td>
+                        <td><%= @winter_school.pin %></td>
+                      </tr>
+                    </tbody>
+                  </table>   
+                </div>
+                <!-- /. col-md-9 -->
+              </div>
+              <!-- /. row -->
+          </div>
+          <!-- /. panel body -->
+</div>
+<!-- /. panel -->

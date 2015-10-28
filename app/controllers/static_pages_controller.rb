@@ -64,6 +64,8 @@ class StaticPagesController < ApplicationController
 			@record=InteractionProgram.find_by_dob_and_id(date, params[:registration_id])
 		elsif @course_type == 'Principal Workshop'
 			@record=PrincipalWorkshop.find_by_dob_and_id(date, params[:registration_id])	
+		elsif @course_type == 'Winter School'
+			@record=WinterSchool.find_by_dob_and_id(date, params[:registration_id])		
 		end
 
 		if @record.nil?
