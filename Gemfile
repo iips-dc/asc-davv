@@ -20,6 +20,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# For Image Gallery
+gem 'Bootstrap-Image-Gallery-rails'
 # For Authentication
 gem 'devise'
 

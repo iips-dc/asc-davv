@@ -11,8 +11,16 @@
 // GO AFTER THE REQUIRES BELOW.
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require bootstrap-datepicker/core
 //= require filterrific/filterrific-jquery
 //= require rails.validations
+//= require blueimp-gallery
+//= require blueimp-gallery-fullscreen
+//= require blueimp-gallery-indicator
+//= require blueimp-gallery-video
+//= require blueimp-gallery-youtube
+//= require jquery.blueimp-gallery
+//= require bootstrap-image-gallery
 //= require_tree .
 //= require d3
