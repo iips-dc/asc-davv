@@ -69,6 +69,8 @@ gem 'axlsx_rails'
 # For quote of the day
 gem 'quoth'
 
+gem 'pry-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
